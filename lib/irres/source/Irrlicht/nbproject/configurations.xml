@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="84">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df name="Irrlicht" root=".">
+      <df name="aesGladman">
+        <in>aes.h</in>
+        <in>aescrypt.cpp</in>
+        <in>aeskey.cpp</in>
+        <in>aesopt.h</in>
+        <in>aestab.cpp</in>
+        <in>fileenc.cpp</in>
+        <in>fileenc.h</in>
+        <in>hmac.cpp</in>
+        <in>hmac.h</in>
+        <in>prng.cpp</in>
+        <in>prng.h</in>
+        <in>pwd2key.cpp</in>
+        <in>pwd2key.h</in>
+        <in>sha1.cpp</in>
+        <in>sha1.h</in>
+        <in>sha2.cpp</in>
+        <in>sha2.h</in>
+      </df>
+      <df name="bzip2">
+        <in>blocksort.c</in>
+        <in>bzcompress.c</in>
+        <in>bzip2.c</in>
+        <in>bzip2recover.c</in>
+        <in>bzlib.c</in>
+        <in>bzlib.h</in>
+        <in>bzlib_private.h</in>
+        <in>crctable.c</in>
+        <in>decompress.c</in>
+        <in>dlltest.c</in>
+        <in>huffman.c</in>
+        <in>mk251.c</in>
+        <in>randtable.c</in>
+        <in>spewG.c</in>
+        <in>unzcrash.c</in>
+      </df>
+      <df name="jpeglib">
+        <in>ansi2knr.c</in>
+        <in>cderror.h</in>
+        <in>cdjpeg.c</in>
+        <in>cdjpeg.h</in>
+        <in>cjpeg.c</in>
+        <in>ckconfig.c</in>
+        <in>djpeg.c</in>
+        <in>example.c</in>
+        <in>jaricom.c</in>
+        <in>jcapimin.c</in>
+        <in>jcapistd.c</in>
+        <in>jcarith.c</in>
+        <in>jccoefct.c</in>
+        <in>jccolor.c</in>
+        <in>jcdctmgr.c</in>
+        <in>jchuff.c</in>
+        <in>jcinit.c</in>
+        <in>jcmainct.c</in>
+        <in>jcmarker.c</in>
+        <in>jcmaster.c</in>
+        <in>jcomapi.c</in>
+        <in>jconfig.h</in>
+        <in>jcparam.c</in>
+        <in>jcprepct.c</in>
+        <in>jcsample.c</in>
+        <in>jctrans.c</in>
+        <in>jdapimin.c</in>
+        <in>jdapistd.c</in>
+        <in>jdarith.c</in>
+        <in>jdatadst.c</in>
+        <in>jdatasrc.c</in>
+        <in>jdcoefct.c</in>
+        <in>jdcolor.c</in>
+        <in>jdct.h</in>
+        <in>jddctmgr.c</in>
+        <in>jdhuff.c</in>
+        <in>jdinput.c</in>
+        <in>jdmainct.c</in>
+        <in>jdmarker.c</in>
+        <in>jdmaster.c</in>
+        <in>jdmerge.c</in>
+        <in>jdpostct.c</in>
+        <in>jdsample.c</in>
+        <in>jdtrans.c</in>
+        <in>jerror.c</in>
+        <in>jerror.h</in>
+        <in>jfdctflt.c</in>
+        <in>jfdctfst.c</in>
+        <in>jfdctint.c</in>
+        <in>jidctflt.c</in>
+        <in>jidctfst.c</in>
+        <in>jidctint.c</in>
+        <in>jinclude.h</in>
+        <in>jmemansi.c</in>
+        <in>jmemdos.c</in>
+        <in>jmemdosa.asm</in>
+        <in>jmemmac.c</in>
+        <in>jmemmgr.c</in>
+        <in>jmemname.c</in>
+        <in>jmemnobs.c</in>
+        <in>jmemsys.h</in>
+        <in>jmorecfg.h</in>
+        <in>jpegint.h</in>
+        <in>jpeglib.h</in>
+        <in>jpegtran.c</in>
+        <in>jquant1.c</in>
+        <in>jquant2.c</in>
+        <in>jutils.c</in>
+        <in>jversion.h</in>
+        <in>rdbmp.c</in>
+        <in>rdcolmap.c</in>
+        <in>rdgif.c</in>
+        <in>rdjpgcom.c</in>
+        <in>rdppm.c</in>
+        <in>rdrle.c</in>
+        <in>rdswitch.c</in>
+        <in>rdtarga.c</in>
+        <in>transupp.c</in>
+        <in>transupp.h</in>
+        <in>wrbmp.c</in>
+        <in>wrgif.c</in>
+        <in>wrjpgcom.c</in>
+        <in>wrppm.c</in>
+        <in>wrrle.c</in>
+        <in>wrtarga.c</in>
+      </df>
+      <df name="libpng">
+        <df name="contrib">
+          <df name="gregbook">
+            <in>readpng.c</in>
+            <in>readpng.h</in>
+            <in>readpng2.c</in>
+            <in>readpng2.h</in>
+            <in>readppm.c</in>
+            <in>rpng-win.c</in>
+            <in>rpng-x.c</in>
+            <in>rpng2-win.c</in>
+            <in>rpng2-x.c</in>
+            <in>wpng.c</in>
+            <in>writepng.c</in>
+            <in>writepng.h</in>
+          </df>
+          <df name="pngminim">
+            <df name="decoder">
+              <in>pngusr.h</in>
+            </df>
+            <df name="encoder">
+              <in>pngusr.h</in>
+            </df>
+            <df name="preader">
+              <in>pngusr.h</in>
+            </df>
+          </df>
+          <df name="pngminus">
+            <in>png2pnm.c</in>
+            <in>pnm2png.c</in>
+          </df>
+          <df name="pngsuite">
+          </df>
+          <df name="visupng">
+            <in>PngFile.c</in>
+            <in>PngFile.h</in>
+            <in>VisualPng.c</in>
+            <in>cexcept.h</in>
+            <in>resource.h</in>
+          </df>
+        </df>
+        <df name="projects">
+          <df name="owatcom">
+          </df>
+          <df name="visualc6">
+          </df>
+          <df name="visualc71">
+          </df>
+          <df name="vstudio">
+            <df name="libpng">
+            </df>
+            <df name="pnglibconf">
+            </df>
+            <df name="pngtest">
+            </df>
+            <df name="pngvalid">
+            </df>
+            <df name="zlib">
+            </df>
+          </df>
+          <df name="xcode">
+            <df name="libpng.xcodeproj">
+            </df>
+          </df>
+        </df>
+        <df name="scripts">
+        </df>
+        <in>example.c</in>
+        <in>png.c</in>
+        <in>png.h</in>
+        <in>pngconf.h</in>
+        <in>pngdebug.h</in>
+        <in>pngerror.c</in>
+        <in>pngget.c</in>
+        <in>pnginfo.h</in>
+        <in>pnglibconf.h</in>
+        <in>pngmem.c</in>
+        <in>pngpread.c</in>
+        <in>pngpriv.h</in>
+        <in>pngread.c</in>
+        <in>pngrio.c</in>
+        <in>pngrtran.c</in>
+        <in>pngrutil.c</in>
+        <in>pngset.c</in>
+        <in>pngstruct.h</in>
+        <in>pngtest.c</in>
+        <in>pngtrans.c</in>
+        <in>pngvalid.c</in>
+        <in>pngwio.c</in>
+        <in>pngwrite.c</in>
+        <in>pngwtran.c</in>
+        <in>pngwutil.c</in>
+      </df>
+      <df name="lzma">
+        <in>LzmaDec.c</in>
+        <in>LzmaDec.h</in>
+        <in>Types.h</in>
+      </df>
+      <df name="MacOSX">
+        <df name="MacOSX.xcodeproj">
+        </df>
+        <df name="MainMenu.nib">
+        </df>
+        <in>AppDelegate.h</in>
+        <in>AppDelegate.mm</in>
+        <in>CIrrDeviceMacOSX.h</in>
+        <in>CIrrDeviceMacOSX.mm</in>
+        <in>OSXClipboard.h</in>
+        <in>OSXClipboard.mm</in>
+      </df>
+      <df name="obj">
+        <df name="Debug">
+        </df>
+        <df name="Static lib - Debug">
+        </df>
+      </df>
+      <df name="zlib">
+        <in>adler32.c</in>
+        <in>compress.c</in>
+        <in>crc32.c</in>
+        <in>crc32.h</in>
+        <in>deflate.c</in>
+        <in>deflate.h</in>
+        <in>gzclose.c</in>
+        <in>gzguts.h</in>
+        <in>gzlib.c</in>
+        <in>gzread.c</in>
+        <in>gzwrite.c</in>
+        <in>infback.c</in>
+        <in>inffast.c</in>
+        <in>inffast.h</in>
+        <in>inffixed.h</in>
+        <in>inflate.c</in>
+        <in>inflate.h</in>
+        <in>inftrees.c</in>
+        <in>inftrees.h</in>
+        <in>trees.c</in>
+        <in>trees.h</in>
+        <in>uncompr.c</in>
+        <in>zconf.h</in>
+        <in>zlib.h</in>
+        <in>zutil.c</in>
+        <in>zutil.h</in>
+      </df>
+      <in>BuiltInFont.h</in>
+      <in>C3DSMeshFileLoader.cpp</in>
+      <in>C3DSMeshFileLoader.h</in>
+      <in>CAnimatedMeshHalfLife.cpp</in>
+      <in>CAnimatedMeshHalfLife.h</in>
+      <in>CAnimatedMeshMD2.cpp</in>
+      <in>CAnimatedMeshMD2.h</in>
+      <in>CAnimatedMeshMD3.cpp</in>
+      <in>CAnimatedMeshMD3.h</in>
+      <in>CAnimatedMeshSceneNode.cpp</in>
+      <in>CAnimatedMeshSceneNode.h</in>
+      <in>CAttributeImpl.h</in>
+      <in>CAttributes.cpp</in>
+      <in>CAttributes.h</in>
+      <in>CB3DMeshFileLoader.cpp</in>
+      <in>CB3DMeshFileLoader.h</in>
+      <in>CBSPMeshFileLoader.cpp</in>
+      <in>CBSPMeshFileLoader.h</in>
+      <in>CBillboardSceneNode.cpp</in>
+      <in>CBillboardSceneNode.h</in>
+      <in>CBlit.h</in>
+      <in>CBoneSceneNode.cpp</in>
+      <in>CBoneSceneNode.h</in>
+      <in>CBurningShader_Raster_Reference.cpp</in>
+      <in>CCSMLoader.cpp</in>
+      <in>CCSMLoader.h</in>
+      <in>CCameraSceneNode.cpp</in>
+      <in>CCameraSceneNode.h</in>
+      <in>CColladaFileLoader.cpp</in>
+      <in>CColladaFileLoader.h</in>
+      <in>CColladaMeshWriter.cpp</in>
+      <in>CColladaMeshWriter.h</in>
+      <in>CColorConverter.cpp</in>
+      <in>CColorConverter.h</in>
+      <in>CCubeSceneNode.cpp</in>
+      <in>CCubeSceneNode.h</in>
+      <in>CD3D8Driver.cpp</in>
+      <in>CD3D8Driver.h</in>
+      <in>CD3D8MaterialRenderer.h</in>
+      <in>CD3D8NormalMapRenderer.cpp</in>
+      <in>CD3D8NormalMapRenderer.h</in>
+      <in>CD3D8ParallaxMapRenderer.cpp</in>
+      <in>CD3D8ParallaxMapRenderer.h</in>
+      <in>CD3D8ShaderMaterialRenderer.cpp</in>
+      <in>CD3D8ShaderMaterialRenderer.h</in>
+      <in>CD3D8Texture.cpp</in>
+      <in>CD3D8Texture.h</in>
+      <in>CD3D9Driver.cpp</in>
+      <in>CD3D9Driver.h</in>
+      <in>CD3D9HLSLMaterialRenderer.cpp</in>
+      <in>CD3D9HLSLMaterialRenderer.h</in>
+      <in>CD3D9MaterialRenderer.h</in>
+      <in>CD3D9NormalMapRenderer.cpp</in>
+      <in>CD3D9NormalMapRenderer.h</in>
+      <in>CD3D9ParallaxMapRenderer.cpp</in>
+      <in>CD3D9ParallaxMapRenderer.h</in>
+      <in>CD3D9ShaderMaterialRenderer.cpp</in>
+      <in>CD3D9ShaderMaterialRenderer.h</in>
+      <in>CD3D9Texture.cpp</in>
+      <in>CD3D9Texture.h</in>
+      <in>CDMFLoader.cpp</in>
+      <in>CDMFLoader.h</in>
+      <in>CDefaultGUIElementFactory.cpp</in>
+      <in>CDefaultGUIElementFactory.h</in>
+      <in>CDefaultSceneNodeAnimatorFactory.cpp</in>
+      <in>CDefaultSceneNodeAnimatorFactory.h</in>
+      <in>CDefaultSceneNodeFactory.cpp</in>
+      <in>CDefaultSceneNodeFactory.h</in>
+      <in>CDepthBuffer.cpp</in>
+      <in>CDepthBuffer.h</in>
+      <in>CDummyTransformationSceneNode.cpp</in>
+      <in>CDummyTransformationSceneNode.h</in>
+      <in>CEmptySceneNode.cpp</in>
+      <in>CEmptySceneNode.h</in>
+      <in>CFPSCounter.cpp</in>
+      <in>CFPSCounter.h</in>
+      <in>CFileList.cpp</in>
+      <in>CFileList.h</in>
+      <in>CFileSystem.cpp</in>
+      <in>CFileSystem.h</in>
+      <in>CGUIButton.cpp</in>
+      <in>CGUIButton.h</in>
+      <in>CGUICheckBox.cpp</in>
+      <in>CGUICheckBox.h</in>
+      <in>CGUIColorSelectDialog.cpp</in>
+      <in>CGUIColorSelectDialog.h</in>
+      <in>CGUIComboBox.cpp</in>
+      <in>CGUIComboBox.h</in>
+      <in>CGUIContextMenu.cpp</in>
+      <in>CGUIContextMenu.h</in>
+      <in>CGUIEditBox.cpp</in>
+      <in>CGUIEditBox.h</in>
+      <in>CGUIEnvironment.cpp</in>
+      <in>CGUIEnvironment.h</in>
+      <in>CGUIFileOpenDialog.cpp</in>
+      <in>CGUIFileOpenDialog.h</in>
+      <in>CGUIFont.cpp</in>
+      <in>CGUIFont.h</in>
+      <in>CGUIImage.cpp</in>
+      <in>CGUIImage.h</in>
+      <in>CGUIImageList.cpp</in>
+      <in>CGUIImageList.h</in>
+      <in>CGUIInOutFader.cpp</in>
+      <in>CGUIInOutFader.h</in>
+      <in>CGUIListBox.cpp</in>
+      <in>CGUIListBox.h</in>
+      <in>CGUIMenu.cpp</in>
+      <in>CGUIMenu.h</in>
+      <in>CGUIMeshViewer.cpp</in>
+      <in>CGUIMeshViewer.h</in>
+      <in>CGUIMessageBox.cpp</in>
+      <in>CGUIMessageBox.h</in>
+      <in>CGUIModalScreen.cpp</in>
+      <in>CGUIModalScreen.h</in>
+      <in>CGUIScrollBar.cpp</in>
+      <in>CGUIScrollBar.h</in>
+      <in>CGUISkin.cpp</in>
+      <in>CGUISkin.h</in>
+      <in>CGUISpinBox.cpp</in>
+      <in>CGUISpinBox.h</in>
+      <in>CGUISpriteBank.cpp</in>
+      <in>CGUISpriteBank.h</in>
+      <in>CGUIStaticText.cpp</in>
+      <in>CGUIStaticText.h</in>
+      <in>CGUITabControl.cpp</in>
+      <in>CGUITabControl.h</in>
+      <in>CGUITable.cpp</in>
+      <in>CGUITable.h</in>
+      <in>CGUIToolBar.cpp</in>
+      <in>CGUIToolBar.h</in>
+      <in>CGUITreeView.cpp</in>
+      <in>CGUITreeView.h</in>
+      <in>CGUIWindow.cpp</in>
+      <in>CGUIWindow.h</in>
+      <in>CGeometryCreator.cpp</in>
+      <in>CGeometryCreator.h</in>
+      <in>CImage.cpp</in>
+      <in>CImage.h</in>
+      <in>CImageLoaderBMP.cpp</in>
+      <in>CImageLoaderBMP.h</in>
+      <in>CImageLoaderDDS.cpp</in>
+      <in>CImageLoaderDDS.h</in>
+      <in>CImageLoaderJPG.cpp</in>
+      <in>CImageLoaderJPG.h</in>
+      <in>CImageLoaderPCX.cpp</in>
+      <in>CImageLoaderPCX.h</in>
+      <in>CImageLoaderPNG.cpp</in>
+      <in>CImageLoaderPNG.h</in>
+      <in>CImageLoaderPPM.cpp</in>
+      <in>CImageLoaderPPM.h</in>
+      <in>CImageLoaderPSD.cpp</in>
+      <in>CImageLoaderPSD.h</in>
+      <in>CImageLoaderPVR.cpp</in>
+      <in>CImageLoaderPVR.h</in>
+      <in>CImageLoaderRGB.cpp</in>
+      <in>CImageLoaderRGB.h</in>
+      <in>CImageLoaderTGA.cpp</in>
+      <in>CImageLoaderTGA.h</in>
+      <in>CImageLoaderWAL.cpp</in>
+      <in>CImageLoaderWAL.h</in>
+      <in>CImageWriterBMP.cpp</in>
+      <in>CImageWriterBMP.h</in>
+      <in>CImageWriterJPG.cpp</in>
+      <in>CImageWriterJPG.h</in>
+      <in>CImageWriterPCX.cpp</in>
+      <in>CImageWriterPCX.h</in>
+      <in>CImageWriterPNG.cpp</in>
+      <in>CImageWriterPNG.h</in>
+      <in>CImageWriterPPM.cpp</in>
+      <in>CImageWriterPPM.h</in>
+      <in>CImageWriterPSD.cpp</in>
+      <in>CImageWriterPSD.h</in>
+      <in>CImageWriterTGA.cpp</in>
+      <in>CImageWriterTGA.h</in>
+      <in>CIrrDeviceConsole.cpp</in>
+      <in>CIrrDeviceConsole.h</in>
+      <in>CIrrDeviceFB.cpp</in>
+      <in>CIrrDeviceFB.h</in>
+      <in>CIrrDeviceIPhone.cpp</in>
+      <in>CIrrDeviceIPhone.h</in>
+      <in>CIrrDeviceIPhone.m</in>
+      <in>CIrrDeviceLinux.cpp</in>
+      <in>CIrrDeviceLinux.h</in>
+      <in>CIrrDeviceSDL.cpp</in>
+      <in>CIrrDeviceSDL.h</in>
+      <in>CIrrDeviceStub.cpp</in>
+      <in>CIrrDeviceStub.h</in>
+      <in>CIrrDeviceWin32.cpp</in>
+      <in>CIrrDeviceWin32.h</in>
+      <in>CIrrDeviceWinCE.cpp</in>
+      <in>CIrrDeviceWinCE.h</in>
+      <in>CIrrMeshFileLoader.cpp</in>
+      <in>CIrrMeshFileLoader.h</in>
+      <in>CIrrMeshWriter.cpp</in>
+      <in>CIrrMeshWriter.h</in>
+      <in>CLMTSMeshFileLoader.cpp</in>
+      <in>CLMTSMeshFileLoader.h</in>
+      <in>CLWOMeshFileLoader.cpp</in>
+      <in>CLWOMeshFileLoader.h</in>
+      <in>CLightSceneNode.cpp</in>
+      <in>CLightSceneNode.h</in>
+      <in>CLimitReadFile.cpp</in>
+      <in>CLimitReadFile.h</in>
+      <in>CLogger.cpp</in>
+      <in>CLogger.h</in>
+      <in>CMD2MeshFileLoader.cpp</in>
+      <in>CMD2MeshFileLoader.h</in>
+      <in>CMD3MeshFileLoader.cpp</in>
+      <in>CMD3MeshFileLoader.h</in>
+      <in>CMS3DMeshFileLoader.cpp</in>
+      <in>CMS3DMeshFileLoader.h</in>
+      <in>CMY3DHelper.h</in>
+      <in>CMY3DMeshFileLoader.cpp</in>
+      <in>CMY3DMeshFileLoader.h</in>
+      <in>CMemoryFile.cpp</in>
+      <in>CMemoryFile.h</in>
+      <in>CMeshCache.cpp</in>
+      <in>CMeshCache.h</in>
+      <in>CMeshManipulator.cpp</in>
+      <in>CMeshManipulator.h</in>
+      <in>CMeshSceneNode.cpp</in>
+      <in>CMeshSceneNode.h</in>
+      <in>CMetaTriangleSelector.cpp</in>
+      <in>CMetaTriangleSelector.h</in>
+      <in>CMountPointReader.cpp</in>
+      <in>CMountPointReader.h</in>
+      <in>CNPKReader.cpp</in>
+      <in>CNPKReader.h</in>
+      <in>CNullDriver.cpp</in>
+      <in>CNullDriver.h</in>
+      <in>COBJMeshFileLoader.cpp</in>
+      <in>COBJMeshFileLoader.h</in>
+      <in>COBJMeshWriter.cpp</in>
+      <in>COBJMeshWriter.h</in>
+      <in>COCTLoader.cpp</in>
+      <in>COCTLoader.h</in>
+      <in>COGLES2Driver.cpp</in>
+      <in>COGLES2Driver.h</in>
+      <in>COGLES2ExtensionHandler.cpp</in>
+      <in>COGLES2ExtensionHandler.h</in>
+      <in>COGLES2FixedPipelineShader.cpp</in>
+      <in>COGLES2FixedPipelineShader.h</in>
+      <in>COGLES2MaterialRenderer.h</in>
+      <in>COGLES2NormalMapRenderer.cpp</in>
+      <in>COGLES2NormalMapRenderer.h</in>
+      <in>COGLES2ParallaxMapRenderer.cpp</in>
+      <in>COGLES2ParallaxMapRenderer.h</in>
+      <in>COGLES2Renderer2D.cpp</in>
+      <in>COGLES2Renderer2D.h</in>
+      <in>COGLES2SLMaterialRenderer.cpp</in>
+      <in>COGLES2SLMaterialRenderer.h</in>
+      <in>COGLES2Texture.cpp</in>
+      <in>COGLES2Texture.h</in>
+      <in>COGLES2Utils.h</in>
+      <in>COGLESDriver.cpp</in>
+      <in>COGLESDriver.h</in>
+      <in>COGLESExtensionHandler.cpp</in>
+      <in>COGLESExtensionHandler.h</in>
+      <in>COGLESMaterialRenderer.h</in>
+      <in>COGLESTexture.cpp</in>
+      <in>COGLESTexture.h</in>
+      <in>COSOperator.cpp</in>
+      <in>COSOperator.h</in>
+      <in>COctreeSceneNode.cpp</in>
+      <in>COctreeSceneNode.h</in>
+      <in>COctreeTriangleSelector.cpp</in>
+      <in>COctreeTriangleSelector.h</in>
+      <in>COgreMeshFileLoader.cpp</in>
+      <in>COgreMeshFileLoader.h</in>
+      <in>COpenGLDriver.cpp</in>
+      <in>COpenGLDriver.h</in>
+      <in>COpenGLExtensionHandler.cpp</in>
+      <in>COpenGLExtensionHandler.h</in>
+      <in>COpenGLMaterialRenderer.h</in>
+      <in>COpenGLNormalMapRenderer.cpp</in>
+      <in>COpenGLNormalMapRenderer.h</in>
+      <in>COpenGLParallaxMapRenderer.cpp</in>
+      <in>COpenGLParallaxMapRenderer.h</in>
+      <in>COpenGLSLMaterialRenderer.cpp</in>
+      <in>COpenGLSLMaterialRenderer.h</in>
+      <in>COpenGLShaderMaterialRenderer.cpp</in>
+      <in>COpenGLShaderMaterialRenderer.h</in>
+      <in>COpenGLTexture.cpp</in>
+      <in>COpenGLTexture.h</in>
+      <in>CPLYMeshFileLoader.cpp</in>
+      <in>CPLYMeshFileLoader.h</in>
+      <in>CPLYMeshWriter.cpp</in>
+      <in>CPLYMeshWriter.h</in>
+      <in>CPakReader.cpp</in>
+      <in>CPakReader.h</in>
+      <in>CParticleAnimatedMeshSceneNodeEmitter.cpp</in>
+      <in>CParticleAnimatedMeshSceneNodeEmitter.h</in>
+      <in>CParticleAttractionAffector.cpp</in>
+      <in>CParticleAttractionAffector.h</in>
+      <in>CParticleBoxEmitter.cpp</in>
+      <in>CParticleBoxEmitter.h</in>
+      <in>CParticleCylinderEmitter.cpp</in>
+      <in>CParticleCylinderEmitter.h</in>
+      <in>CParticleFadeOutAffector.cpp</in>
+      <in>CParticleFadeOutAffector.h</in>
+      <in>CParticleGravityAffector.cpp</in>
+      <in>CParticleGravityAffector.h</in>
+      <in>CParticleMeshEmitter.cpp</in>
+      <in>CParticleMeshEmitter.h</in>
+      <in>CParticlePointEmitter.cpp</in>
+      <in>CParticlePointEmitter.h</in>
+      <in>CParticleRingEmitter.cpp</in>
+      <in>CParticleRingEmitter.h</in>
+      <in>CParticleRotationAffector.cpp</in>
+      <in>CParticleRotationAffector.h</in>
+      <in>CParticleScaleAffector.cpp</in>
+      <in>CParticleScaleAffector.h</in>
+      <in>CParticleSphereEmitter.cpp</in>
+      <in>CParticleSphereEmitter.h</in>
+      <in>CParticleSystemSceneNode.cpp</in>
+      <in>CParticleSystemSceneNode.h</in>
+      <in>CQ3LevelMesh.cpp</in>
+      <in>CQ3LevelMesh.h</in>
+      <in>CQuake3ShaderSceneNode.cpp</in>
+      <in>CQuake3ShaderSceneNode.h</in>
+      <in>CReadFile.cpp</in>
+      <in>CReadFile.h</in>
+      <in>CSMFMeshFileLoader.cpp</in>
+      <in>CSMFMeshFileLoader.h</in>
+      <in>CSTLMeshFileLoader.cpp</in>
+      <in>CSTLMeshFileLoader.h</in>
+      <in>CSTLMeshWriter.cpp</in>
+      <in>CSTLMeshWriter.h</in>
+      <in>CSceneCollisionManager.cpp</in>
+      <in>CSceneCollisionManager.h</in>
+      <in>CSceneLoaderIrr.cpp</in>
+      <in>CSceneLoaderIrr.h</in>
+      <in>CSceneManager.cpp</in>
+      <in>CSceneManager.h</in>
+      <in>CSceneNodeAnimatorCameraFPS.cpp</in>
+      <in>CSceneNodeAnimatorCameraFPS.h</in>
+      <in>CSceneNodeAnimatorCameraMaya.cpp</in>
+      <in>CSceneNodeAnimatorCameraMaya.h</in>
+      <in>CSceneNodeAnimatorCollisionResponse.cpp</in>
+      <in>CSceneNodeAnimatorCollisionResponse.h</in>
+      <in>CSceneNodeAnimatorDelete.cpp</in>
+      <in>CSceneNodeAnimatorDelete.h</in>
+      <in>CSceneNodeAnimatorFlyCircle.cpp</in>
+      <in>CSceneNodeAnimatorFlyCircle.h</in>
+      <in>CSceneNodeAnimatorFlyStraight.cpp</in>
+      <in>CSceneNodeAnimatorFlyStraight.h</in>
+      <in>CSceneNodeAnimatorFollowSpline.cpp</in>
+      <in>CSceneNodeAnimatorFollowSpline.h</in>
+      <in>CSceneNodeAnimatorRotation.cpp</in>
+      <in>CSceneNodeAnimatorRotation.h</in>
+      <in>CSceneNodeAnimatorTexture.cpp</in>
+      <in>CSceneNodeAnimatorTexture.h</in>
+      <in>CShadowVolumeSceneNode.cpp</in>
+      <in>CShadowVolumeSceneNode.h</in>
+      <in>CSkinnedMesh.cpp</in>
+      <in>CSkinnedMesh.h</in>
+      <in>CSkyBoxSceneNode.cpp</in>
+      <in>CSkyBoxSceneNode.h</in>
+      <in>CSkyDomeSceneNode.cpp</in>
+      <in>CSkyDomeSceneNode.h</in>
+      <in>CSoftware2MaterialRenderer.h</in>
+      <in>CSoftwareDriver.cpp</in>
+      <in>CSoftwareDriver.h</in>
+      <in>CSoftwareDriver2.cpp</in>
+      <in>CSoftwareDriver2.h</in>
+      <in>CSoftwareTexture.cpp</in>
+      <in>CSoftwareTexture.h</in>
+      <in>CSoftwareTexture2.cpp</in>
+      <in>CSoftwareTexture2.h</in>
+      <in>CSphereSceneNode.cpp</in>
+      <in>CSphereSceneNode.h</in>
+      <in>CTRFlat.cpp</in>
+      <in>CTRFlatWire.cpp</in>
+      <in>CTRGouraud.cpp</in>
+      <in>CTRGouraud2.cpp</in>
+      <in>CTRGouraudAlpha2.cpp</in>
+      <in>CTRGouraudAlphaNoZ2.cpp</in>
+      <in>CTRGouraudWire.cpp</in>
+      <in>CTRNormalMap.cpp</in>
+      <in>CTRStencilShadow.cpp</in>
+      <in>CTRTextureBlend.cpp</in>
+      <in>CTRTextureDetailMap2.cpp</in>
+      <in>CTRTextureFlat.cpp</in>
+      <in>CTRTextureFlatWire.cpp</in>
+      <in>CTRTextureGouraud.cpp</in>
+      <in>CTRTextureGouraud.h</in>
+      <in>CTRTextureGouraud2.cpp</in>
+      <in>CTRTextureGouraudAdd.cpp</in>
+      <in>CTRTextureGouraudAdd2.cpp</in>
+      <in>CTRTextureGouraudAddNoZ2.cpp</in>
+      <in>CTRTextureGouraudAlpha.cpp</in>
+      <in>CTRTextureGouraudAlphaNoZ.cpp</in>
+      <in>CTRTextureGouraudNoZ.cpp</in>
+      <in>CTRTextureGouraudNoZ2.cpp</in>
+      <in>CTRTextureGouraudVertexAlpha2.cpp</in>
+      <in>CTRTextureGouraudWire.cpp</in>
+      <in>CTRTextureLightMap2_Add.cpp</in>
+      <in>CTRTextureLightMap2_M1.cpp</in>
+      <in>CTRTextureLightMap2_M2.cpp</in>
+      <in>CTRTextureLightMap2_M4.cpp</in>
+      <in>CTRTextureLightMapGouraud2_M4.cpp</in>
+      <in>CTRTextureWire2.cpp</in>
+      <in>CTarReader.cpp</in>
+      <in>CTarReader.h</in>
+      <in>CTerrainSceneNode.cpp</in>
+      <in>CTerrainSceneNode.h</in>
+      <in>CTerrainTriangleSelector.cpp</in>
+      <in>CTerrainTriangleSelector.h</in>
+      <in>CTextSceneNode.cpp</in>
+      <in>CTextSceneNode.h</in>
+      <in>CTimer.h</in>
+      <in>CTriangleBBSelector.cpp</in>
+      <in>CTriangleBBSelector.h</in>
+      <in>CTriangleSelector.cpp</in>
+      <in>CTriangleSelector.h</in>
+      <in>CVideoModeList.cpp</in>
+      <in>CVideoModeList.h</in>
+      <in>CVolumeLightSceneNode.cpp</in>
+      <in>CVolumeLightSceneNode.h</in>
+      <in>CWADReader.cpp</in>
+      <in>CWADReader.h</in>
+      <in>CWaterSurfaceSceneNode.cpp</in>
+      <in>CWaterSurfaceSceneNode.h</in>
+      <in>CWriteFile.cpp</in>
+      <in>CWriteFile.h</in>
+      <in>CXMLReader.cpp</in>
+      <in>CXMLReader.h</in>
+      <in>CXMLReaderImpl.h</in>
+      <in>CXMLWriter.cpp</in>
+      <in>CXMLWriter.h</in>
+      <in>CXMeshFileLoader.cpp</in>
+      <in>CXMeshFileLoader.h</in>
+      <in>CZBuffer.cpp</in>
+      <in>CZBuffer.h</in>
+      <in>CZipReader.cpp</in>
+      <in>CZipReader.h</in>
+      <in>IAttribute.h</in>
+      <in>IBurningShader.cpp</in>
+      <in>IBurningShader.h</in>
+      <in>IDepthBuffer.h</in>
+      <in>IImagePresenter.h</in>
+      <in>ISceneNodeAnimatorFinishing.h</in>
+      <in>ITriangleRenderer.h</in>
+      <in>IZBuffer.h</in>
+      <in>Irrlicht.cpp</in>
+      <in>Octree.h</in>
+      <in>PixelFormatInternal.cpp</in>
+      <in>PixelFormatInternal.h</in>
+      <in>S2DVertex.h</in>
+      <in>S4DVertex.h</in>
+      <in>SPVRHeader.h</in>
+      <in>SoftwareDriver2_compile_config.h</in>
+      <in>SoftwareDriver2_helper.h</in>
+      <in>dmfsupport.h</in>
+      <in>eglext.h</in>
+      <in>gles-ext.h</in>
+      <in>gles2-ext.h</in>
+      <in>glext.h</in>
+      <in>glxext.h</in>
+      <in>irrXML.cpp</in>
+      <in>os.cpp</in>
+      <in>os.h</in>
+      <in>resource.h</in>
+      <in>wglext.h</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <codeAssistance>
+      </codeAssistance>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>${MAKE} -j6 -f Makefile</buildCommand>
+          <cleanCommand>${MAKE} -f Makefile clean</cleanCommand>
+          <executablePath></executablePath>
+          <cTool>
+            <incDir>
+              <pElem>../../include</pElem>
+              <pElem>jpeglib</pElem>
+              <pElem>zlib</pElem>
+              <pElem>libpng</pElem>
+              <pElem>/usr/X11R6/include</pElem>
+              <pElem>.</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>IRRLICHT_EXPORTS=1</Elem>
+              <Elem>PNG_NO_MMX_CODE</Elem>
+              <Elem>PNG_NO_MNG_FEATURES</Elem>
+              <Elem>PNG_THREAD_UNSAFE_OK</Elem>
+            </preprocessorList>
+          </cTool>
+          <ccTool>
+            <incDir>
+              <pElem>../../include</pElem>
+              <pElem>jpeglib</pElem>
+              <pElem>zlib</pElem>
+              <pElem>libpng</pElem>
+              <pElem>/usr/X11R6/include</pElem>
+            </incDir>
+            <preprocessorList>
+              <Elem>IRRLICHT_EXPORTS=1</Elem>
+              <Elem>_DEBUG</Elem>
+            </preprocessorList>
+            <undefinedList>
+              <Elem>__EXCEPTIONS</Elem>
+              <Elem>__GXX_RTTI</Elem>
+            </undefinedList>
+          </ccTool>
+        </makeTool>
+      </makefileType>
+      <item path="C3DSMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CAnimatedMeshHalfLife.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CAnimatedMeshMD2.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CAnimatedMeshMD3.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CB3DMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CBSPMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CBoneSceneNode.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CCSMLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CColladaFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CColladaMeshWriter.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CD3D8MaterialRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CD3D8NormalMapRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CD3D8ParallaxMapRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CD3D8Texture.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CD3D9HLSLMaterialRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CD3D9MaterialRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CD3D9NormalMapRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CD3D9ParallaxMapRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CD3D9ShaderMaterialRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CD3D9Texture.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CDMFLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CIrrDeviceIPhone.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="CIrrDeviceIPhone.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CIrrDeviceIPhone.m" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="CIrrDeviceSDL.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CIrrDeviceWin32.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CIrrDeviceWinCE.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="CIrrDeviceWinCE.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CIrrMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CIrrMeshWriter.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CLMTSMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CMD2MeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CMD3MeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CMS3DMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CMY3DHelper.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CMY3DMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COBJMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COBJMeshWriter.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COCTLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLES2Driver.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="COGLES2Driver.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLES2ExtensionHandler.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="COGLES2ExtensionHandler.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLES2FixedPipelineShader.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="COGLES2FixedPipelineShader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLES2MaterialRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLES2NormalMapRenderer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="COGLES2NormalMapRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLES2ParallaxMapRenderer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="COGLES2ParallaxMapRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLES2Renderer2D.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="COGLES2Renderer2D.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLES2SLMaterialRenderer.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="COGLES2SLMaterialRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLES2Texture.cpp" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="COGLES2Texture.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLES2Utils.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLESExtensionHandler.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLESMaterialRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COGLESTexture.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="COgreMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CPLYMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CPLYMeshWriter.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CQ3LevelMesh.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CSMFMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CSTLMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CSTLMeshWriter.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CSoftware2MaterialRenderer.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CSoftwareTexture.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="CXMeshFileLoader.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="MacOSX/AppDelegate.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="MacOSX/AppDelegate.mm" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="MacOSX/CIrrDeviceMacOSX.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="MacOSX/CIrrDeviceMacOSX.mm" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="MacOSX/OSXClipboard.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="MacOSX/OSXClipboard.mm" ex="true" tool="1" flavor2="0">
+      </item>
+      <item path="bzip2/bzip2.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="bzip2/bzip2recover.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="bzip2/dlltest.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="bzip2/mk251.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="bzip2/spewG.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="bzip2/unzcrash.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="dmfsupport.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="eglext.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <folder path="Irrlicht/aesGladman">
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </folder>
+      <item path="gles-ext.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="gles2-ext.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="jpeglib/ansi2knr.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/cderror.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="jpeglib/cdjpeg.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/cdjpeg.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="jpeglib/cjpeg.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/ckconfig.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/djpeg.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/example.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/jmemansi.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/jmemdos.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/jmemdosa.asm" ex="true" tool="4" flavor2="0">
+      </item>
+      <item path="jpeglib/jmemmac.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/jmemname.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/jpegtran.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/rdbmp.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/rdcolmap.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/rdgif.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/rdjpgcom.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/rdppm.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/rdrle.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/rdswitch.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/rdtarga.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/transupp.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/transupp.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="jpeglib/wrbmp.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/wrgif.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/wrjpgcom.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/wrppm.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/wrrle.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="jpeglib/wrtarga.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/gregbook/readpng.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/gregbook/readpng.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libpng/contrib/gregbook/readpng2.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/gregbook/readpng2.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libpng/contrib/gregbook/readppm.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/gregbook/rpng-win.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/gregbook/rpng-x.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/gregbook/rpng2-win.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/gregbook/rpng2-x.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/gregbook/wpng.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/gregbook/writepng.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/gregbook/writepng.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libpng/contrib/pngminim/decoder/pngusr.h"
+            ex="true"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libpng/contrib/pngminim/encoder/pngusr.h"
+            ex="true"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libpng/contrib/pngminim/preader/pngusr.h"
+            ex="true"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="libpng/contrib/pngminus/png2pnm.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/pngminus/pnm2png.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/visupng/PngFile.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/visupng/PngFile.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libpng/contrib/visupng/VisualPng.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/contrib/visupng/cexcept.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libpng/contrib/visupng/resource.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="libpng/example.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/pngtest.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="libpng/pngvalid.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="resource.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="wglext.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="zlib/gzclose.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="zlib/gzguts.h" ex="true" tool="3" flavor2="0">
+      </item>
+      <item path="zlib/gzlib.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="zlib/gzread.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="zlib/gzwrite.c" ex="true" tool="0" flavor2="0">
+      </item>
+      <item path="zlib/infback.c" ex="true" tool="0" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

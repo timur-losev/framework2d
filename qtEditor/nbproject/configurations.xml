@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="84">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="f1" displayName="Game" projectFiles="true">
+      <logicalFolder name="f1" displayName="Level" projectFiles="true">
+        <itemPath>../Game/Src/ILevel.cpp</itemPath>
+        <itemPath>../Game/Src/ILevel.h</itemPath>
+        <itemPath>../Game/Src/LevelFile.cpp</itemPath>
+        <itemPath>../Game/Src/LevelFile.h</itemPath>
+        <itemPath>../Game/Src/LevelManager.cpp</itemPath>
+        <itemPath>../Game/Src/LevelManager.h</itemPath>
+      </logicalFolder>
+      <itemPath>../Game/Src/AnimatedGameObject.cpp</itemPath>
+      <itemPath>../Game/Src/AnimatedGameObject.h</itemPath>
+      <itemPath>../Game/Src/AssetsManager.cpp</itemPath>
+      <itemPath>../Game/Src/AssetsManager.h</itemPath>
+      <itemPath>../Game/Src/EditablePagedLevel.cpp</itemPath>
+      <itemPath>../Game/Src/EditablePagedLevel.h</itemPath>
+      <itemPath>../Game/Src/GameObject.cpp</itemPath>
+      <itemPath>../Game/Src/GameObject.h</itemPath>
+      <itemPath>../Game/Src/MappingFile.cpp</itemPath>
+      <itemPath>../Game/Src/MappingFile.h</itemPath>
+      <itemPath>../Game/Src/Page.cpp</itemPath>
+      <itemPath>../Game/Src/Page.h</itemPath>
+      <itemPath>../Game/Src/Prec.h</itemPath>
+      <itemPath>../Game/Src/Sprite.cpp</itemPath>
+      <itemPath>../Game/Src/Sprite.h</itemPath>
+      <itemPath>../Game/Src/SpriteDefs.h</itemPath>
+      <itemPath>../Game/Src/StaticGameObject.cpp</itemPath>
+      <itemPath>../Game/Src/StaticGameObject.h</itemPath>
+      <itemPath>../Game/Src/ZwoptexParser.cpp</itemPath>
+      <itemPath>../Game/Src/ZwoptexParser.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles" displayName="Gui" projectFiles="true">
+      <logicalFolder name="f5" displayName="AboutWindow" projectFiles="true">
+        <itemPath>Gui/AboutWindow.cpp</itemPath>
+        <itemPath>Gui/AboutWindow.h</itemPath>
+        <itemPath>Gui/AboutWindow.ui</itemPath>
+        <itemPath>Gui/ui_AboutWindow.hpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2" displayName="Control" projectFiles="true">
+        <itemPath>IrrWorker.cpp</itemPath>
+        <itemPath>IrrWorker.h</itemPath>
+        <itemPath>Gui/QIrrControl.cpp</itemPath>
+        <itemPath>Gui/QIrrControl.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="Controllers" projectFiles="true">
+        <itemPath>AboutWindowController.cpp</itemPath>
+        <itemPath>AboutWindowController.h</itemPath>
+        <itemPath>MainWindowController.cpp</itemPath>
+        <itemPath>MainWindowController.h</itemPath>
+        <itemPath>MappingToolWindowController.cpp</itemPath>
+        <itemPath>MappingToolWindowController.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="MainWindow" projectFiles="true">
+        <itemPath>Gui/MainWindow.cpp</itemPath>
+        <itemPath>Gui/MainWindow.h</itemPath>
+        <itemPath>Gui/MainWindow.ui</itemPath>
+        <itemPath>Gui/ui_MainWindow.hpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f6" displayName="MappingToolWindow" projectFiles="true">
+        <itemPath>Gui/MappingToolWindow.cpp</itemPath>
+        <itemPath>Gui/MappingToolWindow.h</itemPath>
+        <itemPath>Gui/MappingToolWindow.ui</itemPath>
+        <itemPath>Gui/ui_MappingToolWindow.hpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f4" displayName="moc" projectFiles="true">
+        <itemPath>Gui/moc_AboutWindow.cpp</itemPath>
+        <itemPath>Gui/moc_MainWindow.cpp</itemPath>
+        <itemPath>Gui/moc_MappingToolWindow.cpp</itemPath>
+        <itemPath>Gui/moc_QIrrControl.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles" displayName="Source" projectFiles="true">
+      <logicalFolder name="f2" displayName="Holdes" projectFiles="true">
+        <itemPath>GuiManager.cpp</itemPath>
+        <itemPath>GuiManager.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f1" displayName="Interfaces" projectFiles="true">
+        <itemPath>IAboutWindow.h</itemPath>
+        <itemPath>IIrrControl.h</itemPath>
+        <itemPath>IMainWindow.h</itemPath>
+        <itemPath>IMappingToolWindow.h</itemPath>
+        <itemPath>IRegularController.h</itemPath>
+        <itemPath>IRegularView.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f3" displayName="Model" projectFiles="true">
+        <itemPath>MapViewer.cpp</itemPath>
+        <itemPath>MapViewer.h</itemPath>
+        <itemPath>MappingToolLevel.cpp</itemPath>
+        <itemPath>MappingToolLevel.h</itemPath>
+      </logicalFolder>
+      <itemPath>Application.cpp</itemPath>
+      <itemPath>EdPrec.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="f2" displayName="tinyxml" projectFiles="true">
+      <itemPath>../lib/tinyxml/tinystr.cpp</itemPath>
+      <itemPath>../lib/tinyxml/tinystr.h</itemPath>
+      <itemPath>../lib/tinyxml/tinyxml.cpp</itemPath>
+      <itemPath>../lib/tinyxml/tinyxml.h</itemPath>
+      <itemPath>../lib/tinyxml/tinyxmlerror.cpp</itemPath>
+      <itemPath>../lib/tinyxml/tinyxmlparser.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU_SNAP|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <architecture>2</architecture>
+        </cTool>
+        <ccTool>
+          <architecture>2</architecture>
+          <standard>8</standard>
+          <incDir>
+            <pElem>/usr/include/qt4</pElem>
+            <pElem>../lib/irres/include</pElem>
+            <pElem>../Common/Include</pElem>
+            <pElem>../Game/Src</pElem>
+            <pElem>.</pElem>
+            <pElem>../lib/tinyxml</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>DEBUG</Elem>
+            <Elem>EDITOR</Elem>
+            <Elem>__GXX_EXPERIMENTAL_CXX0X__</Elem>
+          </preprocessorList>
+          <warningLevel>2</warningLevel>
+        </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibFileItem>../lib/irres/lib/Linux/libIrrlicht.a</linkerLibFileItem>
+            <linkerLibLibItem>X11</linkerLibLibItem>
+            <linkerLibLibItem>QtCore</linkerLibLibItem>
+            <linkerLibLibItem>QtGui</linkerLibLibItem>
+            <linkerLibProjectItem>
+              <makeArtifact PL="../Common"
+                            CT="3"
+                            CN="Debug"
+                            AC="true"
+                            BL="true"
+                            WD="../Common"
+                            BC="${MAKE} -j6 -f Makefile CONF=Debug"
+                            CC="${MAKE} -j6 -f Makefile CONF=Debug clean"
+                            OP="${CND_DISTDIR}/../../_lib/${CND_CONF}/${CND_PLATFORM}/libcommon.a">
+              </makeArtifact>
+            </linkerLibProjectItem>
+            <linkerLibLibItem>GL</linkerLibLibItem>
+            <linkerLibLibItem>Xxf86vm</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU_SNAP|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+    </conf>
+  </confs>
+</configurationDescriptor>

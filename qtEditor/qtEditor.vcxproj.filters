@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Gui">
+      <UniqueIdentifier>{ecf01e76-6fce-4792-a052-cec61b5a28fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Model">
+      <UniqueIdentifier>{874cf88d-3481-4d55-93d5-aa6583bd1faf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Interfaces">
+      <UniqueIdentifier>{b36eb7e8-264f-4436-8579-4b7d8b2097b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Holder">
+      <UniqueIdentifier>{3f42ba09-206e-486f-9006-27feedff34b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gui\AboutWindow">
+      <UniqueIdentifier>{16e2ff96-0140-4bab-ab55-e81f2abde352}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gui\Control">
+      <UniqueIdentifier>{e6167d0b-2299-4509-af19-264a68e85758}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gui\MainWindow">
+      <UniqueIdentifier>{028a7b46-d30c-41af-ac42-79037f25fdb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gui\MappingToolWindow">
+      <UniqueIdentifier>{d4c5fe99-a9bb-419c-8395-6fcd93c47389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gui\moc">
+      <UniqueIdentifier>{66d68355-41f1-452e-9a1b-8d3d105e225f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gui\Controllers">
+      <UniqueIdentifier>{b91b6588-7e7e-4b94-b737-3a41a825d12c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="MapViewer.cpp">
+      <Filter>Source\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="MappingToolLevel.cpp">
+      <Filter>Source\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiManager.cpp">
+      <Filter>Source\Holder</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\AboutWindow.cpp">
+      <Filter>Gui\AboutWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="IrrWorker.cpp">
+      <Filter>Gui\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\QIrrControl.cpp">
+      <Filter>Gui\Control</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\MainWindow.cpp">
+      <Filter>Gui\MainWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\MappingToolWindow.cpp">
+      <Filter>Gui\MappingToolWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\moc_AboutWindow.cpp">
+      <Filter>Gui\moc</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\moc_MainWindow.cpp">
+      <Filter>Gui\moc</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\moc_QIrrControl.cpp">
+      <Filter>Gui\moc</Filter>
+    </ClCompile>
+    <ClCompile Include="AboutWindowController.cpp">
+      <Filter>Gui\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindowController.cpp">
+      <Filter>Gui\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="MappingToolWindowController.cpp">
+      <Filter>Gui\Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Src\AnimatedGameObject.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Src\AssetsManager.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Src\EditablePagedLevel.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Src\GameObject.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Src\ILevel.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Src\LevelFile.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Src\LevelManager.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Src\MappingFile.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Src\Page.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Src\Sprite.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Src\StaticGameObject.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Game\Src\ZwoptexParser.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui\moc_MappingToolWindow.cpp">
+      <Filter>Gui\moc</Filter>
+    </ClCompile>
+    <ClCompile Include="EdPrec.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EdPrec.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="MapViewer.h">
+      <Filter>Source\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="MappingToolLevel.h">
+      <Filter>Source\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="IAboutWindow.h">
+      <Filter>Source\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IIrrControl.h">
+      <Filter>Source\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IMainWindow.h">
+      <Filter>Source\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IMappingToolWindow.h">
+      <Filter>Source\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IRegularController.h">
+      <Filter>Source\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="IRegularView.h">
+      <Filter>Source\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiManager.h">
+      <Filter>Source\Holder</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\AboutWindow.h">
+      <Filter>Gui\AboutWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\ui_AboutWindow.hpp">
+      <Filter>Gui\AboutWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="IrrWorker.h">
+      <Filter>Gui\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\QIrrControl.h">
+      <Filter>Gui\Control</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\MainWindow.h">
+      <Filter>Gui\MainWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\ui_MainWindow.hpp">
+      <Filter>Gui\MainWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\MappingToolWindow.h">
+      <Filter>Gui\MappingToolWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui\ui_MappingToolWindow.hpp">
+      <Filter>Gui\MappingToolWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutWindowController.h">
+      <Filter>Gui\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="MainWindowController.h">
+      <Filter>Gui\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="MappingToolWindowController.h">
+      <Filter>Gui\Controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\AnimatedGameObject.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\AssetsManager.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\EditablePagedLevel.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\GameObject.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\ILevel.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\LevelFile.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\LevelManager.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\MappingFile.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\Page.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\Prec.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\Ptr.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\PtrForwardDeclarations.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\Sprite.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\SpriteDefs.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\StaticGameObject.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Game\Src\ZwoptexParser.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Gui\AboutWindow.ui">
+      <Filter>Gui\AboutWindow</Filter>
+    </None>
+    <None Include="Gui\MainWindow.ui">
+      <Filter>Gui\MainWindow</Filter>
+    </None>
+    <None Include="Gui\MappingToolWindow.ui">
+      <Filter>Gui\MappingToolWindow</Filter>
+    </None>
+  </ItemGroup>
+</Project>

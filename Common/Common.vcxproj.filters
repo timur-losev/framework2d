@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Include\SigSlot2">
+      <UniqueIdentifier>{06651934-a8ed-4116-83b2-d1df71298de5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\AppApi.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\BoundedBufferReader.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Defs.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\DynamicMemoryStream.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\FileStream.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\MemoryStream.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\MemoryStreamExceptions.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Ptr.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Serializable.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Singleton.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Logger.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\BasicTypes.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Invoker.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Signaling.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Any.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Noncopyable.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\SharedPointer.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\SharedPtrForward.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ThreadBase.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sigslot.h">
+      <Filter>Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Sigslot2.h">
+      <Filter>Include\SigSlot2</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ConnectionsBases.h">
+      <Filter>Include\SigSlot2</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\SigSlot2_variadic_support_full.h">
+      <Filter>Include\SigSlot2</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\SigSlot2_variadic_support_msvc.h">
+      <Filter>Include\SigSlot2</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\AppApi.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\BoundedBufferReader.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DynamicMemoryStream.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\FileStream.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MemoryStream.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MemoryStreamExceptions.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Logger.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Invoker.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SigSlot2.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

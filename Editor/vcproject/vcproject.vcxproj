@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{77CA996C-0B23-4FB9-A70A-1D663528D6E8}</ProjectGuid>
+    <RootNamespace>vcproject</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)..\dist\Win32\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Editor</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalOptions>/MP %(AdditionalOptions)</AdditionalOptions>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../;../../Game/Src;../../lib/irres/include;../../lib/irres/source/irrlicht;../../lib/boost;../../lib/wxWidgets/include;../../lib/wxWidgets/lib/vc_lib/mswd/;../../lib/tinyxml/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CRT_SECURE_NO_WARNINGS;__WXMSW__;__WXDEBUG__;_WINDOWS;_IRR_STATIC_LIB_;EDITOR;USE_INVOKER;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>../../lib/irres/lib/Win32-visualstudio/Irrlicht.lib;wxmsw28d_core.lib;wxmsw28d_adv.lib;wxbase28d.lib;wxtiffd.lib;wxjpegd.lib;wxpngd.lib;wxzlibd.lib;wxregexd.lib;wxexpatd.lib;winmm.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;odbc32.lib;tinyxml.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalLibraryDirectories>../../lib/boost/lib/win32/;../../lib/wxWidgets/lib/vc_lib/;../../lib/tinyxml/Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Game\Src\AnimatedGameObject.cpp" />
+    <ClCompile Include="..\..\Game\Src\AnimationFile.cpp" />
+    <ClCompile Include="..\..\Game\Src\AssetsManager.cpp">
+      <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreprocessToFile>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\LevelFile.cpp" />
+    <ClCompile Include="..\EdApp.cpp" />
+    <ClCompile Include="..\EdCommon.cpp" />
+    <ClCompile Include="..\EdConsole.cpp" />
+    <ClCompile Include="..\EdSetValuePresenter.cpp" />
+    <ClCompile Include="..\EdSetValueView.cpp" />
+    <ClCompile Include="..\Invoker.cpp" />
+    <ClCompile Include="..\IrrWorker.cpp" />
+    <ClCompile Include="..\MapViewer.cpp" />
+    <ClCompile Include="..\WxIrrControl.cpp" />
+    <ClCompile Include="..\EdMainWndPresenter.cpp" />
+    <ClCompile Include="..\EdMainWndView.cpp" />
+    <ClCompile Include="..\EdAtlasToolWndPresenter.cpp" />
+    <ClCompile Include="..\EdAtlasToolWndView.cpp" />
+    <ClCompile Include="..\EdMappingPresenter.cpp" />
+    <ClCompile Include="..\EdMappingToolWndView.cpp" />
+    <ClCompile Include="..\EdControlHolder.cpp" />
+    <ClCompile Include="..\EdPresenterHolder.cpp" />
+    <ClCompile Include="..\EdViewHolder.cpp" />
+    <ClCompile Include="..\EdSetNameForSelectionPresenter.cpp" />
+    <ClCompile Include="..\EdSetNameForSelectionView.cpp" />
+    <ClCompile Include="..\AnimViewer.cpp" />
+    <ClCompile Include="..\AtlasToolLevel.cpp" />
+    <ClCompile Include="..\MappingToolLevel.cpp" />
+    <ClCompile Include="..\..\Game\Src\GameObject.cpp" />
+    <ClCompile Include="..\..\Game\Src\MappingFile.cpp" />
+    <ClCompile Include="..\..\Game\Src\Sprite.cpp" />
+    <ClCompile Include="..\..\Game\Src\StaticGameObject.cpp" />
+    <ClCompile Include="..\..\Game\Src\ZwoptexParser.cpp" />
+    <ClCompile Include="..\..\Game\Src\EditablePagedLevel.cpp" />
+    <ClCompile Include="..\..\Game\Src\ILevel.cpp" />
+    <ClCompile Include="..\..\Game\Src\LevelManager.cpp" />
+    <ClCompile Include="..\..\Game\Src\Page.cpp" />
+    <ClCompile Include="..\..\Game\Src\AppApi.cpp" />
+    <ClCompile Include="..\..\Game\Src\BoundedBufferReader.cpp" />
+    <ClCompile Include="..\..\Game\Src\CLogger.cpp" />
+    <ClCompile Include="..\..\Game\Src\DynamicMemoryStream.cpp" />
+    <ClCompile Include="..\..\Game\Src\FileStream.cpp" />
+    <ClCompile Include="..\..\Game\Src\MemoryStream.cpp" />
+    <ClCompile Include="..\..\Game\Src\MemoryStreamExceptions.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Game\Src\AnimatedGameObject.h" />
+    <ClInclude Include="..\..\Game\Src\AnimationFile.h" />
+    <ClInclude Include="..\..\Game\Src\AssetsManager.h" />
+    <ClInclude Include="..\..\Game\Src\LevelFile.h" />
+    <ClInclude Include="..\..\Game\Src\Ptr.h" />
+    <ClInclude Include="..\..\Game\Src\PtrForwardDeclarations.h" />
+    <ClInclude Include="..\..\Game\Src\Serializable.h" />
+    <ClInclude Include="..\..\Game\Src\SpriteDefs.h" />
+    <ClInclude Include="..\..\Game\Src\Types.h" />
+    <ClInclude Include="..\EdApp.h" />
+    <ClInclude Include="..\EdCommon.h" />
+    <ClInclude Include="..\EdMainWindowWxEvents.hpp" />
+    <ClInclude Include="..\EdPrec.h" />
+    <ClInclude Include="..\EdSetValuePresenter.h" />
+    <ClInclude Include="..\EdSetValueView.h" />
+    <ClInclude Include="..\IEdSetValueView.h" />
+    <ClInclude Include="..\Invoker.h" />
+    <ClInclude Include="..\IEdControl.h" />
+    <ClInclude Include="..\IrrWorker.h" />
+    <ClInclude Include="..\MapViewer.h" />
+    <ClInclude Include="..\Signaling.h" />
+    <ClInclude Include="..\WxIrrControl.h" />
+    <ClInclude Include="..\EdMainWndPresenter.h" />
+    <ClInclude Include="..\EdMainWndView.h" />
+    <ClInclude Include="..\IEdMainWndView.h" />
+    <ClInclude Include="..\EdAtlasToolWndPresenter.h" />
+    <ClInclude Include="..\EdAtlasToolWndView.h" />
+    <ClInclude Include="..\IEdAtlasToolWndView.h" />
+    <ClInclude Include="..\EdMappingPresenter.h" />
+    <ClInclude Include="..\EdMappingToolWndView.h" />
+    <ClInclude Include="..\IEdMappingToolWndView.h" />
+    <ClInclude Include="..\EdControlHolder.h" />
+    <ClInclude Include="..\EdPresenterHolder.h" />
+    <ClInclude Include="..\EdViewHolder.h" />
+    <ClInclude Include="..\EdSetNameForSelectionPresenter.h" />
+    <ClInclude Include="..\EdSetNameForSelectionView.h" />
+    <ClInclude Include="..\IEdSetNameForSelectionView.h" />
+    <ClInclude Include="..\AnimViewer.h" />
+    <ClInclude Include="..\AtlasToolLevel.h" />
+    <ClInclude Include="..\MappingToolLevel.h" />
+    <ClInclude Include="..\..\Game\Src\GameObject.h" />
+    <ClInclude Include="..\..\Game\Src\MappingFile.h" />
+    <ClInclude Include="..\..\Game\Src\Sprite.h" />
+    <ClInclude Include="..\..\Game\Src\StaticGameObject.h" />
+    <ClInclude Include="..\..\Game\Src\ZwoptexParser.h" />
+    <ClInclude Include="..\..\Game\Src\EditablePagedLevel.h" />
+    <ClInclude Include="..\..\Game\Src\ILevel.h" />
+    <ClInclude Include="..\..\Game\Src\LevelManager.h" />
+    <ClInclude Include="..\..\Game\Src\Page.h" />
+    <ClInclude Include="..\..\Game\Src\AppApi.h" />
+    <ClInclude Include="..\..\Game\Src\BoundedBufferReader.h" />
+    <ClInclude Include="..\..\Game\Src\CLogger.h" />
+    <ClInclude Include="..\..\Game\Src\Defs.h" />
+    <ClInclude Include="..\..\Game\Src\DynamicMemoryStream.h" />
+    <ClInclude Include="..\..\Game\Src\FileStream.h" />
+    <ClInclude Include="..\..\Game\Src\FSingleton.h" />
+    <ClInclude Include="..\..\Game\Src\MemoryStream.h" />
+    <ClInclude Include="..\..\Game\Src\MemoryStreamExceptions.h" />
+    <ClInclude Include="..\..\Game\Src\Prec.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

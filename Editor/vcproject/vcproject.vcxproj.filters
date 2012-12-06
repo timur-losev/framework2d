@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Editor">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Editor\Model">
+      <UniqueIdentifier>{6cd54d75-1234-4caa-a766-b03ccc403e82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\Views">
+      <UniqueIdentifier>{ef58d36f-6271-4c3c-873a-068ffd9dc7dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\Views\MainWindow">
+      <UniqueIdentifier>{96f69d41-1802-4341-983a-3446be7c2c12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\Views\Atlas tool window">
+      <UniqueIdentifier>{879ea546-6336-4f7a-a066-6b4fce2ad4fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\Views\EdMappingTool">
+      <UniqueIdentifier>{4e06797f-71b0-46fb-b9e0-d047ca6703ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\Views\Holders">
+      <UniqueIdentifier>{18c3e84b-0867-4d6a-aab4-3ba4743f7315}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\Views\Set Name Dialog">
+      <UniqueIdentifier>{cf10dea3-f859-4e79-8dd0-310e9b3775d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\Levels">
+      <UniqueIdentifier>{7fad2c4f-58bf-486c-a615-bf38517a17f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Game\Levels">
+      <UniqueIdentifier>{54e002a5-b6d1-47f7-84a8-17afdb13394a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\API">
+      <UniqueIdentifier>{9fbff2e4-f93e-442a-8cce-f237934e3c8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Game Objects">
+      <UniqueIdentifier>{1eaa784e-26a9-4f26-9f92-2bef806db8e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Game Objects\Base">
+      <UniqueIdentifier>{222985ec-3f73-43b2-b06c-bb2f699dc1a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\Views\Set Value Dialog">
+      <UniqueIdentifier>{daf2fd0a-e311-45a7-a283-cd6b1570f890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\Levels\AtlasToolLevel">
+      <UniqueIdentifier>{f6074bbb-ae02-4808-9d89-d89323040f73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\Levels\MapToolLevel">
+      <UniqueIdentifier>{32210dc9-17ec-4eef-aeee-d9fe3f15062f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Platform">
+      <UniqueIdentifier>{32da67e9-63b4-4ed2-a1dd-e273857536be}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\EdApp.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdCommon.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdConsole.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Invoker.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\IrrWorker.cpp">
+      <Filter>Editor\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\WxIrrControl.cpp">
+      <Filter>Editor\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdMainWndPresenter.cpp">
+      <Filter>Editor\Views\MainWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdMainWndView.cpp">
+      <Filter>Editor\Views\MainWindow</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdAtlasToolWndPresenter.cpp">
+      <Filter>Editor\Views\Atlas tool window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdAtlasToolWndView.cpp">
+      <Filter>Editor\Views\Atlas tool window</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdMappingPresenter.cpp">
+      <Filter>Editor\Views\EdMappingTool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdMappingToolWndView.cpp">
+      <Filter>Editor\Views\EdMappingTool</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdControlHolder.cpp">
+      <Filter>Editor\Views\Holders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdPresenterHolder.cpp">
+      <Filter>Editor\Views\Holders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdViewHolder.cpp">
+      <Filter>Editor\Views\Holders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdSetNameForSelectionPresenter.cpp">
+      <Filter>Editor\Views\Set Name Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdSetNameForSelectionView.cpp">
+      <Filter>Editor\Views\Set Name Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\Sprite.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\ZwoptexParser.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\EditablePagedLevel.cpp">
+      <Filter>Game\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\ILevel.cpp">
+      <Filter>Game\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\LevelManager.cpp">
+      <Filter>Game\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\Page.cpp">
+      <Filter>Game\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\AppApi.cpp">
+      <Filter>Game\API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\BoundedBufferReader.cpp">
+      <Filter>Game\API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\CLogger.cpp">
+      <Filter>Game\API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\DynamicMemoryStream.cpp">
+      <Filter>Game\API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\FileStream.cpp">
+      <Filter>Game\API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\MemoryStream.cpp">
+      <Filter>Game\API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\MemoryStreamExceptions.cpp">
+      <Filter>Game\API</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\GameObject.cpp">
+      <Filter>Game\Game Objects\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\StaticGameObject.cpp">
+      <Filter>Game\Game Objects\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\AnimatedGameObject.cpp">
+      <Filter>Game\Game Objects\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdSetValuePresenter.cpp">
+      <Filter>Editor\Views\Set Value Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\EdSetValueView.cpp">
+      <Filter>Editor\Views\Set Value Dialog</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AnimViewer.cpp">
+      <Filter>Editor\Levels\AtlasToolLevel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\AtlasToolLevel.cpp">
+      <Filter>Editor\Levels\AtlasToolLevel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MappingToolLevel.cpp">
+      <Filter>Editor\Levels\MapToolLevel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MapViewer.cpp">
+      <Filter>Editor\Levels\MapToolLevel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\LevelFile.cpp">
+      <Filter>Game\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\AnimationFile.cpp">
+      <Filter>Game\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\MappingFile.cpp">
+      <Filter>Game\Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Game\Src\AssetsManager.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\EdApp.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdCommon.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdPrec.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Invoker.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IEdControl.h">
+      <Filter>Editor\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IrrWorker.h">
+      <Filter>Editor\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WxIrrControl.h">
+      <Filter>Editor\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdMainWndPresenter.h">
+      <Filter>Editor\Views\MainWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdMainWndView.h">
+      <Filter>Editor\Views\MainWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IEdMainWndView.h">
+      <Filter>Editor\Views\MainWindow</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdAtlasToolWndPresenter.h">
+      <Filter>Editor\Views\Atlas tool window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdAtlasToolWndView.h">
+      <Filter>Editor\Views\Atlas tool window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IEdAtlasToolWndView.h">
+      <Filter>Editor\Views\Atlas tool window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdMappingPresenter.h">
+      <Filter>Editor\Views\EdMappingTool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdMappingToolWndView.h">
+      <Filter>Editor\Views\EdMappingTool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IEdMappingToolWndView.h">
+      <Filter>Editor\Views\EdMappingTool</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdControlHolder.h">
+      <Filter>Editor\Views\Holders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdPresenterHolder.h">
+      <Filter>Editor\Views\Holders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdViewHolder.h">
+      <Filter>Editor\Views\Holders</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdSetNameForSelectionPresenter.h">
+      <Filter>Editor\Views\Set Name Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdSetNameForSelectionView.h">
+      <Filter>Editor\Views\Set Name Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IEdSetNameForSelectionView.h">
+      <Filter>Editor\Views\Set Name Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\Sprite.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\ZwoptexParser.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\EditablePagedLevel.h">
+      <Filter>Game\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\ILevel.h">
+      <Filter>Game\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\LevelManager.h">
+      <Filter>Game\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\Page.h">
+      <Filter>Game\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\AppApi.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\BoundedBufferReader.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\CLogger.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\Defs.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\DynamicMemoryStream.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\FileStream.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\FSingleton.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\MemoryStream.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\MemoryStreamExceptions.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\Prec.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\Types.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\StaticGameObject.h">
+      <Filter>Game\Game Objects\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\GameObject.h">
+      <Filter>Game\Game Objects\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\AnimatedGameObject.h">
+      <Filter>Game\Game Objects\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdSetValuePresenter.h">
+      <Filter>Editor\Views\Set Value Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdSetValueView.h">
+      <Filter>Editor\Views\Set Value Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IEdSetValueView.h">
+      <Filter>Editor\Views\Set Value Dialog</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AtlasToolLevel.h">
+      <Filter>Editor\Levels\AtlasToolLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\AnimViewer.h">
+      <Filter>Editor\Levels\AtlasToolLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MappingToolLevel.h">
+      <Filter>Editor\Levels\MapToolLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MapViewer.h">
+      <Filter>Editor\Levels\MapToolLevel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\SpriteDefs.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\LevelFile.h">
+      <Filter>Game\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\AnimationFile.h">
+      <Filter>Game\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\MappingFile.h">
+      <Filter>Game\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\Serializable.h">
+      <Filter>Game\Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\AssetsManager.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\Ptr.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Game\Src\PtrForwardDeclarations.h">
+      <Filter>Game\API</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Signaling.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EdMainWindowWxEvents.hpp">
+      <Filter>Editor\Views\MainWindow</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

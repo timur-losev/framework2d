@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="84">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles" displayName="Include" projectFiles="true">
+      <itemPath>Include/Any.h</itemPath>
+      <itemPath>Include/AppApi.h</itemPath>
+      <itemPath>Include/BasicTypes.h</itemPath>
+      <itemPath>Include/BoostInc.h</itemPath>
+      <itemPath>Include/BoundedBufferReader.h</itemPath>
+      <itemPath>Include/Common.h</itemPath>
+      <itemPath>Include/Defs.h</itemPath>
+      <itemPath>Include/DynamicMemoryStream.h</itemPath>
+      <itemPath>Include/FileStream.h</itemPath>
+      <itemPath>Include/Invoker.h</itemPath>
+      <itemPath>Include/Logger.h</itemPath>
+      <itemPath>Include/MemoryStream.h</itemPath>
+      <itemPath>Include/MemoryStreamExceptions.h</itemPath>
+      <itemPath>Include/Noncopyable.h</itemPath>
+      <itemPath>Include/Ptr.h</itemPath>
+      <itemPath>Include/Serializable.h</itemPath>
+      <itemPath>Include/SharedPointer.h</itemPath>
+      <itemPath>Include/SigSlot2_variadic_support_full.h</itemPath>
+      <itemPath>Include/Signaling.h</itemPath>
+      <itemPath>Include/Sigslot2.h</itemPath>
+      <itemPath>Include/Singleton.h</itemPath>
+      <itemPath>Include/Types.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles" displayName="Source" projectFiles="true">
+      <itemPath>Source/AppApi.cpp</itemPath>
+      <itemPath>Source/BoundedBufferReader.cpp</itemPath>
+      <itemPath>Source/Common.cpp</itemPath>
+      <itemPath>Source/DynamicMemoryStream.cpp</itemPath>
+      <itemPath>Source/FileStream.cpp</itemPath>
+      <itemPath>Source/Invoker.cpp</itemPath>
+      <itemPath>Source/Logger.cpp</itemPath>
+      <itemPath>Source/MemoryStream.cpp</itemPath>
+      <itemPath>Source/MemoryStreamExceptions.cpp</itemPath>
+      <itemPath>Source/SigSlot2.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>pch.cpp</itemPath>
+    <itemPath>pch.h</itemPath>
+    <itemPath>targetver.h</itemPath>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>Source</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU_SNAP|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>Include</pElem>
+            <pElem>Source</pElem>
+            <pElem>.</pElem>
+            <pElem>../../boost</pElem>
+          </incDir>
+          <preprocessorList>
+            <Elem>DEBUG</Elem>
+          </preprocessorList>
+          <warningLevel>2</warningLevel>
+        </ccTool>
+        <archiverTool>
+          <output>${CND_DISTDIR}/../../_lib/${CND_CONF}/${CND_PLATFORM}/libcommon.a</output>
+        </archiverTool>
+      </compileType>
+    </conf>
+    <conf name="Release" type="3">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>GNU_SNAP|GNU</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <archiverTool>
+        </archiverTool>
+      </compileType>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1CBA06F7-40D6-4068-9FFA-01BF42CA8C95}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>qtEditor</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+<<<<<<< local
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;DEBUG;EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..\Game\Src;..\lib\irres\include;E:\programming\QTSDK\Desktop\Qt\4.8.1\msvc2010\include;..\Common\Include;..\lib\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+=======
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;DEBUG;EDITOR;USE_INVOKER;_IRR_STATIC_LIB_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..\Game\Src;..\lib\irres\include;F:\devtools\qtsdk\Desktop\Qt\4.8.1\msvc2010\include;..\Common\Include;..\lib\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+>>>>>>> other
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <PrecompiledHeaderFile>EdPrec.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>F:\devtools\qtsdk\Desktop\Qt\4.8.1\msvc2010\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>QtCored4.lib;QtGuid4.lib;..\lib\irres\lib\Win32-visualstudio\Irrlicht.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Game\Src\AnimatedGameObject.cpp" />
+    <ClCompile Include="..\Game\Src\AssetsManager.cpp" />
+    <ClCompile Include="..\Game\Src\EditablePagedLevel.cpp" />
+    <ClCompile Include="..\Game\Src\GameObject.cpp" />
+    <ClCompile Include="..\Game\Src\ILevel.cpp" />
+    <ClCompile Include="..\Game\Src\LevelFile.cpp" />
+    <ClCompile Include="..\Game\Src\LevelManager.cpp" />
+    <ClCompile Include="..\Game\Src\MappingFile.cpp" />
+    <ClCompile Include="..\Game\Src\Page.cpp" />
+    <ClCompile Include="..\Game\Src\Sprite.cpp" />
+    <ClCompile Include="..\Game\Src\StaticGameObject.cpp" />
+    <ClCompile Include="..\Game\Src\ZwoptexParser.cpp" />
+    <ClCompile Include="AboutWindowController.cpp" />
+    <ClCompile Include="Application.cpp">
+      <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreprocessToFile>
+    </ClCompile>
+    <ClCompile Include="EdPrec.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EdPrec.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="GuiManager.cpp" />
+    <ClCompile Include="Gui\AboutWindow.cpp" />
+    <ClCompile Include="Gui\MainWindow.cpp" />
+    <ClCompile Include="Gui\MappingToolWindow.cpp" />
+    <ClCompile Include="Gui\moc_AboutWindow.cpp" />
+    <ClCompile Include="Gui\moc_MainWindow.cpp" />
+    <ClCompile Include="Gui\moc_MappingToolWindow.cpp" />
+    <ClCompile Include="Gui\moc_QIrrControl.cpp" />
+    <ClCompile Include="Gui\QIrrControl.cpp" />
+    <ClCompile Include="IrrWorker.cpp" />
+    <ClCompile Include="MainWindowController.cpp" />
+    <ClCompile Include="MappingToolLevel.cpp" />
+    <ClCompile Include="MappingToolWindowController.cpp" />
+    <ClCompile Include="MapViewer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Game\Src\AnimatedGameObject.h" />
+    <ClInclude Include="..\Game\Src\AssetsManager.h" />
+    <ClInclude Include="..\Game\Src\EditablePagedLevel.h" />
+    <ClInclude Include="..\Game\Src\GameObject.h" />
+    <ClInclude Include="..\Game\Src\ILevel.h" />
+    <ClInclude Include="..\Game\Src\LevelFile.h" />
+    <ClInclude Include="..\Game\Src\LevelManager.h" />
+    <ClInclude Include="..\Game\Src\MappingFile.h" />
+    <ClInclude Include="..\Game\Src\Page.h" />
+    <ClInclude Include="..\Game\Src\Prec.h" />
+    <ClInclude Include="..\Game\Src\Ptr.h" />
+    <ClInclude Include="..\Game\Src\PtrForwardDeclarations.h" />
+    <ClInclude Include="..\Game\Src\Sprite.h" />
+    <ClInclude Include="..\Game\Src\SpriteDefs.h" />
+    <ClInclude Include="..\Game\Src\StaticGameObject.h" />
+    <ClInclude Include="..\Game\Src\ZwoptexParser.h" />
+    <ClInclude Include="AboutWindowController.h" />
+    <ClInclude Include="EdPrec.h" />
+    <ClInclude Include="GuiManager.h" />
+    <ClInclude Include="Gui\AboutWindow.h" />
+    <ClInclude Include="Gui\MainWindow.h" />
+    <ClInclude Include="Gui\MappingToolWindow.h" />
+    <ClInclude Include="Gui\QIrrControl.h" />
+    <ClInclude Include="Gui\ui_AboutWindow.hpp" />
+    <ClInclude Include="Gui\ui_MainWindow.hpp" />
+    <ClInclude Include="Gui\ui_MappingToolWindow.hpp" />
+    <ClInclude Include="IAboutWindow.h" />
+    <ClInclude Include="IIrrControl.h" />
+    <ClInclude Include="IMainWindow.h" />
+    <ClInclude Include="IMappingToolWindow.h" />
+    <ClInclude Include="IRegularController.h" />
+    <ClInclude Include="IRegularView.h" />
+    <ClInclude Include="IrrWorker.h" />
+    <ClInclude Include="MainWindowController.h" />
+    <ClInclude Include="MappingToolLevel.h" />
+    <ClInclude Include="MappingToolWindowController.h" />
+    <ClInclude Include="MapViewer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Gui\AboutWindow.ui" />
+    <None Include="Gui\MainWindow.ui" />
+    <None Include="Gui\MappingToolWindow.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.vcxproj">
+      <Project>{979d70d5-3a28-406f-936b-0cb7ea7d33a4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\irres\source\Irrlicht\Irrlicht10.0.vcxproj">
+      <Project>{e08e042a-6c45-411b-92be-3cc31331019f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\lib\tinyxml\tinyxml.vcxproj">
+      <Project>{b392c987-b66a-4cff-bcc5-4bf0208cadf9}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
