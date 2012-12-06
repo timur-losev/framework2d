@@ -8,8 +8,6 @@
 #ifndef IREGULARVIEW_H
 #    define	IREGULARVIEW_H
 
-#include "Signaling.h"
-
 struct IRegularView : public Common::Signaling
 {
     enum E_BASE_SIGNALS

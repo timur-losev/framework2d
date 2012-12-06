@@ -12,6 +12,7 @@
 #include "QIrrControl.h"
 #include <QtGui/QStandardItem>
 #include <QtGui/QStandardItemModel>
+#include <QtCore/QTimer>
 
 MappingToolWindow::MappingToolWindow(QWidget* parent) : QDialog(parent, Qt::Window)
 {
@@ -60,6 +61,15 @@ MappingToolWindow::MappingToolWindow(QWidget* parent) : QDialog(parent, Qt::Wind
     connect(actionOpenFile, SIGNAL(activated()), this, SLOT(OnOpenFileSelected()));
     connect(actionSaveFile, SIGNAL(activated()), this, SLOT(OnSaveFile()));
     connect(actionOpenTexture, SIGNAL(activated()), this, SLOT(OnOpenTextureSelected()));
+
+#ifdef USE_INVOKER
+    CreateInvoker();
+#endif
+
+    QTimer* timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(DelayedUpdate()));
+    timer->start(150);
+
 
     setAttribute(Qt::WA_PaintOnScreen);
 }
@@ -136,6 +146,11 @@ void MappingToolWindow::resizeEvent(QResizeEvent *evt)
 		m_IrrControl->setGeometry(0, 0, widget.renderFrame->width(), widget.renderFrame->height());
 		m_IrrControl->Resize(core::dimension2du(widget.renderFrame->width(), widget.renderFrame->height()));
 	}
+}
+
+void MappingToolWindow::DelayedUpdate()
+{
+
 }
 
 void MappingToolWindow::RefreshSpriteInfo(SpriteTexturesListConstPtr textures, SpriteFramesListConstPtr frames)

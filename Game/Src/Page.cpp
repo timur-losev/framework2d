@@ -137,11 +137,6 @@ bool_t CPage::AddGameObject( GameObjectPtr obj, const ePageLayer layer )
     };
 #endif
 
-#ifdef USE_INVOKER
-    if (!obj->IsInvokerCreated())
-        obj->CreateInvoker(Thread());
-#endif
-
 	m_Layers[layer].push_back(obj);
 
 	return TRUE;
@@ -281,9 +276,6 @@ size_t CPage::Deserialize( MemoryStream& ms )
 				break;
 			}
 
-	#ifdef USE_INVOKER
-			obj->CreateInvoker(Thread());
-	#endif
 			count += obj->Deserialize(ms);
 
 			AddGameObject(obj);

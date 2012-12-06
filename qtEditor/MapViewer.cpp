@@ -1,5 +1,4 @@
 #include "EdPrec.h"
-
 #include "MapViewer.h"
 
 MapViewer::MapViewer()

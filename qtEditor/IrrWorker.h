@@ -8,8 +8,6 @@
 #ifndef IRRWORKER_H
 #    define	IRRWORKER_H
 
-#    include "EdPrec.h"
-#    include "Invoker.h"
 #    include "Noncopyable.h"
 
 SHARED_PTR_FORWARD(LevelManager);

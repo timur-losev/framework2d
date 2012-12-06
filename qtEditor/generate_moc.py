@@ -21,6 +21,19 @@ def gen_moc():
       affected = "./Gui/" + files
       call(["moc", affected, "-o", outp])
       #os.rename(outp, "./Gui/" + outp)
+      l = -1
+      f = open(outp)
+      lines = f.readlines()
+      f.close()
+      for line in lines:
+	  if line[0] == '#':
+	    break;
+	  l = l + 1
+      if l >= 0:
+	f = open(outp, 'w');
+	lines[l] = '\n#include "EdPrec.h"\n'
+	f.writelines(lines);
+      
       shutil.move(outp, "./Gui/" + outp)
 
 def gen_uic():

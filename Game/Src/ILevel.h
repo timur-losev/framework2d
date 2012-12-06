@@ -10,11 +10,10 @@
 #define ILevel_h__
 
 #include "Serializable.h"
-#include "Prec.h"
-#include "Invoker.h"
 
 #ifdef USE_INVOKER
-class ILevel: public Serializable, public Common::Invoker
+class ILevel: public Serializable,
+              public Common::Invoker
 #else
 class ILevel: public Serializable
 #endif

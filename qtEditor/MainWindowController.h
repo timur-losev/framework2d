@@ -8,7 +8,6 @@
 #ifndef MAINWINDOWCONTROLLER_H
 #    define	MAINWINDOWCONTROLLER_H
 
-#    include "EdPrec.h"
 #    include "IRegularController.h"
 #    include "SharedPointer.h"
 

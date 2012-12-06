@@ -4,11 +4,10 @@
  *
  * Created on September 23, 2012, 6:05 PM
  */
+
 #include "EdPrec.h"
 #include "IrrWorker.h"
-#include <irrlicht.h>
 #include "LevelManager.h"
-#include <Logger.h>
 
 IrrWorker::IrrWorker():
         m_Device(nullptr),
@@ -88,7 +87,7 @@ void IrrWorker::Start()
         if (auto  mgr = m_LevelManager.lock())
             mgr->Update(delta, m_Driver);
 
-        LogDebug("MS " << delta);
+        //LogDebug("MS " << delta);
 
         m_Driver->endScene();
 
