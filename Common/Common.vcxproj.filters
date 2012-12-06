@@ -71,13 +71,7 @@
     <ClInclude Include="Include\ThreadBase.h">
       <Filter>Include</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Sigslot.h">
-      <Filter>Include</Filter>
-    </ClInclude>
     <ClInclude Include="Include\Sigslot2.h">
-      <Filter>Include\SigSlot2</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\ConnectionsBases.h">
       <Filter>Include\SigSlot2</Filter>
     </ClInclude>
     <ClInclude Include="Include\SigSlot2_variadic_support_full.h">

@@ -4,7 +4,7 @@
  *
  * Created on September 23, 2012, 6:05 PM
  */
-
+#include "EdPrec.h"
 #include "IrrWorker.h"
 #include <irrlicht.h>
 #include "LevelManager.h"

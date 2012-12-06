@@ -1,8 +1,4 @@
-#ifdef EDITOR
 #include "EdPrec.h"
-#else
-#include "Prec.h"
-#endif
 
 #include "AssetsManager.h"
 #include "MappingFile.h"

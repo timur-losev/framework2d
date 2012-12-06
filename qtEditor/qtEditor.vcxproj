@@ -50,13 +50,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-<<<<<<< local
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;DEBUG;EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..\Game\Src;..\lib\irres\include;E:\programming\QTSDK\Desktop\Qt\4.8.1\msvc2010\include;..\Common\Include;..\lib\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-=======
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;DEBUG;EDITOR;USE_INVOKER;_IRR_STATIC_LIB_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..\Game\Src;..\lib\irres\include;F:\devtools\qtsdk\Desktop\Qt\4.8.1\msvc2010\include;..\Common\Include;..\lib\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
->>>>>>> other
+      <AdditionalIncludeDirectories>.;..\Game\Src;..\lib\irres\include;..\..\QTSDK\Desktop\Qt\4.8.1\msvc2010\include;..\Common\Include;..\lib\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
       <PrecompiledHeaderFile>EdPrec.h</PrecompiledHeaderFile>
@@ -64,7 +59,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>F:\devtools\qtsdk\Desktop\Qt\4.8.1\msvc2010\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\QTSDK\Desktop\Qt\4.8.1\msvc2010\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>QtCored4.lib;QtGuid4.lib;..\lib\irres\lib\Win32-visualstudio\Irrlicht.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -85,9 +80,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Game\Src\AnimatedGameObject.cpp" />
     <ClCompile Include="..\Game\Src\AssetsManager.cpp" />

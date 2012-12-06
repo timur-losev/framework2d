@@ -4,7 +4,7 @@
  *
  * Created on September 22, 2012, 9:10 PM
  */
-
+#include "EdPrec.h"
 #include "QIrrControl.h"
 #include <QtCore/QEvent>
 #include <QtGui/QMouseEvent>

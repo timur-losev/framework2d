@@ -4,7 +4,7 @@
  *
  * Created on September 24, 2012, 12:09 AM
  */
-
+#include "EdPrec.h"
 #include "MappingToolWindow.h"
 #include <QtGui/QResizeEvent>
 #include <QtGui/QFileDialog>

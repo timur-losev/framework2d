@@ -19,8 +19,8 @@
 #endif
 
 #    define APP_API_NEW             new
-#    define APP_API_DEL(a)          { /*if (a)*/ { delete (a); a=NULL; } }
-#    define APP_API_DELETE_ARRAY(a) { /*if (a)*/ { delete [] (a); a=NULL; } }
+#    define APP_API_DEL(a)           /*if (a)*/ { delete (a); a=NULL; } 
+#    define APP_API_DELETE_ARRAY(a)  /*if (a)*/ { delete [] (a); a=NULL; }
 #    define APP_API_DEL_ARRAY(p, n) { if (p) { for (int __i = 0; __i < n;__i++) APP_API_DELETE_ARRAY((p)[__i]); delete[] (p); p = NULL; } }
 
 // adding a couple basic macros

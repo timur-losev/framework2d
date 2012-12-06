@@ -78,7 +78,6 @@
     <ClInclude Include="Include\AppApi.h" />
     <ClInclude Include="Include\BasicTypes.h" />
     <ClInclude Include="Include\BoundedBufferReader.h" />
-    <ClInclude Include="Include\ConnectionsBases.h" />
     <ClInclude Include="Include\Invoker.h" />
     <ClInclude Include="Include\Logger.h" />
     <ClInclude Include="Include\Defs.h" />
@@ -88,7 +87,6 @@
     <ClInclude Include="Include\SharedPointer.h" />
     <ClInclude Include="Include\SharedPtrForward.h" />
     <ClInclude Include="Include\Signaling.h" />
-    <ClInclude Include="Include\Sigslot.h" />
     <ClInclude Include="Include\Sigslot2.h" />
     <ClInclude Include="Include\SigSlot2_variadic_support_full.h" />
     <ClInclude Include="Include\SigSlot2_variadic_support_msvc.h" />
@@ -110,7 +108,9 @@
     <ClCompile Include="Source\FileStream.cpp" />
     <ClCompile Include="Source\MemoryStream.cpp" />
     <ClCompile Include="Source\MemoryStreamExceptions.cpp" />
-    <ClCompile Include="Source\SigSlot2.cpp" />
+    <ClCompile Include="Source\SigSlot2.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

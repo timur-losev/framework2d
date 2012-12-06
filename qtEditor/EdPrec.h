@@ -11,6 +11,11 @@
 #define USE_INVOKER
 #define _IRR_STATIC_LIB_
 
+#ifdef _VARIADIC_MAX
+#undef _VARIADIC_MAX
+#endif
+#define _VARIADIC_MAX 10
+
 #include "Prec.h"
 #include "Logger.h"
 #include "DynamicMemoryStream.h"

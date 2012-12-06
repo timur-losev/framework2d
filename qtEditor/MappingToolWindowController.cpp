@@ -4,7 +4,7 @@
  *
  * Created on September 24, 2012, 12:13 AM
  */
-
+#include "EdPrec.h"
 #include "MappingToolWindowController.h"
 
 #include "IRegularView.h"

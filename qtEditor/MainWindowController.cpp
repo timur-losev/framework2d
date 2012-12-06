@@ -4,7 +4,7 @@
  *
  * Created on September 22, 2012, 9:43 PM
  */
-
+#include "EdPrec.h"
 #include "MainWindowController.h"
 
 #include "IMainWindow.h"

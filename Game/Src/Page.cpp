@@ -1,8 +1,4 @@
-#ifdef EDITOR
 #include "EdPrec.h"
-#else
-#include "Prec.h"
-#endif
 
 #include "Page.h"
 #include "StaticGameObject.h"

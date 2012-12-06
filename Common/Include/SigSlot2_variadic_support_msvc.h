@@ -8,6 +8,8 @@
 #include <iostream>
 #include "SharedPointer.h"
 
+using std::_Nil;
+
 namespace Common
 {
     //Thread policies
@@ -113,22 +115,23 @@ namespace Common
         void                    DisconnectAll();
     } ;
 
-#define _CLASS_CONNECTION_BASE(\
+    template<class = _Nil, _MAX_CLASS_LIST> class ConnectionBase;
+
+#define _CLASS_ConnectionBase(\
     TEMPLATE_LIST, PADDING_LIST, LIST, COMMA, X1, X2, X3, X4)\
-    template<LIST(_CLASS_TYPE)>\
-    class ConnectionBase\
-    {\
-        public:\
-        virtual HasSlots* GetDest() const = 0;\
-        virtual void Perform(LIST(_TYPE_REF_ARG)) = 0;\
-        virtual ConnectionBase<LIST(_TYPE)>* Clone() = 0;\
-        virtual ConnectionBase<LIST(_TYPE)>* Duplicate(HasSlots* pnewdest) = 0;\
-        virtual ~ConnectionBase() {}\
-    };\
+    template<LIST(_CLASS_TYPE)> \
+    class ConnectionBase<LIST(_TYPE) COMMA PADDING_LIST(_NIL_PAD)>\
+{\
+    public:\
+    virtual HasSlots* GetDest() const = 0;\
+    virtual void Perform(LIST(_TYPE_REF_ARG)) = 0;\
+    virtual ConnectionBase<LIST(_TYPE)>* Clone() = 0;\
+    virtual ConnectionBase<LIST(_TYPE)>* Duplicate(HasSlots* pnewdest) = 0;\
+    virtual ~ConnectionBase() {}\
+};
 
-    _VARIADIC_EXPAND_P1_1(_CLASS_CONNECTION_BASE, , , , )
-    _VARIADIC_EXPAND_P1_2A(_CLASS_CONNECTION_BASE, , , , )
-
+_VARIADIC_EXPAND_P1_1(_CLASS_ConnectionBase, , , , )
+_VARIADIC_EXPAND_P1_2A(_CLASS_ConnectionBase, , , , )
 #undef _CLASS_CONNECTION_BASE
 
     template<> class ConnectionBase<void>
@@ -224,11 +227,11 @@ namespace Common
             {
                 Iterator itNext = it;
                 ++itNext;
-
+                //auto& con = *it;
                 if ((*it)->GetDest() == pslot)
                 {
                     m_ConnectedSlots.erase(it);
-                    //			delete *it;
+                    //delete *it;
                 }
 
                 it = itNext;
@@ -249,25 +252,27 @@ namespace Common
         }
     } ;
 
-#define _CLASS_SIGNAL_BASE(\
+    template<class = _Nil, _MAX_CLASS_LIST> class SignalBase;
+#define _CLASS_SignalBase(\
     TEMPLATE_LIST, PADDING_LIST, LIST, COMMA, X1, X2, X3, X4)\
     template<LIST(_CLASS_TYPE)>\
-    class SignalBase : public SignalContainer<std::list<ConnectionBase<LIST(_TYPE)> >\
+    class SignalBase<LIST(_TYPE) COMMA PADDING_LIST(_NIL_PAD)> : public SignalContainer<std::list<ConnectionBase<LIST(_TYPE)>*>>\
     {};
 
-    _VARIADIC_EXPAND_P1_1(_CLASS_SIGNAL_BASE, , , , )
-    _VARIADIC_EXPAND_P1_2A(_CLASS_SIGNAL_BASE, , , , )
+    _VARIADIC_EXPAND_P1_1(_CLASS_SignalBase, , , , )
+    _VARIADIC_EXPAND_P1_2A(_CLASS_SignalBase, , , , )
 
-#undef _CLASS_SIGNAL_BASE
+#undef _CLASS_SignalBase
 
-    template<> class SignalBase<void> : public SignalContainer<std::list<ConnectionBase<void >> >
+    template<> class SignalBase<void> : public SignalContainer<std::list<ConnectionBase<void>*>>
     {
     };
 
-#define _CLASS_CONNECTION(\
+    template<class = _Nil, _MAX_CLASS_LIST> class Connection;
+#define _CLASS_Connection(\
     TEMPLATE_LIST, PADDING_LIST, LIST, COMMA, X1, X2, X3, X4)\
     template<LIST(_CLASS_TYPE)>\
-    class Connection : public ConnectionBase<LIST(_TYPE)>\
+    class Connection<LIST(_TYPE) COMMA PADDING_LIST(_NIL_PAD)> : public ConnectionBase<LIST(_TYPE)>\
     {\
     public:\
         typedef std::function<void (LIST(_TYPE)) > Signature_t;\
@@ -304,10 +309,10 @@ namespace Common
         }\
     } ;\
      
-    _VARIADIC_EXPAND_P1_1(_CLASS_CONNECTION, , , , )
-    _VARIADIC_EXPAND_P1_2A(_CLASS_CONNECTION, , , , )
+    _VARIADIC_EXPAND_P1_1(_CLASS_Connection, , , , )
+    _VARIADIC_EXPAND_P1_2A(_CLASS_Connection, , , , )
 
-#undef _CLASS_CONNECTION
+#undef _CLASS_Connection
 
     template<>
     class Connection<void> : public ConnectionBase<void>
@@ -356,10 +361,11 @@ namespace Common
         }
     } ;
 
-#define _CLASS_SIGNAL(\
+    template<class = _Nil, _MAX_CLASS_LIST> class Signal;
+#define _CLASS_Signal(\
     TEMPLATE_LIST, PADDING_LIST, LIST, COMMA, X1, X2, X3, X4)\
     template<LIST(_CLASS_TYPE)>\
-    class Signal : public SignalContainer<std::list<ConnectionBase<LIST(_TYPE)>* >>\
+    class Signal<LIST(_TYPE) COMMA PADDING_LIST(_NIL_PAD)> : public SignalContainer<std::list<ConnectionBase<LIST(_TYPE)>* >>\
     {\
         typedef SignalContainer < std::list < ConnectionBase <LIST(_TYPE)>* >> Base;\
         public:\
@@ -371,7 +377,7 @@ namespace Common
             Base::m_ConnectedSlots.push_back(conn);\
             conn->GetDest()->SignalConnect(this);\
         }\
-        void Perform(LIST(_TYPE_REF_ARG) args)\
+        void Perform(LIST(_TYPE_REF_ARG))\
         {\
             LockBlock_t lock(*this);\
             auto itNext = Base::m_ConnectedSlots.begin();\
@@ -401,8 +407,9 @@ namespace Common
         }\
     };
 
-    _VARIADIC_EXPAND_P1_1(_CLASS_SIGNAL, , , , )
-    _VARIADIC_EXPAND_P1_2A(_CLASS_SIGNAL, , , , )
+    _VARIADIC_EXPAND_P1_1(_CLASS_Signal, , , , )
+    _VARIADIC_EXPAND_P1_2A(_CLASS_Signal, , , , )
+#undef _CLASS_Signal
 
     template<>
     class Signal<void> : public SignalContainer<std::list<ConnectionBase<void>* >>

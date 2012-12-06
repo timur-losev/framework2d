@@ -246,11 +246,11 @@ namespace Common
     } ;
 
     template<typename... ArgumentsTypes>
-    class SignalBase : public SignalContainer<std::list<ConnectionBase<ArgumentsTypes... >> >
+    class SignalBase : public SignalContainer<std::list<ConnectionBase<ArgumentsTypes... >*> >
     {
     };
 
-    template<> class SignalBase<void> : public SignalContainer<std::list<ConnectionBase<void >> >
+    template<> class SignalBase<void> : public SignalContainer<std::list<ConnectionBase<void >*> >
     {
     };
 
