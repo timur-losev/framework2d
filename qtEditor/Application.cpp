@@ -7,7 +7,6 @@
 
 #include "EdPrec.h"
 #include <QtGui/QApplication>
-
 #include "GuiManager.h"
 
 #include "MainWindowController.h"
@@ -25,7 +24,6 @@ int main(int argc, char** argv)
 {
     QApplication app(argc, argv);
 
-    //std::tuple
 
     Common::Logger* logger = new Common::Logger();
     logger->Initialize("qtEditor", "debug");

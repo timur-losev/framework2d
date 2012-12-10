@@ -8,16 +8,18 @@
 #ifndef _MAPPINGTOOLWINDOW_H
 #    define	_MAPPINGTOOLWINDOW_H
 
-#    include "EdPrec.h"
 #    include "ui_MappingToolWindow.hpp"
-
 #    include "IMappingToolWindow.h"
-
 #    include <QtGui/QMenuBar>
 
 SHARED_PTR_FORWARD(QIrrControl);
 
-class MappingToolWindow : public QDialog, public IMappingToolWindow
+class MappingToolWindow :
+        public QDialog,
+        public IMappingToolWindow
+#ifdef USE_INVOKER
+        ,public Common::Invoker
+#endif
 {
     Q_OBJECT
 private:
@@ -49,6 +51,7 @@ private slots:
 
     void closeEvent (QCloseEvent * ev);
     void resizeEvent(QResizeEvent *evt);
+    void DelayedUpdate();
 } ;
 
 #endif	/* _MAPPINGTOOLWINDOW_H */

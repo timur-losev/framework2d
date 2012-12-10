@@ -1,11 +1,12 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'MappingToolWindow.h'
 **
-** Created: Thu 6. Dec 14:17:38 2012
+** Created: Sat Dec 8 14:44:30 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
+
 #include "EdPrec.h"
 #include "Gui/MappingToolWindow.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
@@ -23,7 +24,7 @@ static const uint qt_meta_data_MappingToolWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       5,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -36,6 +37,7 @@ static const uint qt_meta_data_MappingToolWindow[] = {
       53,   18,   18,   18, 0x08,
       80,   77,   18,   18, 0x08,
      109,  105,   18,   18, 0x08,
+     136,   18,   18,   18, 0x08,
 
        0        // eod
 };
@@ -44,7 +46,7 @@ static const char qt_meta_stringdata_MappingToolWindow[] = {
     "MappingToolWindow\0\0OnOpenFileSelected()\0"
     "OnSaveFile()\0OnOpenTextureSelected()\0"
     "ev\0closeEvent(QCloseEvent*)\0evt\0"
-    "resizeEvent(QResizeEvent*)\0"
+    "resizeEvent(QResizeEvent*)\0DelayedUpdate()\0"
 };
 
 void MappingToolWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -58,6 +60,7 @@ void MappingToolWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 2: _t->OnOpenTextureSelected(); break;
         case 3: _t->closeEvent((*reinterpret_cast< QCloseEvent*(*)>(_a[1]))); break;
         case 4: _t->resizeEvent((*reinterpret_cast< QResizeEvent*(*)>(_a[1]))); break;
+        case 5: _t->DelayedUpdate(); break;
         default: ;
         }
     }
@@ -97,9 +100,9 @@ int MappingToolWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 5)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 5;
+        _id -= 6;
     }
     return _id;
 }

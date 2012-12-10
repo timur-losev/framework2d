@@ -4,6 +4,7 @@
  *
  * Created on September 23, 2012, 7:44 PM
  */
+
 #include "EdPrec.h"
 #include "AboutWindowController.h"
 
@@ -17,3 +18,4 @@ m_AboutWindowView(view)
 }
 
 AboutWindowController::~AboutWindowController() { }
+

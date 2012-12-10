@@ -22,7 +22,14 @@ bool_t Invoker::NeedInvoke() const
 {
     APP_API_ASSERT(m_Created);
 
-    return std::this_thread::get_id() != m_Thread->get_id();
+    if (m_Thread)
+        return std::this_thread::get_id() != m_Thread->get_id();
+    else if (m_ThreadId)
+        return *m_ThreadId != std::this_thread::get_id();
+
+    APP_API_ASSERT("There are no acceptable comparator for thread id" && FALSE);
+
+    return FALSE;
 }
 
 void Invoker::BeginInvoke( InvokeFunction_t f )
@@ -64,6 +71,16 @@ void Invoker::CreateInvoker(ThreadPtr t)
 
     m_Mutex.reset(new Mutex_t());
     m_Thread = t;
+    m_Created = TRUE;
+}
+
+void Invoker::CreateInvoker()
+{
+    //suppose to be platform specific
+    //CreateInvoker(__gthread_self());
+    m_Thread.reset();
+    m_Mutex.reset(new Mutex_t());
+    m_ThreadId.reset(new ThreadId_t(__gthread_self()));
     m_Created = TRUE;
 }
 

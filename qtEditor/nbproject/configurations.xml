@@ -91,6 +91,7 @@
         <itemPath>MappingToolLevel.h</itemPath>
       </logicalFolder>
       <itemPath>Application.cpp</itemPath>
+      <itemPath>EdPrec.cpp</itemPath>
       <itemPath>EdPrec.h</itemPath>
     </logicalFolder>
     <logicalFolder name="f2" displayName="tinyxml" projectFiles="true">
@@ -165,6 +166,11 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="EdPrec.h" ex="false" tool="1" flavor2="0">
+        <ccTool>
+          <stripSymbols>false</stripSymbols>
+        </ccTool>
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>

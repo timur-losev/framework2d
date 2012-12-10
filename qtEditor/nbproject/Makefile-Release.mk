@@ -53,6 +53,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/IrrWorker.o \
 	${OBJECTDIR}/_ext/2033245622/ZwoptexParser.o \
 	${OBJECTDIR}/_ext/1676536254/tinyxml.o \
+	${OBJECTDIR}/EdPrec.o \
 	${OBJECTDIR}/Gui/MainWindow.o \
 	${OBJECTDIR}/_ext/2033245622/StaticGameObject.o \
 	${OBJECTDIR}/MapViewer.o \
@@ -182,6 +183,11 @@ ${OBJECTDIR}/_ext/1676536254/tinyxml.o: ../lib/tinyxml/tinyxml.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/1676536254
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1676536254/tinyxml.o ../lib/tinyxml/tinyxml.cpp
+
+${OBJECTDIR}/EdPrec.o: EdPrec.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/EdPrec.o EdPrec.cpp
 
 ${OBJECTDIR}/Gui/MainWindow.o: Gui/MainWindow.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Gui

@@ -4,6 +4,7 @@
  *
  * Created on September 22, 2012, 8:41 PM
  */
+
 #include "EdPrec.h"
 #include "MainWindow.h"
 #include "QIrrControl.h"

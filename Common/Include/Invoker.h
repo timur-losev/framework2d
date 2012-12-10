@@ -14,6 +14,7 @@ private:
     bool_t                                  m_Created;
 protected:
     ThreadPtr                               m_Thread;
+    ThreadIdPtr                             m_ThreadId;
     MutexPtr                                m_Mutex;
 protected:
 
@@ -30,6 +31,7 @@ public:
 public:
     void                                    CreateInvoker(ThreadPtr t, MutexPtr mutex); //deprecated
     void                                    CreateInvoker(ThreadPtr t);
+    void                                    CreateInvoker();
     bool_t                                  IsInvokerCreated() const { return m_Created; }
     INL ThreadPtr                           Thread() { return m_Thread; }
     INL MutexPtr                            Mutex() { return m_Mutex; }

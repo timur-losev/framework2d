@@ -4,6 +4,7 @@
  *
  * Created on September 24, 2012, 12:13 AM
  */
+
 #include "EdPrec.h"
 #include "MappingToolWindowController.h"
 
@@ -13,6 +14,7 @@
 
 #include "LevelManager.h"
 #include "MappingToolLevel.h"
+#include "LevelFile.h"
 
 MappingToolWindowController::MappingToolWindowController(IMappingToolWindowPtr view):
 m_MappingToolView(view)
@@ -61,21 +63,23 @@ void MappingToolWindowController::OnViewClosed()
 
 void MappingToolWindowController::OnViewShowed()
 {
+    using namespace std::placeholders;
+
     IIrrControlPtr control = m_MappingToolView->GetControl();
 
     m_LevelManager.reset(new LevelManager());
 
     m_Level.reset(new MappingToolLevel());
-    ThreadPtr t = control->Thread();
+    ThreadPtr thr = control->Thread();
 
-    m_Level->CreateInvoker(t);
+    m_Level->CreateInvoker(thr);
 
     m_LevelManager->AttachLevel(m_Level);
 	m_Level->SetPreviewDimesion(core::vector2df(1.0f, 30.0f), core::vector2di(874, 788));
 
     control->PushLevelManager(m_LevelManager);
 
-	using namespace std::placeholders;
+
 	control->AttachOn<int, int, Qt::MouseButton>(IIrrControl::ES_ON_MOUSE_MOVED,
             std::bind(&MappingToolWindowController::OnMouseMove, this, _1, _2, _3));
 	control->AttachOn<int, int, Qt::MouseButton>(IIrrControl::ES_ON_MOUSE_DOWN,
@@ -85,8 +89,7 @@ void MappingToolWindowController::OnViewShowed()
 	control->AttachOn<int, int, int, int>(IIrrControl::ES_ON_MOUSE_WHEEL,
             std::bind(&MappingToolWindowController::OnMouseWheel, this, _1, _2, _3, _4));
 
-	m_Level->AttachOn<const CSprite*>(MappingToolLevel::ES_ON_SPRITE_DATA_UPDATED_SIGNAL,
-            std::bind(&MappingToolWindowController::OnUpdateSpriteData, this, _1));
+	m_Level->AttachOn<const CSprite*>(MappingToolLevel::ES_ON_SPRITE_DATA_UPDATED_SIGNAL, std::bind(&MappingToolWindowController::OnUpdateSpriteData, this, _1));
 }
 
 void MappingToolWindowController::OnMouseMove(int x, int y, Qt::MouseButton button)

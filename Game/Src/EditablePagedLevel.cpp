@@ -1,3 +1,4 @@
+
 #include "EdPrec.h"
 
 #include "EditablePagedLevel.h"
@@ -148,9 +149,6 @@ void EditablePagedLevel::AddPage( CPage* page )
             page->Init(m_PageList.size());
         }
 
-#ifdef USE_INVOKER
-        page->CreateInvoker(Thread());
-#endif
         m_PageList.push_back(page);
     }
 }

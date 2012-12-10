@@ -8,12 +8,12 @@
 #ifndef QIRRCONTROL_H
 #    define	QIRRCONTROL_H
 
-#include "IIrrControl.h"
+#    include "IIrrControl.h"
 
-#include <QtGui/QWidget>
-#include <thread>
+#    include <QtGui/QWidget>
+#    include <thread>
 
-#include "IrrWorker.h"
+#    include "IrrWorker.h"
 
 SHARED_PTR_FORWARD(LevelManager);
 
@@ -44,11 +44,11 @@ public:
     virtual MutexPtr        Mutex();
 
     virtual void            PushLevelManager(LevelManagerPtr mgr);
-	virtual void            Resize(const core::dimension2du& size);
-	virtual void			mouseMoveEvent(QMouseEvent* event);
-	virtual void			mousePressEvent (QMouseEvent* event);
-	virtual void			mouseReleaseEvent (QMouseEvent* event);
-	virtual void			wheelEvent(QWheelEvent *event);
+    virtual void            Resize(const core::dimension2du& size);
+    virtual void			mouseMoveEvent(QMouseEvent* event);
+    virtual void			mousePressEvent (QMouseEvent* event);
+    virtual void			mouseReleaseEvent (QMouseEvent* event);
+    virtual void			wheelEvent(QWheelEvent *event);
 } ;
 
 #endif	/* QIRRCONTROL_H */

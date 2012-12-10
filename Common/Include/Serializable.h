@@ -4,8 +4,6 @@
 class DynamicMemoryStream;
 class MemoryStream;
 
-#include "AppApi.h"
-
 struct Serializable
 {
     virtual void Serialize(DynamicMemoryStream& dms)

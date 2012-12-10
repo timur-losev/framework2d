@@ -8,7 +8,6 @@
 #ifndef MAPPINGTOOLWINDOWCONTROLLER_H
 #    define	MAPPINGTOOLWINDOWCONTROLLER_H
 
-#    include "EdPrec.h"
 #    include "IRegularController.h"
 
 #include <QtCore/qnamespace.h>	// for Qt::MouseButton

@@ -227,11 +227,11 @@ _VARIADIC_EXPAND_P1_2A(_CLASS_ConnectionBase, , , , )
             {
                 Iterator itNext = it;
                 ++itNext;
-                //auto& con = *it;
+
                 if ((*it)->GetDest() == pslot)
                 {
                     m_ConnectedSlots.erase(it);
-                    //delete *it;
+                    //			delete *it;
                 }
 
                 it = itNext;

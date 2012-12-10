@@ -8,7 +8,6 @@
 #ifndef ABOUTWINDOWCONTROLLER_H
 #    define	ABOUTWINDOWCONTROLLER_H
 
-#    include "EdPrec.h"
 #    include "IRegularController.h"
 #    include "SharedPointer.h"
 
