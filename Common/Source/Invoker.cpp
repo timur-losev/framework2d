@@ -43,15 +43,18 @@ void Invoker::BeginInvoke( InvokeFunction_t f )
 //Must be called from secondary thread context
 void Invoker::UpdateInvoker()
 {
-    APP_API_ASSERT(m_Created);
+    //APP_API_ASSERT(m_Created);
 
-    std::lock_guard<std::mutex> lock(*m_Mutex);
-
-    while(!m_Funcs.empty())
+    if (m_Created)
     {
-		m_Funcs.front()();
-        CondVar.notify_one();
-		m_Funcs.pop();
+        std::lock_guard<std::mutex> lock(*m_Mutex);
+
+        while(!m_Funcs.empty())
+        {
+            m_Funcs.front()();
+            CondVar.notify_one();
+            m_Funcs.pop();
+        }
     }
 }
 
