@@ -26,16 +26,17 @@ def gen_moc():
       lines = f.readlines()
       f.close()
       for line in lines:
-	  if line[0] == '#':
-	    break;
-	  l = l + 1
+        if line[0] == '#':
+            break;
+        l = l + 1
+
       if l >= 0:
-	f = open(outp, 'w');
-	lines[l] = '\n#include "EdPrec.h"\n'
-	f.writelines(lines);
+        f = open(outp, 'w');
+        lines[l] = '\n#include "EdPrec.h"\n'
+        f.writelines(lines)
+        f.close()
       
       shutil.move(outp, "./Gui/" + outp)
-
 
 def gen_uic():
   workDir = os.getcwd() + "/Gui"

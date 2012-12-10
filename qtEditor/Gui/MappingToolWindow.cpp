@@ -62,7 +62,6 @@ MappingToolWindow::MappingToolWindow(QWidget* parent) : QDialog(parent, Qt::Wind
     connect(actionSaveFile, SIGNAL(activated()), this, SLOT(OnSaveFile()));
     connect(actionOpenTexture, SIGNAL(activated()), this, SLOT(OnOpenTextureSelected()));
 
-
 #ifdef USE_INVOKER
     QTimer* timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(DelayedUpdate()));

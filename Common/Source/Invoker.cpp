@@ -76,11 +76,9 @@ void Invoker::CreateInvoker(ThreadPtr t)
 
 void Invoker::CreateInvoker()
 {
-    //suppose to be platform specific
-    //CreateInvoker(__gthread_self());
     m_Thread.reset();
     m_Mutex.reset(new Mutex_t());
-    m_ThreadId.reset(new ThreadId_t(__gthread_self()));
+    m_ThreadId.reset(new ThreadId_t(std::this_thread::get_id()));
     m_Created = TRUE;
 }
 
