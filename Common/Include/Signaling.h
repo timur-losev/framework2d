@@ -240,7 +240,7 @@ public:
     }
 
     template<typename Args0, typename Args1, typename Args2, typename Args3, typename Args4>
-    void CallBack(size_t key, Args0 arg0, Args1 arg1, Args2 arg2, Args3 arg3)
+    void CallBack(size_t key, Args0 arg0, Args1 arg1, Args2 arg2, Args3 arg3, Args4 arg4)
     {
         SignaturesMap_t::iterator it = m_Signatures.find(key);
 
