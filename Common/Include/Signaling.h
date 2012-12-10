@@ -150,7 +150,7 @@ public:
 
         if(it == m_Signatures.end())
         {
-            LogMessage(LOG_WARNING, "Impossible to do call by key = [" << key << "]");
+            //LogMessage(LOG_WARNING, "Impossible to do call by key = [" << key << "]");
             return;
         }
 
@@ -174,7 +174,7 @@ public:
 
         if(it == m_Signatures.end())
         {
-            LogMessage(LOG_WARNING, "Impossible to do call by key = [" << key << "]");
+            //LogMessage(LOG_WARNING, "Impossible to do call by key = [" << key << "]");
             return;
         }
 
@@ -198,7 +198,7 @@ public:
 
         if(it == m_Signatures.end())
         {
-            LogMessage(LOG_WARNING, "Impossible to do call by key = [" << key << "]");
+            //LogMessage(LOG_WARNING, "Impossible to do call by key = [" << key << "]");
             return;
         }
 
@@ -222,7 +222,7 @@ public:
 
         if(it == m_Signatures.end())
         {
-            LogMessage(LOG_WARNING, "Impossible to do call by key = [" << key << "]");
+            //LogMessage(LOG_WARNING, "Impossible to do call by key = [" << key << "]");
             return;
         }
 
@@ -246,7 +246,7 @@ public:
 
         if(it == m_Signatures.end())
         {
-            LogMessage(LOG_WARNING, "Impossible to do call by key = [" << key << "]");
+            //LogMessage(LOG_WARNING, "Impossible to do call by key = [" << key << "]");
             return;
         }
 
