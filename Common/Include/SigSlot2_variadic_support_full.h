@@ -90,13 +90,14 @@ namespace Common
     } ;
     //////////////////////////////////////////////////////////////////////////
 
-    class HasSlots : public CurrentThreadPolicy
+    class HasSlots
     {
     private:
         typedef std::set<ISignal*> Senders_t;
         typedef Senders_t::const_iterator ConstIter;
 
         Senders_t m_Senders;
+        CurrentThreadPolicy m_ThreadPolicy;
     public:
 
         HasSlots()

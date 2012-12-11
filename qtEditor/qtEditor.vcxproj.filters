@@ -132,6 +132,9 @@
     <ClCompile Include="EdPrec.cpp">
       <Filter>Source</Filter>
     </ClCompile>
+    <ClCompile Include="SigSlot2Test.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EdPrec.h">
@@ -244,6 +247,9 @@
     </ClInclude>
     <ClInclude Include="..\Game\Src\ZwoptexParser.h">
       <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="SigSlot2Test.h">
+      <Filter>Source</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -92,12 +92,13 @@ namespace Common
     } ;
     //////////////////////////////////////////////////////////////////////////
 
-    class HasSlots : public CurrentThreadPolicy
+    class HasSlots
     {
     private:
         typedef std::set<ISignal*> Senders_t;
         typedef Senders_t::const_iterator ConstIter;
 
+        CurrentThreadPolicy m_ThreadPolicy;
         Senders_t m_Senders;
     public:
 
@@ -124,7 +125,7 @@ namespace Common
 {\
     public:\
     virtual HasSlots* GetDest() const = 0;\
-    virtual void Perform(LIST(_TYPE_REF_ARG)) = 0;\
+    virtual void Perform(LIST(_TYPE_ARG)) = 0;\
     virtual ConnectionBase<LIST(_TYPE)>* Clone() = 0;\
     virtual ConnectionBase<LIST(_TYPE)>* Duplicate(HasSlots* pnewdest) = 0;\
     virtual ~ConnectionBase() {}\
@@ -299,7 +300,7 @@ _VARIADIC_EXPAND_P1_2A(_CLASS_ConnectionBase, , , , )
         {\
             return nullptr;\
         }\
-        virtual void Perform(LIST(_TYPE_REF_ARG))\
+        virtual void Perform(LIST(_TYPE_ARG))\
         {\
             m_Signature(LIST(_ARG));\
         }\
@@ -377,7 +378,7 @@ _VARIADIC_EXPAND_P1_2A(_CLASS_ConnectionBase, , , , )
             Base::m_ConnectedSlots.push_back(conn);\
             conn->GetDest()->SignalConnect(this);\
         }\
-        void Perform(LIST(_TYPE_REF_ARG))\
+        void Perform(LIST(_TYPE_ARG))\
         {\
             LockBlock_t lock(*this);\
             auto itNext = Base::m_ConnectedSlots.begin();\
@@ -391,7 +392,7 @@ _VARIADIC_EXPAND_P1_2A(_CLASS_ConnectionBase, , , , )
                 it = itNext;\
             }\
         }\
-        void operator()(LIST(_TYPE_REF_ARG))\
+        void operator()(LIST(_TYPE_ARG))\
         {\
             LockBlock_t lock(*this);\
             auto itNext = Base::m_ConnectedSlots.begin();\
