@@ -59,6 +59,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/MapViewer.o \
 	${OBJECTDIR}/_ext/2033245622/Sprite.o \
 	${OBJECTDIR}/_ext/2033245622/MappingFile.o \
+	${OBJECTDIR}/SigSlot2Test.o \
 	${OBJECTDIR}/Gui/moc_MainWindow.o \
 	${OBJECTDIR}/_ext/2033245622/Page.o \
 	${OBJECTDIR}/Gui/QIrrControl.o \
@@ -222,6 +223,11 @@ ${OBJECTDIR}/EdPrec.h.gch: EdPrec.h
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -g -Wall -DDEBUG -DEDITOR -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/include/qt4 -I../lib/irres/include -I../Common/Include -I../Game/Src -I. -I../lib/tinyxml -std=c++11 -MMD -MP -MF $@.d -o $@ EdPrec.h
+
+${OBJECTDIR}/SigSlot2Test.o: SigSlot2Test.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -g -Wall -DDEBUG -DEDITOR -D__GXX_EXPERIMENTAL_CXX0X__ -I/usr/include/qt4 -I../lib/irres/include -I../Common/Include -I../Game/Src -I. -I../lib/tinyxml -std=c++11 -MMD -MP -MF $@.d -o ${OBJECTDIR}/SigSlot2Test.o SigSlot2Test.cpp
 
 ${OBJECTDIR}/Gui/moc_MainWindow.o: Gui/moc_MainWindow.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Gui

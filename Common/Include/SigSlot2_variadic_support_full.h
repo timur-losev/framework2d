@@ -79,7 +79,7 @@ namespace Common
 
     class HasSlots;
 
-    struct ISignal : public CurrentThreadPolicy
+    struct ISignal
     {
         virtual void SlotDisconnect(HasSlots * pslot) = 0;
         virtual void SlotDuplicate(const HasSlots* poldslot, HasSlots * pnewslot) = 0;
@@ -87,6 +87,7 @@ namespace Common
         virtual ~ISignal()
         {
         }
+
     } ;
     //////////////////////////////////////////////////////////////////////////
 
@@ -144,9 +145,10 @@ namespace Common
     template<typename SlotsContainer>
     class SignalContainer : public ISignal
     {
-    private:
     protected:
         typedef SlotsContainer SlotsContainer_t;
+
+        CurrentThreadPolicy m_ThreadPolicy;
 
         SlotsContainer_t    m_ConnectedSlots;
         typedef typename SlotsContainer_t::iterator Iterator;
@@ -158,7 +160,7 @@ namespace Common
 
         SignalContainer(const SignalContainer& oth)
         {
-            LockBlock_t lock(*this);
+            LockBlock_t lock(m_ThreadPolicy);
 
             for (auto& con : oth.m_ConnectedSlots)
             {
@@ -179,7 +181,7 @@ namespace Common
 
         void DisconnectAll()
         {
-            LockBlock_t lock(*this);
+            LockBlock_t lock(m_ThreadPolicy);
 
             for (auto & con : m_ConnectedSlots)
             {
@@ -192,7 +194,7 @@ namespace Common
 
         void Disconnect(HasSlots* pclass)
         {
-            LockBlock_t lock(*this);
+            LockBlock_t lock(m_ThreadPolicy);
             int i = 0;
 
             for (auto& con : m_ConnectedSlots)
@@ -212,7 +214,7 @@ namespace Common
 
         void SlotDisconnect(HasSlots* pslot)
         {
-            LockBlock_t lock(*this);
+            LockBlock_t lock(m_ThreadPolicy);
 
             Iterator it = m_ConnectedSlots.begin();
             Iterator itEnd = m_ConnectedSlots.end();
@@ -234,7 +236,7 @@ namespace Common
 
         void SlotDuplicate(const HasSlots* oldtarget, HasSlots* newtarget)
         {
-            LockBlock_t lock(*this);
+            LockBlock_t lock(m_ThreadPolicy);
 
             for (auto& con : m_ConnectedSlots)
             {
@@ -358,7 +360,7 @@ namespace Common
 
         void Connect(const SlotType& signature, HasSlots * target)
         {
-            LockBlock_t lock(*this);
+            LockBlock_t lock(Base::m_ThreadPolicy);
             Connection < ArgumentsTypes...>* conn = new Connection < ArgumentsTypes...>(signature, target);
             Base::m_ConnectedSlots.push_back(conn);
             conn->GetDest()->SignalConnect(this);
@@ -366,7 +368,7 @@ namespace Common
 
         void Perform(ArgumentsTypes... args)
         {
-            LockBlock_t lock(*this);
+            LockBlock_t lock(Base::m_ThreadPolicy);
 
             auto itNext = Base::m_ConnectedSlots.begin();
             auto it = Base::m_ConnectedSlots.begin();
@@ -385,7 +387,7 @@ namespace Common
 
         void operator()(ArgumentsTypes... args)
         {
-            LockBlock_t lock(*this);
+            LockBlock_t lock(Base::m_ThreadPolicy);
             auto itNext = Base::m_ConnectedSlots.begin();
             auto it = Base::m_ConnectedSlots.begin();
             auto itEnd = Base::m_ConnectedSlots.end();
@@ -411,7 +413,7 @@ namespace Common
 
         void Connect(const SlotType& signature, HasSlots * target)
         {
-            LockBlock_t lock(*this);
+            LockBlock_t lock(m_ThreadPolicy);
             Connection<void>* conn = new Connection<void>(signature, target);
             Base::m_ConnectedSlots.push_back(conn);
             conn->GetDest()->SignalConnect(this);
@@ -419,7 +421,7 @@ namespace Common
 
         void Perform()
         {
-            LockBlock_t lock(*this);
+            LockBlock_t lock(m_ThreadPolicy);
 
             auto itNext = Base::m_ConnectedSlots.begin();
             auto it = Base::m_ConnectedSlots.begin();
@@ -438,7 +440,7 @@ namespace Common
 
         void operator()()
         {
-            LockBlock_t lock(*this);
+            LockBlock_t lock(m_ThreadPolicy);
             auto itNext = Base::m_ConnectedSlots.begin();
             auto it = Base::m_ConnectedSlots.begin();
             auto itEnd = Base::m_ConnectedSlots.end();

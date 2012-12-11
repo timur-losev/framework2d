@@ -17,3 +17,8 @@
 *.a
 *.tlog
 *.obj
+*.d
+/Common/build/
+/qtEditor/build/
+/Common/dist/
+/qtEditor/dist/

@@ -93,6 +93,8 @@
       <itemPath>Application.cpp</itemPath>
       <itemPath>EdPrec.cpp</itemPath>
       <itemPath>EdPrec.h</itemPath>
+      <itemPath>SigSlot2Test.cpp</itemPath>
+      <itemPath>SigSlot2Test.h</itemPath>
     </logicalFolder>
     <logicalFolder name="f2" displayName="tinyxml" projectFiles="true">
       <itemPath>../lib/tinyxml/tinystr.cpp</itemPath>

@@ -13,97 +13,35 @@
 #include "Logger.h" //Warning: Logger must be created!
 #include <functional>
 
+#include "Sigslot2.h"
+
 namespace Common {
 
 #define BAD_CAST_MESSAGE\
     LogMessage(LOG_ERR, e.what() << " From call = "<< DebugName() << " key = " << key)
 
-class Signaling: public Noncopyable
+class Signaling: public HasSlots, public Noncopyable
 {
 protected:
     typedef std::map<size_t, Any> SignaturesMap_t;
-    SignaturesMap_t                      m_Signatures;
+    SignaturesMap_t               m_Signatures;
 public:
 
     virtual const char* DebugName() const = 0;
 
-    void AttachOn(size_t key, std::function<void ()> signature)
+
+    template<class Signature>
+    void AttachOn(size_t key, const Signature& signature)
     {
         APP_API_ASSERT(!IsAttached(key));
         m_Signatures[key] = signature;
     }
 
-    template<typename A0>
-    void AttachOn(size_t key, std::function<void (A0)> signature)
+    template<class Signature>
+    void AttachOn2(size_t key, const Signature& sn)
     {
-        APP_API_ASSERT(!IsAttached(key));
-        m_Signatures[key] = signature;
+
     }
-
-    template<class A0, class A1>
-    void AttachOn(size_t key, std::function<void (A0, A1)> signature)
-    {
-        APP_API_ASSERT(!IsAttached(key));
-        m_Signatures[key] = signature;
-    }
-
-    template<class A0, class A1, class A2>
-    void AttachOn(size_t key, std::function<void (A0, A1, A2)> signature)
-    {
-        APP_API_ASSERT(!IsAttached(key));
-        m_Signatures[key] = signature;
-    }
-
-    template<class A0, class A1, class A2, class A3>
-    void AttachOn(size_t key, std::function<void (A0, A1, A2, A3)> signature)
-    {
-        APP_API_ASSERT(!IsAttached(key));
-        m_Signatures[key] = signature;
-    }
-
-    template<class A0, class A1, class A2, class A3, class A4>
-    void AttachOn(size_t key, std::function<void (A0, A1, A2, A3, A4)> signature)
-    {
-        APP_API_ASSERT(!IsAttached(key));
-        m_Signatures[key] = signature;
-    }
-
-    template<class A0, class A1, class A2, class A3, class A4, class A5>
-    void AttachOn(size_t key, std::function<void (A0, A1, A2, A3, A4, A5)> signature)
-    {
-        APP_API_ASSERT(!IsAttached(key));
-        m_Signatures[key] = signature;
-    }
-
-    template<class A0, class A1, class A2, class A3, class A4, class A5, class A6>
-    void AttachOn(size_t key, std::function<void (A0, A1, A2, A3, A4, A5, A6)> signature)
-    {
-        APP_API_ASSERT(!IsAttached(key));
-        m_Signatures[key] = signature;
-    }
-
-    template<class A0, class A1, class A2, class A3, class A4, class A5, class A6, class A7>
-    void AttachOn(size_t key, std::function<void (A0, A1, A2, A3, A4, A5, A6, A7)> signature)
-    {
-        APP_API_ASSERT(!IsAttached(key));
-        m_Signatures[key] = signature;
-    }
-
-    template<class A0, class A1, class A2, class A3, class A4, class A5, class A6, class A7, class A8>
-    void AttachOn(size_t key, std::function<void (A0, A1, A2, A3, A4, A5, A6, A7, A8)> signature)
-    {
-        APP_API_ASSERT(!IsAttached(key));
-        m_Signatures[key] = signature;
-    }
-
-    /*template<typename TFunc, typename... TArgs>
-    void AttachOn(size_t key, TFunc f, TArgs&&... args)
-    {
-        std::function<void (TArgs...)> signature = std::bind(f, std::forward<TArgs>(args)...);
-
-        APP_API_ASSERT(!IsAttached(key));
-        //m_Signatures[key] = signature;
-    }*/
 
     bool_t IsAttached(size_t key)
     {

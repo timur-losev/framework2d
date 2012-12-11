@@ -39,6 +39,23 @@ void Light::ToggleState3(int i, float f, const std::string& str)
     std::cout << "Light::ToggleState2() " << this << " " << i << " " << f << " " << str <<std::endl;
 }
 
+template<typename T>
+struct function_traits;
+
+template<typename R, typename ...Args>
+struct function_traits<std::function<R(Args...)>>
+{
+    static const size_t nargs = sizeof...(Args);
+
+    typedef R result_type;
+
+    template <size_t i>
+    struct arg
+    {
+        typedef typename std::tuple_element<i, std::tuple<Args...>>::type type;
+    };
+};
+
 int Sigslot2Test::main()
 {
     using namespace std::placeholders;
@@ -61,6 +78,8 @@ int Sigslot2Test::main()
     sw.Mod1(10, 14.0, "blablabla");
 
     system("pause");
+
+    std::function<void (int, float, const std::string&)> f;
 
     return 0;
 }

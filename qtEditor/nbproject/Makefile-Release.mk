@@ -59,6 +59,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/MapViewer.o \
 	${OBJECTDIR}/_ext/2033245622/Sprite.o \
 	${OBJECTDIR}/_ext/2033245622/MappingFile.o \
+	${OBJECTDIR}/SigSlot2Test.o \
 	${OBJECTDIR}/Gui/moc_MainWindow.o \
 	${OBJECTDIR}/_ext/2033245622/Page.o \
 	${OBJECTDIR}/Gui/QIrrControl.o \
@@ -213,6 +214,11 @@ ${OBJECTDIR}/_ext/2033245622/MappingFile.o: ../Game/Src/MappingFile.cpp
 	${MKDIR} -p ${OBJECTDIR}/_ext/2033245622
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2033245622/MappingFile.o ../Game/Src/MappingFile.cpp
+
+${OBJECTDIR}/SigSlot2Test.o: SigSlot2Test.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/SigSlot2Test.o SigSlot2Test.cpp
 
 ${OBJECTDIR}/Gui/moc_MainWindow.o: Gui/moc_MainWindow.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Gui

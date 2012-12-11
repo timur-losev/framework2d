@@ -23,9 +23,9 @@ m_MappingToolView(view)
 
     using namespace std::placeholders;
 
-    m_View->AttachOn<std::string>(IMappingToolWindow::ES_ON_OPEN_MAPPING_FILE, std::bind(&MappingToolWindowController::OnOpenMappingFile, this, _1));
-    m_View->AttachOn<std::string>(IMappingToolWindow::ES_ON_SAVE_MAPPING_FILE, std::bind(&MappingToolWindowController::OnSaveMappingFile, this, _1));
-    m_View->AttachOn<std::string>(IMappingToolWindow::ES_ON_OPEN_IMAGE, std::bind(&MappingToolWindowController::OnOpenTextureFile, this, _1));
+    m_View->AttachOn(IMappingToolWindow::ES_ON_OPEN_MAPPING_FILE, std::bind(&MappingToolWindowController::OnOpenMappingFile, this, _1));
+    m_View->AttachOn(IMappingToolWindow::ES_ON_SAVE_MAPPING_FILE, std::bind(&MappingToolWindowController::OnSaveMappingFile, this, _1));
+    m_View->AttachOn(IMappingToolWindow::ES_ON_OPEN_IMAGE, std::bind(&MappingToolWindowController::OnOpenTextureFile, this, _1));
     m_View->AttachOn(IMappingToolWindow::EB_ON_SHOW, std::bind(&MappingToolWindowController::OnViewShowed, this));
 	m_View->AttachOn(IMappingToolWindow::EB_ON_CLOSE, std::bind(&MappingToolWindowController::OnViewClosed, this));
 
@@ -79,17 +79,16 @@ void MappingToolWindowController::OnViewShowed()
 
     control->PushLevelManager(m_LevelManager);
 
-
-	control->AttachOn<int, int, Qt::MouseButton>(IIrrControl::ES_ON_MOUSE_MOVED,
+	control->AttachOn(IIrrControl::ES_ON_MOUSE_MOVED,
             std::bind(&MappingToolWindowController::OnMouseMove, this, _1, _2, _3));
-	control->AttachOn<int, int, Qt::MouseButton>(IIrrControl::ES_ON_MOUSE_DOWN,
+	control->AttachOn(IIrrControl::ES_ON_MOUSE_DOWN,
             std::bind(&MappingToolWindowController::OnMouseDown, this, _1, _2, _3));
-	control->AttachOn<int, int, Qt::MouseButton>(IIrrControl::ES_ON_MOUSE_UP,
+	control->AttachOn(IIrrControl::ES_ON_MOUSE_UP,
             std::bind(&MappingToolWindowController::OnMouseUp, this, _1, _2, _3));
-	control->AttachOn<int, int, int, int>(IIrrControl::ES_ON_MOUSE_WHEEL,
+	control->AttachOn(IIrrControl::ES_ON_MOUSE_WHEEL,
             std::bind(&MappingToolWindowController::OnMouseWheel, this, _1, _2, _3, _4));
 
-	m_Level->AttachOn<const CSprite*>(MappingToolLevel::ES_ON_SPRITE_DATA_UPDATED_SIGNAL, std::bind(&MappingToolWindowController::OnUpdateSpriteData, this, _1));
+	m_Level->AttachOn(MappingToolLevel::ES_ON_SPRITE_DATA_UPDATED_SIGNAL, std::bind(&MappingToolWindowController::OnUpdateSpriteData, this, _1));
 }
 
 void MappingToolWindowController::OnMouseMove(int x, int y, Qt::MouseButton button)
