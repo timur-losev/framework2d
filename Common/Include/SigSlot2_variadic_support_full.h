@@ -6,7 +6,6 @@
 #include <set>
 #include <list>
 #include <iostream>
-#include "SharedPointer.h"
 
 namespace Common
 {

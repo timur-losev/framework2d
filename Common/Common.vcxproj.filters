@@ -80,6 +80,12 @@
     <ClInclude Include="Include\SigSlot2_variadic_support_msvc.h">
       <Filter>Include\SigSlot2</Filter>
     </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\SigSlot2_adaptive_msvc.h">
+      <Filter>Include\SigSlot2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\AppApi.cpp">
@@ -107,6 +113,9 @@
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Source\SigSlot2.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

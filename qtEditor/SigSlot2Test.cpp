@@ -39,7 +39,7 @@ void Light::ToggleState3(int i, float f, const std::string& str)
     std::cout << "Light::ToggleState2() " << this << " " << i << " " << f << " " << str <<std::endl;
 }
 
-template<typename T>
+/*template<typename T>
 struct function_traits;
 
 template<typename R, typename ...Args>
@@ -54,7 +54,7 @@ struct function_traits<std::function<R(Args...)>>
     {
         typedef typename std::tuple_element<i, std::tuple<Args...>>::type type;
     };
-};
+};*/
 
 int Sigslot2Test::main()
 {

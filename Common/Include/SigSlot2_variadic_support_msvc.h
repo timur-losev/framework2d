@@ -6,7 +6,7 @@
 #include <set>
 #include <list>
 #include <iostream>
-#include "SharedPointer.h"
+#include <xstddef>
 
 using std::_Nil;
 

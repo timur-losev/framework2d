@@ -19,6 +19,15 @@
 *.obj
 *.d
 /Common/build/
+/Common/Debug/
+/_lib/
 /qtEditor/build/
 /Common/dist/
 /qtEditor/dist/
+/lib/irres/lib/Win32-VisualStudio/
+/lib/irres/source/Irrlicht/obj/
+/lib/tinyxml/Debug/
+qtEditor.vcxproj.user
+*.pyc
+/qtEditor/Debug/
+/qtEditor/ipch/
