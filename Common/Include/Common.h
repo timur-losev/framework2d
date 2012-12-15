@@ -9,7 +9,6 @@
 #include "Logger.h"
 #include "Ptr.h"
 #include "Invoker.h"
-#include "Signaling.h"
 
 namespace Common
 {

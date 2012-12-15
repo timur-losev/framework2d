@@ -11,7 +11,6 @@
 #    include "IIrrControl.h"
 
 #    include <QtGui/QWidget>
-#    include <thread>
 
 #    include "IrrWorker.h"
 
@@ -24,6 +23,11 @@ class QIrrControl : public QWidget, public IIrrControl
 private:
     ThreadPtr               m_WorkerThread;
     IrrWorker               m_Worker;
+
+    MouseEventSignal_t          m_MouseEventSignal;
+    MousePressEventSignal_t     m_MousePressEventSignal;
+    MouseReleaseEventSignal_t   m_MouseReleaseEventSignal;
+    MouseWheelEventSignal_t     m_MouseWheelEventSignal;
 
 public:
     QIrrControl(QWidget* parent = nullptr);
@@ -45,10 +49,16 @@ public:
 
     virtual void            PushLevelManager(LevelManagerPtr mgr);
     virtual void            Resize(const core::dimension2du& size);
-    virtual void			mouseMoveEvent(QMouseEvent* event);
-    virtual void			mousePressEvent (QMouseEvent* event);
-    virtual void			mouseReleaseEvent (QMouseEvent* event);
-    virtual void			wheelEvent(QWheelEvent *event);
+    virtual void            mouseMoveEvent(QMouseEvent* event);
+    virtual void            mousePressEvent (QMouseEvent* event);
+    virtual void            mouseReleaseEvent (QMouseEvent* event);
+    virtual void	    wheelEvent(QWheelEvent *event);
+
+
+    virtual boost::signals::connection AttachOnMouseEventSignal(const MouseEventSignal_t::slot_type& slot);
+    virtual boost::signals::connection AttachOnMousePressEventSignal(const MousePressEventSignal_t::slot_type& slot);
+    virtual boost::signals::connection AttachOnMouseReleaseEventSignal(const MouseReleaseEventSignal_t::slot_type& slot);
+    virtual boost::signals::connection AttachOnMouseWheelEventSignal(const MouseWheelEventSignal_t::slot_type& slot);
 } ;
 
 #endif	/* QIRRCONTROL_H */

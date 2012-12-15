@@ -90,6 +90,10 @@
         <itemPath>MappingToolLevel.cpp</itemPath>
         <itemPath>MappingToolLevel.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="f4" displayName="Tests" projectFiles="true">
+        <itemPath>SigSlot2Test.cpp</itemPath>
+        <itemPath>SigSlot2Test.h</itemPath>
+      </logicalFolder>
       <itemPath>Application.cpp</itemPath>
       <itemPath>EdPrec.cpp</itemPath>
       <itemPath>EdPrec.h</itemPath>
@@ -135,10 +139,12 @@
             <pElem>../Game/Src</pElem>
             <pElem>.</pElem>
             <pElem>../lib/tinyxml</pElem>
+            <pElem>../lib/boost</pElem>
           </incDir>
           <preprocessorList>
             <Elem>DEBUG</Elem>
             <Elem>EDITOR</Elem>
+            <Elem>QT_NO_KEYWORDS</Elem>
             <Elem>__GXX_EXPERIMENTAL_CXX0X__</Elem>
           </preprocessorList>
           <warningLevel>2</warningLevel>
@@ -163,6 +169,7 @@
             </linkerLibProjectItem>
             <linkerLibLibItem>GL</linkerLibLibItem>
             <linkerLibLibItem>Xxf86vm</linkerLibLibItem>
+            <linkerLibFileItem>../lib/boost/stage/lib/gcc_4.8_x64/libboost_signals.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>
@@ -170,6 +177,8 @@
         <ccTool>
           <stripSymbols>false</stripSymbols>
         </ccTool>
+      </item>
+      <item path="SigSlot2Test.cpp" ex="true" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">

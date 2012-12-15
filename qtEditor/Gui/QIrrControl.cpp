@@ -104,20 +104,40 @@ void QIrrControl::Resize(const core::dimension2du& size)
 //*****************************************************************************
 void QIrrControl::mouseMoveEvent( QMouseEvent* event )
 {
-	CallBack(ES_ON_MOUSE_MOVED, event->x(), event->y(), event->button());
+	m_MouseEventSignal(event->x(), event->y(), event->button());
 }
 
 void QIrrControl::mousePressEvent( QMouseEvent* event )
 {
-	CallBack(ES_ON_MOUSE_DOWN, event->x(), event->y(), event->button());
+	m_MousePressEventSignal(event->x(), event->y(), event->button());
 }
 
 void QIrrControl::mouseReleaseEvent( QMouseEvent* event )
 {
-	CallBack(ES_ON_MOUSE_UP, event->x(), event->y(), event->button());
+	m_MouseReleaseEventSignal(event->x(), event->y(), event->button());
 }
 
 void QIrrControl::wheelEvent(QWheelEvent *event)
 {
-	CallBack(ES_ON_MOUSE_WHEEL, event->delta(), (event->delta() > 0) ? 1 : -1, event->x(), event->y());
+	m_MouseWheelEventSignal(event->delta(), (event->delta() > 0) ? 1 : -1, event->x(), event->y());
+}
+
+boost::signals::connection QIrrControl::AttachOnMouseEventSignal(const MouseEventSignal_t::slot_type& slot)
+{
+    return m_MouseEventSignal.connect(slot);
+}
+
+boost::signals::connection QIrrControl::AttachOnMousePressEventSignal(const MousePressEventSignal_t::slot_type& slot)
+{
+    return m_MousePressEventSignal.connect(slot);
+}
+
+boost::signals::connection QIrrControl::AttachOnMouseReleaseEventSignal(const MouseReleaseEventSignal_t::slot_type& slot)
+{
+    return m_MouseReleaseEventSignal.connect(slot);
+}
+
+boost::signals::connection QIrrControl::AttachOnMouseWheelEventSignal(const MouseWheelEventSignal_t::slot_type& slot)
+{
+    return m_MouseWheelEventSignal.connect(slot);
 }

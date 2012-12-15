@@ -16,6 +16,8 @@
 
 #include "AssetsManager.h"
 
+#include "SigSlot2Test.h"
+
 std::stack<DebugFontPtr> G::FontStack;
 /*
  *
@@ -23,7 +25,6 @@ std::stack<DebugFontPtr> G::FontStack;
 int main(int argc, char** argv)
 {
     QApplication app(argc, argv);
-
 
     Common::Logger* logger = new Common::Logger();
     logger->Initialize("qtEditor", "debug");

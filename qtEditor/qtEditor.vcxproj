@@ -115,6 +115,7 @@
     <ClCompile Include="MappingToolLevel.cpp" />
     <ClCompile Include="MappingToolWindowController.cpp" />
     <ClCompile Include="MapViewer.cpp" />
+    <ClCompile Include="SigSlot2Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Game\Src\AnimatedGameObject.h" />
@@ -154,6 +155,7 @@
     <ClInclude Include="MappingToolLevel.h" />
     <ClInclude Include="MappingToolWindowController.h" />
     <ClInclude Include="MapViewer.h" />
+    <ClInclude Include="SigSlot2Test.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Gui\AboutWindow.ui" />

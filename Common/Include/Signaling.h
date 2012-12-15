@@ -13,19 +13,22 @@
 #include "Logger.h" //Warning: Logger must be created!
 #include <functional>
 
+#include "Sigslot2.h"
+
 namespace Common {
 
 #define BAD_CAST_MESSAGE\
     LogMessage(LOG_ERR, e.what() << " From call = "<< DebugName() << " key = " << key)
 
-class Signaling: public Noncopyable
+class Signaling: /*public HasSlots, */public Noncopyable
 {
 protected:
     typedef std::map<size_t, Any> SignaturesMap_t;
-    SignaturesMap_t                      m_Signatures;
+    SignaturesMap_t               m_Signatures;
 public:
 
     virtual const char* DebugName() const = 0;
+
 
     void AttachOn(size_t key, std::function<void ()> signature)
     {
@@ -95,15 +98,6 @@ public:
         APP_API_ASSERT(!IsAttached(key));
         m_Signatures[key] = signature;
     }
-
-    /*template<typename TFunc, typename... TArgs>
-    void AttachOn(size_t key, TFunc f, TArgs&&... args)
-    {
-        std::function<void (TArgs...)> signature = std::bind(f, std::forward<TArgs>(args)...);
-
-        APP_API_ASSERT(!IsAttached(key));
-        //m_Signatures[key] = signature;
-    }*/
 
     bool_t IsAttached(size_t key)
     {

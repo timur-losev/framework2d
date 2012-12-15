@@ -88,6 +88,7 @@
     <ClInclude Include="Include\SharedPtrForward.h" />
     <ClInclude Include="Include\Signaling.h" />
     <ClInclude Include="Include\Sigslot2.h" />
+    <ClInclude Include="Include\SigSlot2_adaptive_msvc.h" />
     <ClInclude Include="Include\SigSlot2_variadic_support_full.h" />
     <ClInclude Include="Include\SigSlot2_variadic_support_msvc.h" />
     <ClInclude Include="Include\Singleton.h" />
@@ -96,8 +97,10 @@
     <ClInclude Include="Include\Ptr.h" />
     <ClInclude Include="Include\Serializable.h" />
     <ClInclude Include="Include\ThreadBase.h" />
+    <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="pch.cpp" />
     <ClCompile Include="Source\AppApi.cpp" />
     <ClCompile Include="Source\BoundedBufferReader.cpp" />
     <ClCompile Include="Source\Invoker.cpp" />
