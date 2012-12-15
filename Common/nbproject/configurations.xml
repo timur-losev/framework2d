@@ -2,6 +2,13 @@
 <configurationDescriptor version="84">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles" displayName="Include" projectFiles="true">
+      <logicalFolder name="f1" displayName="sigslot2" projectFiles="true">
+        <itemPath>Include/SigSlot2_adaptive_msvc.h</itemPath>
+        <itemPath>Include/SigSlot2_variadic_support_full.h</itemPath>
+        <itemPath>Include/SigSlot2_variadic_support_msvc.h</itemPath>
+        <itemPath>Include/Sigslot2.h</itemPath>
+        <itemPath>Include/Sigslot2_adaptive_gcc.h</itemPath>
+      </logicalFolder>
       <itemPath>Include/Any.h</itemPath>
       <itemPath>Include/AppApi.h</itemPath>
       <itemPath>Include/BasicTypes.h</itemPath>
@@ -19,9 +26,7 @@
       <itemPath>Include/Ptr.h</itemPath>
       <itemPath>Include/Serializable.h</itemPath>
       <itemPath>Include/SharedPointer.h</itemPath>
-      <itemPath>Include/SigSlot2_variadic_support_full.h</itemPath>
       <itemPath>Include/Signaling.h</itemPath>
-      <itemPath>Include/Sigslot2.h</itemPath>
       <itemPath>Include/Singleton.h</itemPath>
       <itemPath>Include/Types.h</itemPath>
     </logicalFolder>

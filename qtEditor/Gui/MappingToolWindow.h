@@ -44,7 +44,7 @@ public:
 
     virtual void RefreshSpriteInfo(SpriteTexturesListConstPtr textures, SpriteFramesListConstPtr frames);
 
-private slots:
+private Q_SLOTS:
     void OnOpenFileSelected();
     void OnSaveFile();
     void OnOpenTextureSelected();

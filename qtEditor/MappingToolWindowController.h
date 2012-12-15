@@ -32,12 +32,12 @@ private:
     void OnOpenTextureFile(const std::string& filePath);
 
     void OnViewShowed();
-	void OnViewClosed();
-	void OnMouseMove(int x, int y, Qt::MouseButton button);
-	void OnMouseDown(int x, int y, Qt::MouseButton button);
-	void OnMouseUp(int x, int y, Qt::MouseButton button);
-	void OnMouseWheel(int delta, int direction, int x, int y);
-	void OnUpdateSpriteData(const CSprite* sprite);
+    void OnViewClosed();
+    void OnMouseMove(int x, int y, Qt::MouseButton button);
+    void OnMouseDown(int x, int y, Qt::MouseButton button);
+    void OnMouseUp(int x, int y, Qt::MouseButton button);
+    void OnMouseWheel(int delta, int direction, int x, int y);
+    void OnUpdateSpriteData(const CSprite* sprite);
 } ;
 
 #endif	/* MAPPINGTOOLWINDOWCONTROLLER_H */

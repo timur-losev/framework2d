@@ -25,6 +25,9 @@
 #include <Signaling.h>
 #include <ThreadBase.h>
 #include <functional>
+#include <thread>
+#include "boost/signal.hpp"
+#include "boost/bind.hpp"
 
 #ifdef USE_INVOKER
     #include "Invoker.h"

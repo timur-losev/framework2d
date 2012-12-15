@@ -1,5 +1,8 @@
 #include "EdPrec.h"
 #include "SigSlot2Test.h"
+#include "Signaling.h"
+
+#if 0
 
 void Switch::AttachOnClicked(const SignalClicked::SlotType& slot, Common::HasSlots* target)
 {
@@ -80,6 +83,87 @@ int Sigslot2Test::main()
     system("pause");
 
     std::function<void (int, float, const std::string&)> f;
+
+    return 0;
+}
+
+#endif
+
+
+struct SignalHolder: public Common::Signaling
+{
+    enum E_SIGNALS
+    {
+        ES_TEST1,
+        ES_TEST2,
+        ES_TEST3,
+
+        ES_MAX
+    };
+
+    virtual const char* DebugName() const
+    {
+        return "SignalHolder";
+    }
+};
+
+using namespace std::placeholders;
+
+template<class Signature>
+void Foo(const Signature& sign)
+{
+    Signature sss(sign);
+}
+
+template<class Signature>
+void Blabla(const Signature& sign)
+{
+    Foo<Signature>(sign);
+}
+
+struct SignalController
+{
+    SignalHolder sh;
+
+    void AttachSignals()
+    {
+        //Babla(std::bind(&SignalController::OnTest1, this));
+        sh.AttachOn2(SignalHolder::ES_TEST1, std::bind(&SignalController::OnTest1, this));
+        /*sh.AttachOn2(SignalHolder::ES_TEST1, std::bind(&SignalController::OnTest1_1, this));
+        sh.AttachOn2(SignalHolder::ES_TEST2, std::bind(&SignalController::OnTest2, this, _1));
+        sh.AttachOn2(SignalHolder::ES_TEST3, std::bind(&SignalController::OnTest3, this, _1, _2, _3));*/
+    }
+
+    void OnTest1()
+    {
+        std::cout << __FUNCTION__ << std::endl;
+    }
+
+    void OnTest1_1()
+    {
+        std::cout << __FUNCTION__ << std::endl;
+    }
+
+    void OnTest2(int i)
+    {
+        std::cout << __FUNCTION__ << " " << i <<std::endl;
+    }
+
+    void OnTest3(int i, float t, const std::string& str)
+    {
+        std::cout << __FUNCTION__ << " " << i << " " << t << " " << str << std::endl;
+    }
+};
+
+int Sigslot2Test::main()
+{
+
+    SignalController sc;
+    sc.AttachSignals();
+
+    sc.sh.CallBack2(SignalHolder::ES_TEST1);
+    //sc.sh.CallBack2(SignalHolder::ES_TEST2, 1456);
+    //sc.sh.CallBack2(SignalHolder::ES_TEST3, 4455, 1435.f, "blablabla");
 
     return 0;
 }

@@ -31,3 +31,4 @@ qtEditor.vcxproj.user
 *.pyc
 /qtEditor/Debug/
 /qtEditor/ipch/
+.gitignore~

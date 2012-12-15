@@ -9,4 +9,5 @@
     #include "SigSlot2_variadic_support_msvc.h"
 #else
 #include "SigSlot2_variadic_support_full.h"
+//#include "Sigslot2_adaptive_gcc.h"
 #endif

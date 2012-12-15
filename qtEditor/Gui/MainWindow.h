@@ -35,14 +35,14 @@ public:
         return "MainWindow";
     }
 
-private slots:
+    void resizeEvent( QResizeEvent* evt);
+
+private Q_SLOTS:
     //signaling
 
     void OnAboutClicked();
     void OnMappingToolClicked();
     void OnAtlasToolClicked();
-
-	void resizeEvent( QResizeEvent* evt);
 } ;
 
 #endif	/* _MAINWINDOW_H */
