@@ -51,7 +51,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;DEBUG;EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..\Game\Src;..\lib\irres\include;..\..\QTSDK\Desktop\Qt\4.8.1\msvc2010\include;..\Common\Include;..\lib\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;..\Game\Src;..\lib\irres\include;$(QTSDK)\Desktop\Qt\4.8.1\msvc2010\include;..\Common\Include;..\lib\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
       <PrecompiledHeaderFile>EdPrec.h</PrecompiledHeaderFile>
