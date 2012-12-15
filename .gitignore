@@ -14,7 +14,6 @@
 # Compiled Static libraries
 *.lai
 *.la
-*.a
 *.tlog
 *.obj
 *.d
@@ -27,8 +26,8 @@
 /lib/irres/lib/Win32-VisualStudio/
 /lib/irres/source/Irrlicht/obj/
 /lib/tinyxml/Debug/
-qtEditor.vcxproj.user
 *.pyc
 /qtEditor/Debug/
 /qtEditor/ipch/
 .gitignore~
+*.user

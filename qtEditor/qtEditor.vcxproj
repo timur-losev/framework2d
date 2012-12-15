@@ -50,8 +50,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;DEBUG;EDITOR;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.;..\Game\Src;..\lib\irres\include;$(QTSDK)\Desktop\Qt\4.8.1\msvc2010\include;..\Common\Include;..\lib\tinyxml;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;DEBUG;EDITOR;QT_NO_KEYWORDS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..\Game\Src;..\lib\irres\include;$(QTSDK)\Desktop\Qt\4.8.1\msvc2010\include;..\Common\Include;..\lib\tinyxml;..\lib\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <MinimalRebuild>false</MinimalRebuild>
       <PrecompiledHeaderFile>EdPrec.h</PrecompiledHeaderFile>
@@ -59,7 +59,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\..\QTSDK\Desktop\Qt\4.8.1\msvc2010\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(QTSDK)\Desktop\Qt\4.8.1\msvc2010\lib;..\lib\boost\stage\lib\msvc_11_x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>QtCored4.lib;QtGuid4.lib;..\lib\irres\lib\Win32-visualstudio\Irrlicht.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -115,7 +115,9 @@
     <ClCompile Include="MappingToolLevel.cpp" />
     <ClCompile Include="MappingToolWindowController.cpp" />
     <ClCompile Include="MapViewer.cpp" />
-    <ClCompile Include="SigSlot2Test.cpp" />
+    <ClCompile Include="SigSlot2Test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Game\Src\AnimatedGameObject.h" />
