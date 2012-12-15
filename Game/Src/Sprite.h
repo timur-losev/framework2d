@@ -4,7 +4,7 @@
 #    include "SpriteDefs.h"
 #    include "Serializable.h"
 
-class CSprite : public Serializable
+class SpriteInstance : public Serializable
 {
 protected:
     // Animation
@@ -36,8 +36,8 @@ protected:
                                          const core::position2df& rotationPoint, f32 rotation, const core::vector2df& scale,
                                          bool useAlphaChannel, const video::SColor& color);
 public:
-    CSprite(void);
-    virtual ~CSprite(void);
+    SpriteInstance(void);
+    virtual ~SpriteInstance(void);
 
     virtual void           Update(DriverPtr driver);
 

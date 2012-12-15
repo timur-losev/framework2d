@@ -95,9 +95,9 @@ extern irr::video::IVideoDriver* g_Driver;
 #endif
 //class CLogger;
 
-class CSprite;
+class SpriteInstance;
 class CLevel;
-class CPage;
+class PageInstance;
 class ILevel;
 class LevelManager;
 class EditablePagedLevel;

@@ -29,5 +29,6 @@
 *.pyc
 /qtEditor/Debug/
 /qtEditor/ipch/
+/Editor/vcproject/ipch/
 .gitignore~
 *.user

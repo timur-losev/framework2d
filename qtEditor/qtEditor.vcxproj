@@ -130,8 +130,6 @@
     <ClInclude Include="..\Game\Src\MappingFile.h" />
     <ClInclude Include="..\Game\Src\Page.h" />
     <ClInclude Include="..\Game\Src\Prec.h" />
-    <ClInclude Include="..\Game\Src\Ptr.h" />
-    <ClInclude Include="..\Game\Src\PtrForwardDeclarations.h" />
     <ClInclude Include="..\Game\Src\Sprite.h" />
     <ClInclude Include="..\Game\Src\SpriteDefs.h" />
     <ClInclude Include="..\Game\Src\StaticGameObject.h" />

@@ -16,7 +16,7 @@ enum LevelStates
 class EditablePagedLevel : public ILevel
 {
 public:
-    typedef core::array<CPage*>      PageList_t;
+    typedef core::array<PageInstance*>      PageList_t;
 
     static float				DefaultBacklash;
     static size_t				MaxPagesInView;
@@ -40,12 +40,12 @@ public:
     virtual void				Init();
     virtual void				Destroy();
 
-    void AddPage(CPage* page);
+    void AddPage(PageInstance* page);
 
     void						Scroll(float deltaX, float deltaY);
 
     size_t GetPageIndexByPoint(const core::position2df& point);
-    CPage*						GetPageByIndex(size_t i);
+    PageInstance*						GetPageByIndex(size_t i);
 
     INL size_t					GetPagesCount() const
     {
@@ -68,7 +68,7 @@ public:
     void						OnMouseUp(int btn, int x, int y);
     void						OnMouseMove(int x, int y);
     void						OnKeyDown(irr::EKEY_CODE kc);
-    CPage*						GetEditablePage();
+    PageInstance*						GetEditablePage();
     //boost::signals::connection	AttachOnGameObjectSelectedSignal(const OnGameObjectSelectedSignal::slot_type& slot);
 
     void						ChangeState(LevelStates state);

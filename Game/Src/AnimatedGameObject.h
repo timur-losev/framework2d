@@ -11,7 +11,7 @@ class AnimatedGameObject: public GameObject
 {
 private:
 protected:
-    CSprite*                        m_Sprite;
+    SpriteInstance*                        m_Sprite;
 public:
     AnimatedGameObject();
     virtual ~AnimatedGameObject();

@@ -122,6 +122,20 @@ void QIrrControl::wheelEvent(QWheelEvent *event)
 	m_MouseWheelEventSignal(event->delta(), (event->delta() > 0) ? 1 : -1, event->x(), event->y());
 }
 
+//*****************************************************************************
+//
+// Keyboard events over render panel
+//*****************************************************************************
+void QIrrControl::keyPressEvent( QKeyEvent * e)
+{
+    m_KeyboardEventSignal(static_cast<irr::EKEY_CODE>(e->key()), EBS_KEY_DOWN);
+}
+
+void QIrrControl::keyReleaseEvent( QKeyEvent * e)
+{
+    m_KeyboardEventSignal(static_cast<irr::EKEY_CODE>(e->key()), EBS_KEY_UP);
+}
+
 boost::signals::connection QIrrControl::AttachOnMouseEventSignal(const MouseEventSignal_t::slot_type& slot)
 {
     return m_MouseEventSignal.connect(slot);
@@ -141,3 +155,9 @@ boost::signals::connection QIrrControl::AttachOnMouseWheelEventSignal(const Mous
 {
     return m_MouseWheelEventSignal.connect(slot);
 }
+
+boost::signals::connection QIrrControl::AttachOnKeyboardEventSignal( const KeyboardEventSignal_t::slot_type& slot )
+{
+    return m_KeyboardEventSignal.connect(slot);
+}
+

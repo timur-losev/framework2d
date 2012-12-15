@@ -57,6 +57,12 @@ enum EMouseButtons
     EMB_NONE
 };
 
+enum EButtonState
+{
+    EBS_KEY_DOWN,
+    EBS_KEY_UP,
+    EBS_KEY_PRESSED
+};
 
 class IMainWindow;
 struct IRegularView;

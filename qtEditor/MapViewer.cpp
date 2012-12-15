@@ -17,7 +17,7 @@ MapViewer::~MapViewer(void)
 
 void MapViewer::Init(const irr::core::position2df &previewPos, const irr::core::vector2di &previewSize)
 {
-	//CSprite::Init(fname);
+	//SpriteInstance::Init(fname);
 	m_PreviewPos = previewPos;
 	m_PreviewSize = previewSize;
 

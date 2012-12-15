@@ -30,11 +30,15 @@ void MainWindow::ShowView()
     connect(widget.actionAbout, SIGNAL(activated()), this, SLOT(OnAboutClicked()));
     connect(widget.actionMapping, SIGNAL(activated()), this, SLOT(OnMappingToolClicked()));
     connect(widget.actionAtlas, SIGNAL(activated()), this, SLOT(OnAtlasToolClicked()));
+
+    CallBack(EB_ON_SHOW);
 }
 
 void MainWindow::HideView()
 {
     this->hide();
+
+    CallBack(EB_ON_CLOSE);
 }
 
 void MainWindow::OnAboutClicked()
@@ -59,4 +63,9 @@ void MainWindow::resizeEvent(QResizeEvent *evt)
 		m_IrrControl->setGeometry(0, 0, widget.centralwidget->width(), widget.centralwidget->height());
 		m_IrrControl->Resize(core::dimension2du(widget.centralwidget->width(), widget.centralwidget->height()));
 	}
+}
+
+IIrrControlPtr MainWindow::GetControl()
+{
+    return m_IrrControl;
 }

@@ -80,7 +80,7 @@ void MappingToolWindowController::OnViewShowed()
 	control->AttachOnMouseReleaseEventSignal(boost::bind(&MappingToolWindowController::OnMouseUp, this, _1, _2, _3));
 	control->AttachOnMouseWheelEventSignal(boost::bind(&MappingToolWindowController::OnMouseWheel, this, _1, _2, _3, _4));
 
-	m_Level->AttachOn<const CSprite*>(MappingToolLevel::ES_ON_SPRITE_DATA_UPDATED_SIGNAL,
+	m_Level->AttachOn<const SpriteInstance*>(MappingToolLevel::ES_ON_SPRITE_DATA_UPDATED_SIGNAL,
             std::bind(&MappingToolWindowController::OnUpdateSpriteData, this, std::placeholders::_1));
 }
 
@@ -144,7 +144,7 @@ void MappingToolWindowController::OnMouseWheel(int delta, int direction, int x, 
 	}
 }
 
-void MappingToolWindowController::OnUpdateSpriteData(const CSprite* sprite)
+void MappingToolWindowController::OnUpdateSpriteData(const SpriteInstance* sprite)
 {
     auto testuresList = sprite->GetTexturesList();
     auto framesList = sprite->GetFramesList();

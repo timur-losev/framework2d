@@ -12,14 +12,15 @@
 #include <QtCore/qnamespace.h>	// for Qt::MouseButton
 SHARED_PTR_FORWARD(LevelManager);
 
-class IIrrControl//: public Common::Signaling
+class IIrrControl
 {
 public:
 
-    typedef boost::signal<void (int, int, Qt::MouseButton)> MouseEventSignal_t;
-    typedef boost::signal<void (int, int, Qt::MouseButton)> MousePressEventSignal_t;
-    typedef boost::signal<void (int, int, Qt::MouseButton)> MouseReleaseEventSignal_t;
-    typedef boost::signal<void (int, int, int, int)> MouseWheelEventSignal_t;
+    typedef boost::signal<void (int, int, Qt::MouseButton)>     MouseEventSignal_t;
+    typedef boost::signal<void (int, int, Qt::MouseButton)>     MousePressEventSignal_t;
+    typedef boost::signal<void (int, int, Qt::MouseButton)>     MouseReleaseEventSignal_t;
+    typedef boost::signal<void (int, int, int, int)>            MouseWheelEventSignal_t;
+    typedef boost::signal<void (irr::EKEY_CODE, EButtonState)>  KeyboardEventSignal_t;
 
     /*enum E_SIGNALS
     {
@@ -46,6 +47,7 @@ public:
     virtual boost::signals::connection AttachOnMousePressEventSignal(const MousePressEventSignal_t::slot_type& slot) = 0;
     virtual boost::signals::connection AttachOnMouseReleaseEventSignal(const MouseReleaseEventSignal_t::slot_type& slot) = 0;
     virtual boost::signals::connection AttachOnMouseWheelEventSignal(const MouseWheelEventSignal_t::slot_type& slot) = 0;
+    virtual boost::signals::connection AttachOnKeyboardEventSignal(const KeyboardEventSignal_t::slot_type& slot) = 0;
 
     virtual ThreadPtr       Thread()
     {

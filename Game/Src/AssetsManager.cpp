@@ -23,16 +23,16 @@ bool_t AssetsManager::GetMapping( const std::string& path, SpriteFramesListPtr& 
 
     if (n != m_MappingTable.end())
     {
-		sels		= n->second->frames;
-		textures	= n->second->textures;
-		anims		= n->second->animations;
+        sels		= n->second->frames;
+        textures	= n->second->textures;
+        anims		= n->second->animations;
 
         return TRUE;
     }
 
-	SpriteFramesListPtr			_sels(new SpriteFramesList());
-	SpriteTexturesListPtr		_textures(new SpriteTexturesList());
-	SpriteAnimationsListPtr		_anims(new SpriteAnimationsList());
+    SpriteFramesListPtr			_sels(new SpriteFramesList());
+    SpriteTexturesListPtr		_textures(new SpriteTexturesList());
+    SpriteAnimationsListPtr		_anims(new SpriteAnimationsList());
 
     if (!MappingFile::Load(path, _sels, _anims, _textures))
         return FALSE;
@@ -46,12 +46,12 @@ bool_t AssetsManager::GetMapping( const std::string& path, SpriteFramesListPtr& 
     APP_API_ASSERT(m_MappingFilesCache.end() == pn && "Detected collisions. Hash functions works incorrect.")
 #endif
 
-    m_MappingFilesCache[key] = APP_API_GET_SIMPLE_FILE_NAME(path.c_str());
+        m_MappingFilesCache[key] = APP_API_GET_SIMPLE_FILE_NAME(path.c_str());
 
     //clone
-	sels		= _sels;
-	textures	= _textures;
-	anims		= _anims;
+    sels		= _sels;
+    textures	= _textures;
+    anims		= _anims;
 
     return TRUE;
 }
@@ -69,10 +69,10 @@ void AssetsManager::ClearAll()
 
 void AssetsManager::Clear(const std::string& path)
 {
-	hash_t key = APP_API_STRHASH(path.c_str(), path.size());
+    hash_t key = APP_API_STRHASH(path.c_str(), path.size());
 
     m_MappingTable.erase(key);
-	m_MappingFilesCache.erase(key);
+    m_MappingFilesCache.erase(key);
 }
 
 const std::string& AssetsManager::GetOrigin( hash_t frameUid ) const
@@ -88,7 +88,7 @@ FrameDef* AssetsManager::GetFrame( const std::string& origin, const std::string&
     FrameDef* ret = NULL;
 
     /*SpriteFramesListPtr sels_in(new SpriteFramesList());
-	SpriteAnimationsListPtr animations_in(new SpriteAnimationsList());
+    SpriteAnimationsListPtr animations_in(new SpriteAnimationsList());
     SpriteTexturesListPtr textures_in(new SpriteTexturesList());
 
     if (AssetsManager::GetMapping( MEDIA_PATH + origin, sels_in, animations_in, textures_in))

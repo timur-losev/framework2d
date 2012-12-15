@@ -28,6 +28,7 @@ private:
     MousePressEventSignal_t     m_MousePressEventSignal;
     MouseReleaseEventSignal_t   m_MouseReleaseEventSignal;
     MouseWheelEventSignal_t     m_MouseWheelEventSignal;
+    KeyboardEventSignal_t       m_KeyboardEventSignal;
 
 public:
     QIrrControl(QWidget* parent = nullptr);
@@ -52,13 +53,16 @@ public:
     virtual void            mouseMoveEvent(QMouseEvent* event);
     virtual void            mousePressEvent (QMouseEvent* event);
     virtual void            mouseReleaseEvent (QMouseEvent* event);
-    virtual void	    wheelEvent(QWheelEvent *event);
+    virtual void            wheelEvent(QWheelEvent *event);
+    virtual void            keyPressEvent(QKeyEvent *);
+    virtual void            keyReleaseEvent(QKeyEvent *);
 
 
     virtual boost::signals::connection AttachOnMouseEventSignal(const MouseEventSignal_t::slot_type& slot);
     virtual boost::signals::connection AttachOnMousePressEventSignal(const MousePressEventSignal_t::slot_type& slot);
     virtual boost::signals::connection AttachOnMouseReleaseEventSignal(const MouseReleaseEventSignal_t::slot_type& slot);
     virtual boost::signals::connection AttachOnMouseWheelEventSignal(const MouseWheelEventSignal_t::slot_type& slot);
+    virtual boost::signals::connection AttachOnKeyboardEventSignal(const KeyboardEventSignal_t::slot_type& slot);
 } ;
 
 #endif	/* QIRRCONTROL_H */

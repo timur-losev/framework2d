@@ -2,7 +2,7 @@
 #    define MAPVIEWER_H
 
 #    include "Sprite.h"
-class MapViewer : public CSprite
+class MapViewer : public SpriteInstance
 {
 private:
     int                     m_SelectedFrame;

@@ -52,12 +52,12 @@ bool_t IrrWorker::Init()
 
     m_Driver = m_Device->getVideoDriver();
 
-    /*core::stringc fontpath = std::string(MEDIA_PATH + "lucida.xml").c_str();
+    core::stringc fontpath = std::string(MEDIA_PATH + "lucida.xml").c_str();
     irr::gui::IGUIFont* dbgFont = m_Device->getGUIEnvironment()->getFont(fontpath);
     if (dbgFont)
     {
         G::FontStack.push(dbgFont);
-    }*/
+    }
 
     return TRUE;
 }

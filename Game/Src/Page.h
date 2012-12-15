@@ -14,10 +14,10 @@ enum ePageLayer
 
 #    ifdef USE_INVOKER
 #        include "Invoker.h"
-class CPage : public Serializable, public Common::Invoker
+class PageInstance : public Serializable, public Common::Invoker
 #    else
 
-class CPage : public Serializable
+class PageInstance : public Serializable
 #    endif
 {
 private:
@@ -75,8 +75,8 @@ public:
 
     static core::dimension2df   PageSize;
 
-    CPage();
-    ~CPage();
+    PageInstance();
+    ~PageInstance();
 
 public:
 

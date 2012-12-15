@@ -97,7 +97,7 @@ void EditablePagedLevel::Init()
 
         for (size_t i = 0; i < MaxPagesInView; ++i)
         {
-            CPage* page = new CPage();
+            PageInstance* page = new PageInstance();
             APP_API_ASSERT(page->Init(i));
 
             //Add clear page
@@ -123,7 +123,7 @@ void EditablePagedLevel::Destroy()
 
         for (size_t i = 0; i < m_PageList.size(); ++i)
         {
-            CPage* page = m_PageList[i];
+            PageInstance* page = m_PageList[i];
 
             page->Destroy();
 
@@ -134,7 +134,7 @@ void EditablePagedLevel::Destroy()
     }
 }
 
-void EditablePagedLevel::AddPage( CPage* page )
+void EditablePagedLevel::AddPage( PageInstance* page )
 {
 #ifdef USE_INVOKER
     if (NeedInvoke())
@@ -388,7 +388,7 @@ size_t EditablePagedLevel::GetPageIndexByPoint( const core::position2df& point )
     return PE_UINT_MAX;
 }
 
-CPage* EditablePagedLevel::GetPageByIndex( size_t i )
+PageInstance* EditablePagedLevel::GetPageByIndex( size_t i )
 {
     if (i < m_PageList.size())
     {
@@ -398,7 +398,7 @@ CPage* EditablePagedLevel::GetPageByIndex( size_t i )
     return NULL;
 }
 
-CPage* EditablePagedLevel::GetEditablePage()
+PageInstance* EditablePagedLevel::GetEditablePage()
 {
     /*size_t i = GetPageIndexByPoint(core::position2df((f32)GVideoDriver->getScreenSize().Width / 2.f, (f32)GVideoDriver->getScreenSize().Height / 2.f));
     if (i == PE_UINT_MAX) return NULL;*/
@@ -463,7 +463,7 @@ size_t EditablePagedLevel::Deserialize( MemoryStream& ms )
 
     for(ushort_t i = 0; i < pagesCount; ++i)
     {
-        CPage* page = APP_API_NEW CPage();
+        PageInstance* page = APP_API_NEW PageInstance();
         AddPage(page);
 
         count += page->Deserialize(ms);

@@ -4,23 +4,23 @@
 #include "StaticGameObject.h"
 #include "AnimatedGameObject.h"
 
-core::dimension2df	CPage::PageSize = core::dimension2df(960.f, 480.f);
-float				CPage::BackgroundLayerSpeed = 2.f;
-core::position2df	CPage::MainLayerSpeed		= core::position2df(5.f, 5.f);
-float				CPage::ForegroundLayerSpeed = 7.f;
+core::dimension2df	PageInstance::PageSize = core::dimension2df(960.f, 480.f);
+float				PageInstance::BackgroundLayerSpeed = 2.f;
+core::position2df	PageInstance::MainLayerSpeed		= core::position2df(5.f, 5.f);
+float				PageInstance::ForegroundLayerSpeed = 7.f;
 
-CPage::CPage()
+PageInstance::PageInstance()
 	: m_Index(PE_UINT_MAX)
 	, m_DirtyPos(FALSE)
 {
 }
 
-CPage::~CPage()
+PageInstance::~PageInstance()
 {
 	Destroy();
 }
 
-void CPage::Update(float dt, DriverPtr driver)
+void PageInstance::Update(float dt, DriverPtr driver)
 {
 #ifdef USE_INVOKER
     UpdateInvoker();
@@ -48,7 +48,7 @@ void CPage::Update(float dt, DriverPtr driver)
 	}
 }
 
-void CPage::Destroy()
+void PageInstance::Destroy()
 {
 	/*for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
 	{
@@ -64,7 +64,7 @@ void CPage::Destroy()
 	}*/
 }
 
-bool_t CPage::Init(size_t index)
+bool_t PageInstance::Init(size_t index)
 {
     m_Index = index;
     m_Pos.Y = 0;
@@ -74,22 +74,22 @@ bool_t CPage::Init(size_t index)
     return TRUE;
 }
 
-const GameObjectList_t& CPage::GetObjects( const ePageLayer layer ) const
+const GameObjectList_t& PageInstance::GetObjects( const ePageLayer layer ) const
 {
 	return m_Layers[layer];
 }
 
-GameObjectList_t& CPage:: GetObjects(const ePageLayer layer)
+GameObjectList_t& PageInstance:: GetObjects(const ePageLayer layer)
 {
     return m_Layers[layer];
 }
 
-bool_t CPage::HitTest( const core::position2df& pos )
+bool_t PageInstance::HitTest( const core::position2df& pos )
 {
 	return (m_Pos.X <= pos.X && m_Pos.X + m_Bound.getWidth() > pos.X);
 }
 
-GameObjectPtr CPage::GetGameObjectByName( const std::string& name )
+GameObjectPtr PageInstance::GetGameObjectByName( const std::string& name )
 {
 	for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
 	{
@@ -105,7 +105,7 @@ GameObjectPtr CPage::GetGameObjectByName( const std::string& name )
     return NULL;
 }
 
-GameObjectPtr CPage::GetGameObjectByHash( hash_t hash )
+GameObjectPtr PageInstance::GetGameObjectByHash( hash_t hash )
 {
 	for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
 	{
@@ -121,7 +121,7 @@ GameObjectPtr CPage::GetGameObjectByHash( hash_t hash )
     return NULL;
 }
 
-bool_t CPage::AddGameObject( GameObjectPtr obj, const ePageLayer layer )
+bool_t PageInstance::AddGameObject( GameObjectPtr obj, const ePageLayer layer )
 {
 #ifdef DBGMODE
 	GameObjectList_t &object_list = m_Layers[layer];
@@ -131,7 +131,7 @@ bool_t CPage::AddGameObject( GameObjectPtr obj, const ePageLayer layer )
         if (obj->Hash() == thisobj->Hash() || obj->Name() == thisobj->Name())
         {
             APP_API_ASSERT("Game object already exists." && FALSE);
-            LogMessage(LOG_ERR, "CPage::AddGameObject. Game object already exists. [" << obj->Name() << "]");
+            LogMessage(LOG_ERR, "PageInstance::AddGameObject. Game object already exists. [" << obj->Name() << "]");
             return FALSE;
         }
     };
@@ -142,7 +142,7 @@ bool_t CPage::AddGameObject( GameObjectPtr obj, const ePageLayer layer )
 	return TRUE;
 }
 
-GameObjectPtr CPage::AddGameObject( const std::string& name, GameObject::EType type, const ePageLayer layer)
+GameObjectPtr PageInstance::AddGameObject( const std::string& name, GameObject::EType type, const ePageLayer layer)
 {
     GameObjectPtr gobj;
 
@@ -167,7 +167,7 @@ GameObjectPtr CPage::AddGameObject( const std::string& name, GameObject::EType t
     return gobj;
 }
 
-GameObjectListIter_t CPage::RemoveGameObject( GameObjectPtr obj, const ePageLayer layer )
+GameObjectListIter_t PageInstance::RemoveGameObject( GameObjectPtr obj, const ePageLayer layer )
 {
 	GameObjectList_t& objects_list = m_Layers[layer];
 
@@ -185,12 +185,12 @@ GameObjectListIter_t CPage::RemoveGameObject( GameObjectPtr obj, const ePageLaye
 	}
 
 	APP_API_ASSERT("Game object is not exists." && FALSE);
-	LogMessage(LOG_ERR, "CPage::RemoveGameObject. Game object is not exists. " << obj->Name().c_str());
+	LogMessage(LOG_ERR, "PageInstance::RemoveGameObject. Game object is not exists. " << obj->Name().c_str());
 
 	return objects_list.end();
 }
 
-GameObjectPtr CPage::GetGameObjectByPoint( const core::position2df& p )
+GameObjectPtr PageInstance::GetGameObjectByPoint( const core::position2df& p )
 {
 	for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
 	{
@@ -206,14 +206,14 @@ GameObjectPtr CPage::GetGameObjectByPoint( const core::position2df& p )
     return NULL;
 }
 
-void CPage::Scroll(float stepX, float stepY)
+void PageInstance::Scroll(float stepX, float stepY)
 {
 	m_Offset += core::position2df(stepX, stepY);
 
 	m_DirtyPos = TRUE;
 }
 
-void CPage::Serialize( DynamicMemoryStream& dms )
+void PageInstance::Serialize( DynamicMemoryStream& dms )
 {
 	size_t layersCount = EPAGE_LAYER_MAX;
 	dms.write(&layersCount);
@@ -236,13 +236,13 @@ void CPage::Serialize( DynamicMemoryStream& dms )
 	}
 }
 
-size_t CPage::Deserialize( MemoryStream& ms )
+size_t PageInstance::Deserialize( MemoryStream& ms )
 {
 	size_t layersCount = 0;
 	ms.read(&layersCount);
 	if (EPAGE_LAYER_MAX != layersCount)
 	{
-		LogMessage(LOG_ERR, "CPage::Deserialize. Read file have incorrect version. Please check file format. Exist layers: " << EPAGE_LAYER_MAX << " read: " << layersCount);
+		LogMessage(LOG_ERR, "PageInstance::Deserialize. Read file have incorrect version. Please check file format. Exist layers: " << EPAGE_LAYER_MAX << " read: " << layersCount);
 		return 0;
 	}
 

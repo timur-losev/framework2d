@@ -10,6 +10,8 @@
 
 #    include "IRegularView.h"
 
+SHARED_PTR_FORWARD(IIrrControl);
+
 class IMainWindow : public IRegularView
 {
 private:
@@ -22,6 +24,7 @@ public:
         E_ON_ATLAS_TOOL_CLICKED
     };
 
+    virtual IIrrControlPtr GetControl() = 0;
 } ;
 
 #endif	/* IMAINWINDOW_H */

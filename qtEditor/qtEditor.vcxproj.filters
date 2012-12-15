@@ -230,12 +230,6 @@
     <ClInclude Include="..\Game\Src\Prec.h">
       <Filter>Game</Filter>
     </ClInclude>
-    <ClInclude Include="..\Game\Src\Ptr.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Game\Src\PtrForwardDeclarations.h">
-      <Filter>Game</Filter>
-    </ClInclude>
     <ClInclude Include="..\Game\Src\Sprite.h">
       <Filter>Game</Filter>
     </ClInclude>

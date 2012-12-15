@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'AboutWindow.ui'
 **
-** Created: Sat Dec 15 12:29:05 2012
-**      by: Qt User Interface Compiler version 4.8.1
+** Created: Sat 15. Dec 23:22:16 2012
+**      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -49,7 +49,7 @@ public:
     {
         AboutWindow->setWindowTitle(QApplication::translate("AboutWindow", "AboutWindow", 0, QApplication::UnicodeUTF8));
         OkButton->setText(QApplication::translate("AboutWindow", "Ok", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("AboutWindow", "Version 0.5.3. Jeka & Timur Inc.", 0, QApplication::UnicodeUTF8));
+        label->setText(QApplication::translate("AboutWindow", "Version 0.5.4. Jeka & Timur Inc.", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

@@ -5,7 +5,7 @@
 
 AnimatedGameObject::AnimatedGameObject()
 {
-    m_Sprite = APP_API_NEW CSprite();
+    m_Sprite = APP_API_NEW SpriteInstance();
 }
 
 AnimatedGameObject::~AnimatedGameObject()

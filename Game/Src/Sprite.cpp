@@ -3,7 +3,7 @@
 #include "Sprite.h"
 #include "AssetsManager.h"
 
-CSprite::CSprite(void)
+SpriteInstance::SpriteInstance(void)
 : m_CurrentFrame(0)
 , m_CurrentAnimation(0)
 , m_EndAnimationTime(APP_API_GET_TICK_COUNT())
@@ -23,14 +23,14 @@ CSprite::CSprite(void)
 , m_Driver(nullptr)
 { }
 
-CSprite::~CSprite(void)
+SpriteInstance::~SpriteInstance(void)
 {
 	m_Frames->clear();
     m_Animations->clear();
 	m_Atlases->clear();
 }
 
-void CSprite::Load(const std::string& resName)
+void SpriteInstance::Load(const std::string& resName)
 {
     m_CurrentAnimation	= 0;
     m_CurrentFrame		= 0;
@@ -84,7 +84,7 @@ void CSprite::Load(const std::string& resName)
     }
 }
 
-void CSprite::Update(DriverPtr driver)
+void SpriteInstance::Update(DriverPtr driver)
 {
     m_Driver = driver;
 
@@ -143,7 +143,7 @@ void CSprite::Update(DriverPtr driver)
     }
 }
 
-void CSprite::Draw2DImage(DriverPtr driver,
+void SpriteInstance::Draw2DImage(DriverPtr driver,
 						  video::ITexture* texture,
                           const core::rectf& sourceRect, const core::position2df& position,
                           const core::position2df& rotationPoint,  f32 rotation, const core::vector2df& scale,
@@ -226,7 +226,7 @@ void CSprite::Draw2DImage(DriverPtr driver,
     driver->setTransform( video::ETS_VIEW, oldViewMat);
 }
 
-void CSprite::GotoAndStop( u32 frameIndx )
+void SpriteInstance::GotoAndStop( u32 frameIndx )
 {
     if (frameIndx < m_FramesCount)
     {
@@ -235,7 +235,7 @@ void CSprite::GotoAndStop( u32 frameIndx )
     m_IsAnimated = FALSE;
 }
 
-void CSprite::GotoAndPlay( u32 frameIndx )
+void SpriteInstance::GotoAndPlay( u32 frameIndx )
 {
     if (frameIndx < m_FramesCount)
     {
@@ -244,7 +244,7 @@ void CSprite::GotoAndPlay( u32 frameIndx )
     m_IsAnimated = TRUE;
 }
 
-void CSprite::SetCurrentAnimation( u32 animationIndx )
+void SpriteInstance::SetCurrentAnimation( u32 animationIndx )
 {
     if (animationIndx < m_AnimationCount)
     {

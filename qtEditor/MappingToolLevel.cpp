@@ -61,7 +61,7 @@ void MappingToolLevel::Update(float dt, DriverPtr driver)
         {
             if (EMB_LEFT != m_BtnId)
             {
-                CallBack<const CSprite*>(ES_ON_SPRITE_DATA_UPDATED_SIGNAL, m_MapViewer);
+                CallBack<const SpriteInstance*>(ES_ON_SPRITE_DATA_UPDATED_SIGNAL, m_MapViewer);
                 RestoreState();
             }
         }
@@ -363,7 +363,7 @@ void MappingToolLevel::LoadMapFile( std::string path )
         m_MapViewer->Load(path);
         m_MapViewer->Centering();
 
-		CallBack<const CSprite*>(ES_ON_SPRITE_DATA_UPDATED_SIGNAL, m_MapViewer);
+		CallBack<const SpriteInstance*>(ES_ON_SPRITE_DATA_UPDATED_SIGNAL, m_MapViewer);
     }
 }
 

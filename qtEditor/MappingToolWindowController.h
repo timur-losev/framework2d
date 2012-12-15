@@ -37,7 +37,7 @@ private:
     void OnMouseDown(int x, int y, Qt::MouseButton button);
     void OnMouseUp(int x, int y, Qt::MouseButton button);
     void OnMouseWheel(int delta, int direction, int x, int y);
-    void OnUpdateSpriteData(const CSprite* sprite);
+    void OnUpdateSpriteData(const SpriteInstance* sprite);
 } ;
 
 #endif	/* MAPPINGTOOLWINDOWCONTROLLER_H */

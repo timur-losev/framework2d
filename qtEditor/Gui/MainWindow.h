@@ -37,6 +37,9 @@ public:
 
     void resizeEvent( QResizeEvent* evt);
 
+private:
+    virtual IIrrControlPtr GetControl();
+
 private Q_SLOTS:
     //signaling
 
