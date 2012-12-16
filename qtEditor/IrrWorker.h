@@ -40,6 +40,8 @@ private:
     bool_t                      m_Stoped;
     bool_t                      m_Paused;
 
+    RenderContext               m_Context;
+
 public:
     IrrWorker();
     ~IrrWorker();

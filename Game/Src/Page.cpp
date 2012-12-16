@@ -20,7 +20,7 @@ PageInstance::~PageInstance()
 	Destroy();
 }
 
-void PageInstance::Update(float dt, DriverPtr driver)
+void PageInstance::Update( float dt, const RenderContext& context )
 {
 #ifdef USE_INVOKER
     UpdateInvoker();
@@ -36,7 +36,7 @@ void PageInstance::Update(float dt, DriverPtr driver)
 			{
 				obj->Offset() += m_Offset;
 			}
-			obj->Update(dt, driver);
+			obj->Update(dt, context);
 		}
 	}
 

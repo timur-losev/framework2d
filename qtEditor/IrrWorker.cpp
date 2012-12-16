@@ -52,11 +52,13 @@ bool_t IrrWorker::Init()
 
     m_Driver = m_Device->getVideoDriver();
 
+    m_Context.Driver = m_Driver;
+
     core::stringc fontpath = std::string(MEDIA_PATH + "lucida.xml").c_str();
     irr::gui::IGUIFont* dbgFont = m_Device->getGUIEnvironment()->getFont(fontpath);
     if (dbgFont)
     {
-        G::FontStack.push(dbgFont);
+        m_Context.DebugFont = dbgFont;
     }
 
     return TRUE;
@@ -78,16 +80,16 @@ void IrrWorker::Start()
 
         u32 startTime = m_Device->getTimer()->getTime();
 
-        irr::video::SColor color (255, 39, 0, 31);	// fill color Ubuntu stile :)
+        irr::video::SColor color (255, 39, 0, 31);	// fill color like Ubuntu style :)
         m_Driver->beginScene(true, true, color);
 
         u32 timeThisFrame = m_Device->getTimer()->getTime();
         float delta = static_cast<float>(timeThisFrame - timePrevFrame);
 
         if (auto  mgr = m_LevelManager.lock())
-            mgr->Update(delta, m_Driver);
+            mgr->Update(delta, m_Context);
 
-        //LogDebug("MS " << delta);
+        LogDebug("MS " << delta << " Thread= " << std::this_thread::get_id());
 
         m_Driver->endScene();
 

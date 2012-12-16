@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MainWindow.ui'
 **
-** Created: Sat 15. Dec 23:22:16 2012
+** Created: Sun 16. Dec 00:47:11 2012
 **      by: Qt User Interface Compiler version 4.8.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -14,6 +14,8 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QFrame>
+#include <QtGui/QGridLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenu>
@@ -30,6 +32,10 @@ public:
     QAction *actionAtlas;
     QAction *actionMapping;
     QWidget *centralwidget;
+    QGridLayout *gridLayout;
+    QGridLayout *mainSizer;
+    QFrame *renderFrame;
+    QFrame *frame;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuTools;
@@ -40,7 +46,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(730, 512);
+        MainWindow->resize(1026, 798);
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
         actionAtlas = new QAction(MainWindow);
@@ -49,10 +55,34 @@ public:
         actionMapping->setObjectName(QString::fromUtf8("actionMapping"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
+        gridLayout = new QGridLayout(centralwidget);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        mainSizer = new QGridLayout();
+        mainSizer->setObjectName(QString::fromUtf8("mainSizer"));
+        mainSizer->setVerticalSpacing(14);
+        mainSizer->setContentsMargins(0, -1, -1, -1);
+        renderFrame = new QFrame(centralwidget);
+        renderFrame->setObjectName(QString::fromUtf8("renderFrame"));
+        renderFrame->setMinimumSize(QSize(0, 700));
+        renderFrame->setFrameShape(QFrame::Box);
+        renderFrame->setFrameShadow(QFrame::Raised);
+
+        mainSizer->addWidget(renderFrame, 0, 0, 1, 1);
+
+        frame = new QFrame(centralwidget);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setFrameShape(QFrame::Box);
+        frame->setFrameShadow(QFrame::Raised);
+
+        mainSizer->addWidget(frame, 1, 0, 1, 1);
+
+
+        gridLayout->addLayout(mainSizer, 0, 0, 1, 1);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 730, 18));
+        menubar->setGeometry(QRect(0, 0, 1026, 21));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuTools = new QMenu(menubar);

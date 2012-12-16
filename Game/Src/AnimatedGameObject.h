@@ -17,7 +17,7 @@ public:
     virtual ~AnimatedGameObject();
 
     // overrides:
-    virtual void                    Update(float dt, DriverPtr driver);
+    virtual void Update(float dt, const RenderContext& context);
     virtual GameObject::EType       Type() const { return ET_ANIMATED; }
     virtual void                    Serialize(DynamicMemoryStream& dms);
     virtual size_t                  Deserialize(MemoryStream& ms);

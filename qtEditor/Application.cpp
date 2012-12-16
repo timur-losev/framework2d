@@ -16,9 +16,7 @@
 
 #include "AssetsManager.h"
 
-#include "SigSlot2Test.h"
-
-std::stack<DebugFontPtr> G::FontStack;
+//#include "SigSlot2Test.h"
 /*
  *
  */

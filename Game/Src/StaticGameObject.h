@@ -31,7 +31,7 @@ public:
     StaticGameObject();
     virtual ~StaticGameObject();
 
-    virtual void                 Update(float dt, DriverPtr driver);
+    virtual void Update(float dt, const RenderContext& context);
     virtual GameObject::EType    Type() const { return ET_STATIC; }
 
     INL const GraphicState_t&    GraphicState() const { return m_GraphicState; }

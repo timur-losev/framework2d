@@ -84,9 +84,9 @@ void SpriteInstance::Load(const std::string& resName)
     }
 }
 
-void SpriteInstance::Update(DriverPtr driver)
+void SpriteInstance::Update( const RenderContext& context )
 {
-    m_Driver = driver;
+    m_Driver = context.Driver;
 
     if (m_TotalTextures == 0 || !m_IsVisible) return;
 

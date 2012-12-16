@@ -23,15 +23,15 @@ MappingToolLevel::~MappingToolLevel()
 //	BASE
 //
 //*******************************************************************************
-void MappingToolLevel::Update(float dt, DriverPtr driver)
+void MappingToolLevel::Update( float dt, const RenderContext& context)
 {
-    m_Driver = driver;
+    m_Driver = context.Driver;
 #ifdef USE_INVOKER
     UpdateInvoker();
 #endif
     if (m_MapViewer)
     {
-        m_MapViewer->Update(driver);
+        m_MapViewer->Update(context);
     }
 
     switch(m_State)

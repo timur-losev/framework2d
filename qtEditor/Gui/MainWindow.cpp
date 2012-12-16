@@ -8,6 +8,7 @@
 #include "EdPrec.h"
 #include "MainWindow.h"
 #include "QIrrControl.h"
+#include <QtGui/QPushButton>
 
 MainWindow::MainWindow()
 {
@@ -20,8 +21,8 @@ void MainWindow::ShowView()
 {
     this->show();
 
-    m_IrrControl.reset(new QIrrControl(widget.centralwidget));
-    m_IrrControl->setGeometry(0, 0, widget.centralwidget->width(), widget.centralwidget->height());
+    m_IrrControl.reset(new QIrrControl(widget.renderFrame));
+    m_IrrControl->setGeometry(0, 0, widget.renderFrame->width(), widget.renderFrame->height());
     m_IrrControl->setObjectName(QString::fromUtf8("IrrControl"));
     m_IrrControl->show();
 

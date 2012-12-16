@@ -33,7 +33,7 @@ protected:
 public:
 
     bool_t                  Init(size_t index);
-    void                    Update(float dt, DriverPtr driver);
+    void                    Update(float dt, const RenderContext&);
     void                    Destroy();
 
     INL const core::rectf& GetBound() const
@@ -63,8 +63,8 @@ public:
     GameObjectPtr            GetGameObjectByName(const std::string& name);
     GameObjectPtr            GetGameObjectByHash(hash_t hash);
     GameObjectPtr            GetGameObjectByPoint(const core::position2df& p);
-    bool_t		     AddGameObject(GameObjectPtr obj, const ePageLayer layer = EPAGE_LAYER_MIDDLE);
-    GameObjectPtr	     AddGameObject(const std::string& name, GameObject::EType type, const ePageLayer layer = EPAGE_LAYER_MIDDLE);
+    bool_t                   AddGameObject(GameObjectPtr obj, const ePageLayer layer = EPAGE_LAYER_MIDDLE);
+    GameObjectPtr            AddGameObject(const std::string& name, GameObject::EType type, const ePageLayer layer = EPAGE_LAYER_MIDDLE);
     GameObjectListIter_t     RemoveGameObject(GameObjectPtr obj, const ePageLayer layer = EPAGE_LAYER_MIDDLE);
 
     const GameObjectList_t&  GetObjects(const ePageLayer layer = EPAGE_LAYER_MIDDLE) const;

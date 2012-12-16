@@ -20,15 +20,15 @@ public:
 
     void                    AttachLevel(ILevelPtr lvl);
     void                    DetatchLevel(ILevelPtr lvl);
-    void                    Update(float dt, DriverPtr driver);
+    void                    Update(float dt, const RenderContext&);
 
     // Returns FALSE if next level could not be reached
     bool_t                  NextLevel();
 
     bool_t                  Flush();
 
-    ILevelPtr                 GetLevelByName(const std::string& name);
-    ILevelPtr                 CurrentLevel();
+    ILevelPtr               GetLevelByName(const std::string& name);
+    ILevelPtr               CurrentLevel();
 };
 
 #endif // LevelManager_h__

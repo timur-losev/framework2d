@@ -67,7 +67,7 @@ bool_t GameObject::operator==( const GameObject& oth )
     return oth.m_Hash != 0 && oth.m_Hash == Hash();
 }
 
-void GameObject::Update(float dt, DriverPtr driver)
+void GameObject::Update( float dt, const RenderContext& context )
 {
 #ifdef USE_INVOKER
     UpdateInvoker();

@@ -25,23 +25,24 @@ EditablePagedLevel::~EditablePagedLevel()
 {
 }
 
-void EditablePagedLevel::Update(float dt, DriverPtr driver)
+void EditablePagedLevel::Update( float dt, const RenderContext& context )
 {
 #ifdef USE_INVOKER
     // update invoker first
     UpdateInvoker();
 #endif
 
+    DriverPtr driver = context.Driver;
+
     if (m_Locked) return;
 
     for (size_t i = 0; i < MaxPagesInView; ++i)
     {
 #ifdef EDITOR
-        DebugFontPtr font	= GDebugFont;
+        DebugFontPtr font   = context.DebugFont;
 
         core::stringw					text		= core::stringw("Page ") + core::stringw(m_PagesInView[i]->GetIndex());
         const core::dimension2d<u32>	scrSize		= driver->getScreenSize();
-        core::dimension2d<u32>			textSize	= font->getDimension(text.c_str());
 
         core::recti rectangle = core::recti((int)m_PagesInView[i]->GetPosition().X,
             (int)m_PagesInView[i]->GetPosition().Y,
@@ -57,20 +58,23 @@ void EditablePagedLevel::Update(float dt, DriverPtr driver)
 #endif
 
         // Update all pages
-        m_PagesInView[i]->Update(dt, driver);
+        m_PagesInView[i]->Update(dt, context);
 
 #ifdef EDITOR
         // Draw restrictive rectangle
         driver->draw2DRectangleOutline( rectangle, video::SColor(255, 0, 255, 0) );
 
         // Draw page text info
-        if (font &&
-            rectangle.UpperLeftCorner.X >= 0 && rectangle.UpperLeftCorner.X + textSize.Width < scrSize.Width &&
-            rectangle.UpperLeftCorner.Y >= 0 && rectangle.UpperLeftCorner.Y + textSize.Height < scrSize.Height)
+        if (font)
         {
-            core::recti textRect = core::recti(rectangle.UpperLeftCorner, textSize);
+            core::dimension2d<u32> textSize = font->getDimension(text.c_str());
+            if (rectangle.UpperLeftCorner.X >= 0 && rectangle.UpperLeftCorner.X + textSize.Width < scrSize.Width &&
+                rectangle.UpperLeftCorner.Y >= 0 && rectangle.UpperLeftCorner.Y + textSize.Height < scrSize.Height)
+            {
+                core::recti textRect = core::recti(rectangle.UpperLeftCorner, textSize);
 
-            font->draw( text, textRect, video::SColor(255, 0, 255, 0) );
+                font->draw( text, textRect, video::SColor(255, 0, 255, 0) );
+            }
         }
 #endif
     }

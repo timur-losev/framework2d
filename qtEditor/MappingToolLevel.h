@@ -44,7 +44,7 @@ public:
     MappingToolLevel();
     virtual ~MappingToolLevel();
 
-    virtual void            Update(float dt, DriverPtr driver);
+    virtual void Update(float dt, const RenderContext& driver);
     virtual bool_t          Create();
     virtual void            Init();
     virtual void            Destroy();

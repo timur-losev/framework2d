@@ -15,23 +15,23 @@ StaticGameObject::~StaticGameObject()
 
 }
 
-void StaticGameObject::Update(float dt, DriverPtr driver)
+void StaticGameObject::Update( float dt, const RenderContext& context )
 {
-    m_Driver = driver;
+    m_Driver = context.Driver;
 
-    GameObject::Update(dt, driver);
+    GameObject::Update(dt, context);
 
     for(m_GraphicStateIterBegin = m_GraphicState.begin(), m_GraphicStateIterEnd = m_GraphicState.end();
         m_GraphicStateIterEnd != m_GraphicStateIterBegin; m_GraphicStateIterBegin++)
     {
         GraphicItem& item = *m_GraphicStateIterBegin;
 
-        const core::matrix4& oldProjMat = driver->getTransform( video::ETS_PROJECTION);
-        driver->setTransform(video::ETS_PROJECTION, core::matrix4());
+        const core::matrix4& oldProjMat = m_Driver->getTransform( video::ETS_PROJECTION);
+        m_Driver->setTransform(video::ETS_PROJECTION, core::matrix4());
 
         // Store and clear the view matrix
-        const  core::matrix4& oldViewMat = driver->getTransform( video::ETS_VIEW);
-        driver->setTransform(video::ETS_VIEW, core::matrix4());
+        const  core::matrix4& oldViewMat = m_Driver->getTransform( video::ETS_VIEW);
+        m_Driver->setTransform(video::ETS_VIEW, core::matrix4());
 
         // Find the positions of corners
         const core::recti& source = item.m_SourceRect;
@@ -74,8 +74,8 @@ void StaticGameObject::Update(float dt, DriverPtr driver)
         u16 indices[6] = { 0, 1, 2, 3 ,2 ,1 };
 
         // Convert pixels to world coordinates
-        const float screenWidth = (float)driver->getScreenSize().Width;
-        const float screenHeight = (float)driver->getScreenSize().Height;
+        const float screenWidth = (float)m_Driver->getScreenSize().Width;
+        const float screenHeight = (float)m_Driver->getScreenSize().Height;
 
         for (int x = 0; x < 4; ++x)
         {
@@ -93,11 +93,11 @@ void StaticGameObject::Update(float dt, DriverPtr driver)
         material.TextureLayer[0].Texture = texture;
         material.MaterialType =  video::EMT_TRANSPARENT_ALPHA_CHANNEL;
 
-        driver->setMaterial(material);
-        driver->drawIndexedTriangleList(&vertices[0], 4, &indices[0], 2);
+        m_Driver->setMaterial(material);
+        m_Driver->drawIndexedTriangleList(&vertices[0], 4, &indices[0], 2);
 
-        driver->setTransform( video::ETS_PROJECTION, oldProjMat);
-        driver->setTransform( video::ETS_VIEW, oldViewMat);
+        m_Driver->setTransform( video::ETS_PROJECTION, oldProjMat);
+        m_Driver->setTransform( video::ETS_VIEW, oldViewMat);
     }
 }
 

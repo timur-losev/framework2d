@@ -35,7 +35,7 @@ public:
 
     void					Init (const core::position2df& previewPos,
                                                 const core::vector2di& previewSize);
-    virtual void			Update(DriverPtr driver);
+    virtual void Update(const RenderContext& driver);
 
     bool_t					IntersectWithPreview(int x, int y);
     IntersectSelection		IntersectWithSelectedFrame(int x, int y);

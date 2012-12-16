@@ -13,13 +13,13 @@ AnimatedGameObject::~AnimatedGameObject()
     APP_API_DEL(m_Sprite);
 }
 
-void AnimatedGameObject::Update(float dt, DriverPtr driver)
+void AnimatedGameObject::Update( float dt, const RenderContext& context )
 {
     m_Sprite->SetPosition(m_Position);
     m_Sprite->SetRotation(m_Rotation);
     m_Sprite->SetScale(m_Scale);
 
-    m_Sprite->Update(driver);
+    m_Sprite->Update(context);
 }
 
 void AnimatedGameObject::Serialize( DynamicMemoryStream& dms )

@@ -3,10 +3,10 @@
 #include "LevelManager.h"
 #include "ILevel.h"
 
-void LevelManager::Update(float dt, DriverPtr driver)
+void LevelManager::Update( float dt, const RenderContext& context )
 {
     if (m_CurrentLevel)
-        m_CurrentLevel->Update(dt, driver);
+        m_CurrentLevel->Update(dt, context);
 }
 
 void LevelManager::AttachLevel(ILevelPtr lvl)

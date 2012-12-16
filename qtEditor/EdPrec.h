@@ -41,13 +41,17 @@ typedef void* MyWinId;
 typedef unsigned long MyWinId;
 #endif
 
-//global struct
-struct G
+struct RenderContext
 {
-    static std::stack<DebugFontPtr> FontStack;
-};
+    DriverPtr       Driver;
+    DebugFontPtr    DebugFont;
 
-#define GDebugFont G::FontStack.top()
+    RenderContext():
+        Driver(nullptr),
+        DebugFont(nullptr)
+    {}
+
+};
 
 enum EMouseButtons
 {

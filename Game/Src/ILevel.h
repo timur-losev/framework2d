@@ -29,7 +29,7 @@ public:
     virtual hash_t                          GetHash();
     virtual const std::string&             GetName() const;
 
-    virtual void            Update(float dt, DriverPtr driver) = 0;
+    virtual void Update(float dt, const RenderContext& driver) = 0;
     virtual bool_t          Create() = 0;
     virtual void            Init() = 0;
     virtual void            Destroy() = 0;

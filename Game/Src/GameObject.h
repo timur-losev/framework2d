@@ -96,7 +96,7 @@ public:
 
     virtual hash_t               Hash();
 
-    virtual void                 Update(float dt, DriverPtr driver);
+    virtual void Update(float dt, const RenderContext& context);
 
     virtual EType                Type() const
     {

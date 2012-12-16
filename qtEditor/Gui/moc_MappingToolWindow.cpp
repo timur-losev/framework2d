@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'MappingToolWindow.h'
 **
-** Created: Sat 15. Dec 23:22:16 2012
+** Created: Sun 16. Dec 00:47:11 2012
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.3)
 **
 ** WARNING! All changes made in this file will be lost!
