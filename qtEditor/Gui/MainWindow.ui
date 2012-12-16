@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1026</width>
-    <height>798</height>
+    <width>1107</width>
+    <height>913</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,8 +27,8 @@
        <widget class="QFrame" name="renderFrame">
         <property name="minimumSize">
          <size>
-          <width>0</width>
-          <height>700</height>
+          <width>1500</width>
+          <height>600</height>
          </size>
         </property>
         <property name="frameShape">
@@ -37,10 +37,11 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
+        <zorder>editFrame</zorder>
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QFrame" name="frame">
+       <widget class="QFrame" name="editFrame">
         <property name="frameShape">
          <enum>QFrame::Box</enum>
         </property>
@@ -58,7 +59,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1026</width>
+     <width>1107</width>
      <height>21</height>
     </rect>
    </property>
@@ -80,8 +81,16 @@
     </property>
     <addaction name="actionAbout"/>
    </widget>
+   <widget class="QMenu" name="menuWindows">
+    <property name="title">
+     <string>Windows</string>
+    </property>
+    <addaction name="actionLibrary"/>
+    <addaction name="actionToolbox"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuTools"/>
+   <addaction name="menuWindows"/>
    <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
@@ -98,6 +107,16 @@
   <action name="actionMapping">
    <property name="text">
     <string>Mapping</string>
+   </property>
+  </action>
+  <action name="actionLibrary">
+   <property name="text">
+    <string>Library</string>
+   </property>
+  </action>
+  <action name="actionToolbox">
+   <property name="text">
+    <string>Toolbox</string>
    </property>
   </action>
  </widget>

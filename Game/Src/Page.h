@@ -22,12 +22,12 @@ class PageInstance : public Serializable
 {
 private:
 protected:
-    core::rectf		    m_Bound;
+    core::rectf             m_Bound;
     core::position2df	    m_Pos;
-    u32			    m_Index;
-    core::position2df	    m_Offset;
+    u32                     m_Index;
+    core::position2df       m_Offset;
 
-    GameObjectList_t	    m_Layers[EPAGE_LAYER_MAX];
+    GameObjectList_t        m_Layers[EPAGE_LAYER_MAX];
     GameObjectListIter_t    m_GameObjectsIter;
     bool_t                  m_DirtyPos;
 public:
@@ -36,25 +36,11 @@ public:
     void                    Update(float dt, const RenderContext&);
     void                    Destroy();
 
-    INL const core::rectf& GetBound() const
-    {
-        return m_Bound;
-    }
+    const core::rectf& GetBound() const;
+    u32 GetIndex() const;
 
-    INL u32 GetIndex() const
-    {
-        return m_Index;
-    }
-
-    INL const core::position2df& GetPosition() const
-    {
-        return m_Pos;
-    }
-
-    INL void SetPosition(const core::position2df& pos)
-    {
-        m_Pos = pos;
-    }
+    const core::position2df& GetPosition() const;
+    void SetPosition(const core::position2df& pos);
 
     void                     Scroll(float stepX, float stepY);
 
@@ -80,9 +66,9 @@ public:
 
 public:
 
-    static float			BackgroundLayerSpeed;
-    static core::position2df		MainLayerSpeed;
-    static float			ForegroundLayerSpeed;
+    static float            BackgroundLayerSpeed;
+    static core::position2df    MainLayerSpeed;
+    static float            ForegroundLayerSpeed;
 } ;
 
 #endif // __PAGE_H__

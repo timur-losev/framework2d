@@ -2,16 +2,22 @@
 #    define GameObject_h__
 
 #    include "Serializable.h"
-#    include "SharedPointer.h"
 
 SHARED_PTR_FORWARD(GameObject);
+SHARED_PTR_FORWARD(SpriteInstance);
+
+typedef std::list<GameObjectPtr>                 GameObjectList_t;
+typedef GameObjectList_t::iterator               GameObjectListIter_t;
 
 #    ifdef USE_INVOKER
-#        include <Invoker.h>
-class GameObject : public Serializable, public Common::Invoker
+#    include <Invoker.h>
+class GameObject : 
+    public Serializable, 
+    public Common::Invoker, 
+    public std::enable_shared_from_this<GameObject>
 #    else
 
-class GameObject : public Serializable
+class GameObject : public Serializable, public std::enable_shared_from_this<GameObject>
 #    endif
 {
 public:
@@ -29,10 +35,17 @@ protected:
     core::position2df       m_Shift;
     float                   m_Rotation; //degrees
     core::vector2df         m_Scale;
-    std::string           m_Name;
+    std::string             m_Name;
     hash_t                  m_Hash;
-    virtual hash_t          CalcHash();
-    core::position2df		m_Offset;
+
+    core::position2df       m_Offset;
+
+    hash_t                  CalcHash();
+
+    GameObjectList_t        m_Childs;
+    GameObjectPtr           m_Parent;
+
+    SpriteInstancePtr       m_SpriteInstance;
 public:
 
     GameObject();
@@ -44,90 +57,45 @@ public:
 
     virtual ~GameObject();
 
-    INL core::position2df&       Position()
-    {
-        return m_Position;
-    }
+    const core::position2df& GetPosition();
+    void                     SetPosition(const core::position2df& val);
+    
+    const std::string&       GetName();
+    void                     SetName(const std::string& val);
+    
+    const core::vector2df&   GetScale();
+    void                     SetScale(const core::vector2df& val); 
+    
+    float                    GetRotation();
+    void                     SetRotation(float val);
+    
+    const core::position2df& GetOffset();
+    void                     SetOffset(const core::position2df& val);
 
-    INL void                     Position(const core::position2df& val)
-    {
-        m_Position = val;
-    }
+    virtual hash_t           Hash();
 
-    INL std::string&           Name()
-    {
-        return m_Name;
-    }
+    virtual void             Update(float dt, const RenderContext& context);
 
-    INL void                     Name(const std::string& val)
-    {
-        m_Name = val;
-    }
+    virtual EType            Type() const;
 
-    INL core::vector2df&         Scale()
-    {
-        return m_Scale;
-    }
+    virtual void             Serialize(DynamicMemoryStream& dms);
+    virtual size_t           Deserialize(MemoryStream& ms);
 
-    INL void                     Scale(const core::vector2df& val)
-    {
-        m_Scale = val;
-    }
+    GameObject&              operator=(const GameObject& oth);
+    bool_t                   operator==(const GameObject& oth);
+    virtual bool_t           HitTest(const core::position2df& in) const;
 
-    INL float                    Rotation()
-    {
-        return m_Rotation;
-    }
+    SpriteInstancePtr        GetSprite();
+    SpriteInstanceConstPtr   GetSprite() const;
 
-    INL void                     Rotation(float val)
-    {
-        m_Rotation = val;
-    }
+    void                     SetSprite(SpriteInstancePtr sprite);
 
-    INL core::position2df&       Offset()
-    {
-        return m_Offset;
-    }
-
-    INL void                     Offset(const core::position2df& val)
-    {
-        m_Offset = val;
-    }
-
-    virtual hash_t               Hash();
-
-    virtual void Update(float dt, const RenderContext& context);
-
-    virtual EType                Type() const
-    {
-        return ET_NONE;
-    }
-
-    virtual void                 Serialize(DynamicMemoryStream& dms);
-    virtual size_t               Deserialize(MemoryStream& ms);
-
-    GameObject& operator=(const GameObject& oth);
-    bool_t operator==(const GameObject& oth);
-
-    INL StaticGameObject*        AsStaticGameObject()
-    {
-        APP_API_ASSERT(Type() == ET_STATIC);
-        return (StaticGameObject*)this;
-    }
-
-    INL AnimatedGameObject*      AsAnimatedGameObject()
-    {
-        APP_API_ASSERT(Type() == ET_ANIMATED);
-        return (AnimatedGameObject*)this;
-    }
-
-    virtual bool_t               HitTest(const core::position2df& in) const
-    {
-        return FALSE;
-    }
+    GameObjectPtr            GetParent();
+    void                     SetParent(GameObjectPtr);
+    void                     AddChild(GameObjectPtr);
+    void                     AddChild(GameObjectPtr, int index);
+    void                     RemoveChild(GameObjectPtr);
+    GameObjectPtr            GetChild(const std::string& name);
 } ;
-
-typedef std::list<GameObjectPtr>                 GameObjectList_t;
-typedef GameObjectList_t::iterator				GameObjectListIter_t;
 
 #endif // GameObject_h__

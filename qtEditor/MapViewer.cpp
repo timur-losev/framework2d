@@ -377,3 +377,28 @@ void MapViewer::SetScaleByPoint(float scale, int x, int y)
 
     m_Scale = core::vector2df(scale, scale);
 }
+
+int MapViewer::GetSelectedFrameIndex()
+{
+    return m_SelectedFrame;
+}
+
+void MapViewer::ShowHideSelections()
+{
+    m_IsShowAllSelections = !m_IsShowAllSelections;
+}
+
+bool_t MapViewer::IsShowAllSelection()
+{
+    return m_IsShowAllSelections;
+}
+
+int MapViewer::GetCurrentTexture()
+{
+    return m_CurrentTexture;
+}
+
+const SpriteFramesListPtr& MapViewer::GetFramesList() const
+{
+    return m_Frames;
+}

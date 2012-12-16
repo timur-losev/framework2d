@@ -285,7 +285,7 @@ void EditablePagedLevel::OnMouseDown( int btn, int x, int y )
             if (obj)
             {
                 ChangeState(LEVEL_STATE_MOVE_OBJECT);
-                LogDebug("Selected object: " << obj->Name().c_str());
+                LogDebug("Selected object: " << obj->GetName().c_str());
             }
 
             m_SelectedObject = obj; //Can be NULL
@@ -337,7 +337,7 @@ void EditablePagedLevel::OnMouseMove( int x, int y )
         {
             if (EMB_LEFT == m_BtnId && m_SelectedObject)
             {
-                m_SelectedObject->Position(m_SelectedObject->Position() + core::position2df((float)deltaX, (float)deltaY));
+                m_SelectedObject->SetPosition(m_SelectedObject->GetPosition() + core::position2df((float)deltaX, (float)deltaY));
             }
             else
             {

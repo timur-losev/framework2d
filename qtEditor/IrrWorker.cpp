@@ -89,7 +89,7 @@ void IrrWorker::Start()
         if (auto  mgr = m_LevelManager.lock())
             mgr->Update(delta, m_Context);
 
-        LogDebug("MS " << delta << " Thread= " << std::this_thread::get_id());
+        //LogDebug("MS " << delta << " Thread= " << std::this_thread::get_id());
 
         m_Driver->endScene();
 

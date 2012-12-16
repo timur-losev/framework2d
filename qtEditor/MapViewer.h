@@ -26,56 +26,42 @@ public:
         BODY_INTERSECT,
         NONE_INTERSECT
     } ;
+
+
 private:
-    const core::recti		GetSelectedFrameAnchorRect(IntersectSelection anchor);
+    const core::recti       GetSelectedFrameAnchorRect(IntersectSelection anchor);
 public:
 
     MapViewer();
     virtual ~MapViewer(void);
 
-    void					Init (const core::position2df& previewPos,
-                                                const core::vector2di& previewSize);
-    virtual void Update(const RenderContext& driver);
+    void                    Init (const core::position2df& previewPos,const core::vector2di& previewSize);
+    virtual                 void Update(const RenderContext& driver);
 
-    bool_t					IntersectWithPreview(int x, int y);
-    IntersectSelection		IntersectWithSelectedFrame(int x, int y);
-    int						IntersectWithShowedFrame(int x, int y);
+    bool_t                  IntersectWithPreview(int x, int y);
+    IntersectSelection      IntersectWithSelectedFrame(int x, int y);
+    int                     IntersectWithShowedFrame(int x, int y);
 
-    INL const SpriteFramesListPtr& GetFramesList() const
-    {
-        return m_Frames;
-    }
+    const SpriteFramesListPtr& GetFramesList() const;
 
-    void					AddFrame(const FrameDef& frame);
-	bool					AddFrame(const core::recti& frameRect, FrameDef& out);
-    void					SelectFrame(u32 index);
+    void                    AddFrame(const FrameDef& frame);
+    bool                    AddFrame(const core::recti& frameRect, FrameDef& out);
+    void                    SelectFrame(u32 index);
 
-    INL int					GetSelectedFrameIndex()
-    {
-        return m_SelectedFrame;
-    }
+    int                     GetSelectedFrameIndex();
 
-    INL void				ShowHideSelections()
-    {
-        m_IsShowAllSelections = !m_IsShowAllSelections;
-    }
+    void                    ShowHideSelections();
 
-    INL bool_t				IsShowAllSelection()
-    {
-        return m_IsShowAllSelections;
-    }
-    void					UpdateSelectedPosition(int dx, int dy);
-    void					UpdateSelectedSize(int dw, int dh);
-    void					SetCurrentTexture(int index);
-    void					Centering();
+    bool_t                  IsShowAllSelection();
+    void                    UpdateSelectedPosition(int dx, int dy);
+    void                    UpdateSelectedSize(int dw, int dh);
+    void                    SetCurrentTexture(int index);
+    void                    Centering();
 
-    INL int					GetCurrentTexture()
-    {
-        return m_CurrentTexture;
-    }
-    void					RemoveFrame(int index);
-    void					RemoveTexture(int index);
-    void					SetScaleByPoint(float scale, int x, int y);
+    int                     GetCurrentTexture();
+    void                    RemoveFrame(int index);
+    void                    RemoveTexture(int index);
+    void                    SetScaleByPoint(float scale, int x, int y);
 } ;
 
 

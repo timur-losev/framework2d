@@ -39,116 +39,46 @@ public:
     SpriteInstance(void);
     virtual ~SpriteInstance(void);
 
-    virtual void Update(const RenderContext& context);
+    virtual void           Update(const RenderContext& context);
 
     void                   Load(const std::string& resName);
     bool_t                 LoadTexture(const std::string& resName, video::ITexture* out);
 
-    INL void Stop()
-    {
-        m_IsAnimated = FALSE;
-    }
+    void                   Stop();
+    void                   Play();
+    void                   GotoAndStop(u32 frameIndx);
+    void                   GotoAndPlay(u32 frameIndx);
 
-    INL void Play()
-    {
-        m_IsAnimated = TRUE;
-    }
-    void GotoAndStop(u32 frameIndx);
-    void GotoAndPlay(u32 frameIndx);
+    u32                    GetTotalAnimations() const;
+    u32                    GetCurrentAnimation() const;
 
-    INL	u32 GetTotalAnimations() const
-    {
-        return m_AnimationCount;
-    }
+    void                   SetCurrentAnimation(u32 animationIndx);
+    u32                    GetAnimationFrames() const;
 
-    INL u32 GetCurrentAnimation() const
-    {
-        return m_CurrentAnimation;
-    }
-    void SetCurrentAnimation(u32 animationIndx);
+    u32                    GetCurrentFrame() const;
 
-    INL u32 GetAnimationFrames() const
-    {
-        return m_FramesCount;
-    }
-
-    INL u32 GetCurrentFrame() const
-    {
-        return m_CurrentFrame;
-    }
-
-    INL u32 GetTotalFrames() const
-    {
-        return m_TotalFrames;
-    }
+    u32                    GetTotalFrames() const;
     // Properties
 
-    INL void SetPosition(const core::position2df& position)
-    {
-        m_Position = position;
-    }
+    void                   SetPosition(const core::position2df& position);
+    const core::position2df& GetPosition() const;
 
-    INL const core::position2df& GetPosition() const
-    {
-        return m_Position;
-    }
+    void                   SetScale(const core::vector2df& scale);
+    const core::vector2df& GetScale() const;
 
-    INL void SetScale(const core::vector2df& scale)
-    {
-        m_Scale = scale;
-    }
+    void                   SetRotationPoint(const core::position2df& rotationPoint);
+    const core::position2df& GetRotationPoint() const;
 
-    INL const core::vector2df& GetScale() const
-    {
-        return m_Scale;
-    }
+    void                   SetRotation(f32 rotation);
+    f32                    GetRotation() const;
 
-    INL void SetRotationPoint(const core::position2df& rotationPoint)
-    {
-        m_RotationPoint = rotationPoint;
-    }
+    void                   SetVisible(bool_t isVisible);
+    bool_t                 GetVisible() const;
 
-    INL const core::position2df& GetRotationPoint() const
-    {
-        return m_RotationPoint;
-    }
+    bool_t                 IsAnimated() const;
 
-    INL void SetRotation(f32 rotation)
-    {
-        m_Rotation = rotation;
-    }
-
-    INL f32 GetRotation() const
-    {
-        return m_Rotation;
-    }
-
-    INL void SetVisible(bool_t isVisible)
-    {
-        m_IsVisible = isVisible;
-    }
-
-    INL bool_t GetVisible() const
-    {
-        return m_IsVisible;
-    }
-
-    INL bool_t IsAnimated() const
-    {
-        return m_IsAnimated;
-    }
-
-    INL SpriteTexturesListConstPtr GetTexturesList() const
-    {
-        return m_Atlases;
-    }
-
-    INL SpriteFramesListConstPtr GetFramesList() const
-    {
-        return m_Frames;
-    }
-
-private:
+    SpriteTexturesListConstPtr GetTexturesList() const;
+    SpriteFramesListConstPtr GetFramesList() const;
 
 } ;
 
