@@ -356,3 +356,16 @@ SpriteFramesListConstPtr SpriteInstance::GetFramesList() const
 {
     return m_Frames;
 }
+
+bool_t SpriteInstance::HitTest( const core::position2df& in ) const
+{
+    for(size_t i = 0; i < m_FramesCount; ++i)
+    {
+        const FrameDef& frame = m_Frames->get(i);
+
+        if (frame.originalWidth >= in.X && frame.originalHeight >= in.Y)
+            return TRUE;
+    }
+
+    return FALSE;
+}

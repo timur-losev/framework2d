@@ -4,7 +4,7 @@
 #    include "GameObject.h"
 #    include "Serializable.h"
 
-enum ePageLayer
+enum EPageLayer
 {
     EPAGE_LAYER_BOTTOM = 0,
     EPAGE_LAYER_MIDDLE,
@@ -49,12 +49,12 @@ public:
     GameObjectPtr            GetGameObjectByName(const std::string& name);
     GameObjectPtr            GetGameObjectByHash(hash_t hash);
     GameObjectPtr            GetGameObjectByPoint(const core::position2df& p);
-    bool_t                   AddGameObject(GameObjectPtr obj, const ePageLayer layer = EPAGE_LAYER_MIDDLE);
-    GameObjectPtr            AddGameObject(const std::string& name, GameObject::EType type, const ePageLayer layer = EPAGE_LAYER_MIDDLE);
-    GameObjectListIter_t     RemoveGameObject(GameObjectPtr obj, const ePageLayer layer = EPAGE_LAYER_MIDDLE);
+    bool_t                   AddGameObject(GameObjectPtr obj, const EPageLayer layer = EPAGE_LAYER_MIDDLE);
+    GameObjectPtr            AddGameObject(const std::string& name, GameObject::EType type, const EPageLayer layer = EPAGE_LAYER_MIDDLE);
+    GameObjectListIter_t     RemoveGameObject(GameObjectPtr obj, const EPageLayer layer = EPAGE_LAYER_MIDDLE);
 
-    const GameObjectList_t&  GetObjects(const ePageLayer layer = EPAGE_LAYER_MIDDLE) const;
-    GameObjectList_t&        GetObjects(const ePageLayer layer = EPAGE_LAYER_MIDDLE);
+    const GameObjectList_t&  GetObjects(const EPageLayer layer = EPAGE_LAYER_MIDDLE) const;
+    GameObjectList_t&        GetObjects(const EPageLayer layer = EPAGE_LAYER_MIDDLE);
 
     virtual void             Serialize(DynamicMemoryStream& dms);
     virtual size_t           Deserialize(MemoryStream& ms);

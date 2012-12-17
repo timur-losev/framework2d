@@ -31,10 +31,7 @@ public:
 
 private:
 protected:
-    core::position2df       m_Position;
     core::position2df       m_Shift;
-    float                   m_Rotation; //degrees
-    core::vector2df         m_Scale;
     std::string             m_Name;
     hash_t                  m_Hash;
 
@@ -57,7 +54,7 @@ public:
 
     virtual ~GameObject();
 
-    const core::position2df& GetPosition();
+    const core::position2df& GetPosition() const;
     void                     SetPosition(const core::position2df& val);
     
     const std::string&       GetName();

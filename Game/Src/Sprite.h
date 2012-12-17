@@ -80,6 +80,8 @@ public:
     SpriteTexturesListConstPtr GetTexturesList() const;
     SpriteFramesListConstPtr GetFramesList() const;
 
+    bool_t                  HitTest(const core::position2df& in) const;
+
 } ;
 
 #endif // _CSPRITE_H_

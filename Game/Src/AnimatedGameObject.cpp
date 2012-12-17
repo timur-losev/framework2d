@@ -15,11 +15,7 @@ AnimatedGameObject::~AnimatedGameObject()
 
 void AnimatedGameObject::Update( float dt, const RenderContext& context )
 {
-    m_Sprite->SetPosition(m_Position);
-    m_Sprite->SetRotation(m_Rotation);
-    m_Sprite->SetScale(m_Scale);
 
-    m_Sprite->Update(context);
 }
 
 void AnimatedGameObject::Serialize( DynamicMemoryStream& dms )

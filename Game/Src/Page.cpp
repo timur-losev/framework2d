@@ -28,7 +28,7 @@ void PageInstance::Update( float dt, const RenderContext& context )
 
     for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
     {
-        GameObjectList_t& objects_list = m_Layers[(ePageLayer)i];
+        GameObjectList_t& objects_list = m_Layers[(EPageLayer)i];
 
         for(auto& obj : objects_list)
         {
@@ -52,7 +52,7 @@ void PageInstance::Destroy()
 {
     /*for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
     {
-    GameObjectList_t& objects_list = m_Layers[(ePageLayer)i];
+    GameObjectList_t& objects_list = m_Layers[(EPageLayer)i];
 
     for(auto obji = objects_list.begin(),
     auto obje = objects_list.end(); obji != obje; ++obji)
@@ -60,7 +60,7 @@ void PageInstance::Destroy()
     APP_API_DEL(*obji);
     }
 
-    m_Layers[(ePageLayer)i].clear();
+    m_Layers[(EPageLayer)i].clear();
     }*/
 }
 
@@ -74,12 +74,12 @@ bool_t PageInstance::Init(size_t index)
     return TRUE;
 }
 
-const GameObjectList_t& PageInstance::GetObjects( const ePageLayer layer ) const
+const GameObjectList_t& PageInstance::GetObjects( const EPageLayer layer ) const
 {
     return m_Layers[layer];
 }
 
-GameObjectList_t& PageInstance:: GetObjects(const ePageLayer layer)
+GameObjectList_t& PageInstance:: GetObjects(const EPageLayer layer)
 {
     return m_Layers[layer];
 }
@@ -93,7 +93,7 @@ GameObjectPtr PageInstance::GetGameObjectByName( const std::string& name )
 {
     for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
     {
-        GameObjectList_t &object_list = m_Layers[(ePageLayer)i];
+        GameObjectList_t &object_list = m_Layers[(EPageLayer)i];
 
         for(auto& obj: object_list)
         {
@@ -109,7 +109,7 @@ GameObjectPtr PageInstance::GetGameObjectByHash( hash_t hash )
 {
     for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
     {
-        GameObjectList_t &object_list = m_Layers[(ePageLayer)i];
+        GameObjectList_t &object_list = m_Layers[(EPageLayer)i];
 
         for(auto& obj : object_list)
         {
@@ -121,7 +121,7 @@ GameObjectPtr PageInstance::GetGameObjectByHash( hash_t hash )
     return NULL;
 }
 
-bool_t PageInstance::AddGameObject( GameObjectPtr obj, const ePageLayer layer )
+bool_t PageInstance::AddGameObject( GameObjectPtr obj, const EPageLayer layer )
 {
 #ifdef DBGMODE
     GameObjectList_t &object_list = m_Layers[layer];
@@ -142,7 +142,7 @@ bool_t PageInstance::AddGameObject( GameObjectPtr obj, const ePageLayer layer )
     return TRUE;
 }
 
-GameObjectPtr PageInstance::AddGameObject( const std::string& name, GameObject::EType type, const ePageLayer layer)
+GameObjectPtr PageInstance::AddGameObject( const std::string& name, GameObject::EType type, const EPageLayer layer)
 {
     GameObjectPtr gobj;
 
@@ -167,7 +167,7 @@ GameObjectPtr PageInstance::AddGameObject( const std::string& name, GameObject::
     return gobj;
 }
 
-GameObjectListIter_t PageInstance::RemoveGameObject( GameObjectPtr obj, const ePageLayer layer )
+GameObjectListIter_t PageInstance::RemoveGameObject( GameObjectPtr obj, const EPageLayer layer )
 {
     GameObjectList_t& objects_list = m_Layers[layer];
 
@@ -221,7 +221,7 @@ void PageInstance::Serialize( DynamicMemoryStream& dms )
     for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
     {
         dms.write(&m_Index);
-        ushort_t objCount = (ushort_t)m_Layers[(ePageLayer)i].size();
+        ushort_t objCount = (ushort_t)m_Layers[(EPageLayer)i].size();
         dms.write(&objCount);
 
         GameObjectList_t& objects_list = m_Layers[i];

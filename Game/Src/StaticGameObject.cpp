@@ -20,7 +20,7 @@ void StaticGameObject::Update( float dt, const RenderContext& context )
     m_Driver = context.Driver;
 
     GameObject::Update(dt, context);
-
+#if 0
     for(m_GraphicStateIterBegin = m_GraphicState.begin(), m_GraphicStateIterEnd = m_GraphicState.end();
         m_GraphicStateIterEnd != m_GraphicStateIterBegin; m_GraphicStateIterBegin++)
     {
@@ -99,6 +99,8 @@ void StaticGameObject::Update( float dt, const RenderContext& context )
         m_Driver->setTransform( video::ETS_PROJECTION, oldProjMat);
         m_Driver->setTransform( video::ETS_VIEW, oldViewMat);
     }
+
+#endif
 }
 
 void StaticGameObject::Serialize( DynamicMemoryStream& dms )

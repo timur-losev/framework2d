@@ -62,7 +62,6 @@ typedef std::shared_ptr<SpriteTexturesList const> SpriteTexturesListConstPtr;
 
 struct FrameDef
 {
-
     FrameDef(	std::string _name = "",
              float _left = 0,
              float _top = 0,

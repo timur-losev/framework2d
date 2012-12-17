@@ -88,12 +88,14 @@ void GameObject::Update( float dt, const RenderContext& context )
 
 void GameObject::Serialize( DynamicMemoryStream& dms )
 {
+    //TODO:
     dms.writeUTF8(m_Name);
     m_SpriteInstance->Serialize(dms);
 }
 
 size_t GameObject::Deserialize( MemoryStream& ms )
 {
+    //TODO:
     size_t read = 0;
     read = ms.readUTF8(m_Name);
     read += m_SpriteInstance->Deserialize(ms);
@@ -101,7 +103,7 @@ size_t GameObject::Deserialize( MemoryStream& ms )
     return read;
 }
 
-const core::position2df& GameObject::GetPosition()
+const core::position2df& GameObject::GetPosition() const
 {
     return m_SpriteInstance->GetPosition();
 }
@@ -158,6 +160,19 @@ GameObject::EType GameObject::Type() const
 
 bool_t GameObject::HitTest( const core::position2df& in ) const
 {
+    const core::position2df& thispos = GetPosition();
+    if (in.X < thispos.X || in.Y < thispos.Y)
+        return FALSE;
+
+    if (m_SpriteInstance->HitTest(in))
+        return TRUE;
+
+    for(auto & obj: m_Childs)
+    {
+        if (obj->HitTest(in))
+            return TRUE;
+    }
+
     return FALSE;
 }
 
