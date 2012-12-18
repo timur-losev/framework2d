@@ -10,6 +10,7 @@
 #include "GuiManager.h"
 
 #include "MainWindowController.h"
+#include "EditFrameController.h"
 #include "IRegularView.h"
 
 //#include "Sigslot2.h"
@@ -33,10 +34,14 @@ int main(int argc, char** argv)
     MainWindowControllerPtr mainWnd = GuiManager::getRef().CreateMainWindow();
     mainWnd->View().ShowView();
 
-	AssetsManager* assetmanager = new AssetsManager();
+    EditFrameControllerPtr editFrame = GuiManager::getRef().CreateEditFrame();
+    mainWnd->SetEditFrame(editFrame);
+
+    AssetsManager* assetmanager = new AssetsManager();
 
     int ret = app.exec();
 
+    APP_API_DEL(assetmanager);
     APP_API_DEL(guimanager);
     APP_API_DEL(logger);
     return ret;

@@ -9,10 +9,12 @@
 
 #include "IMainWindow.h"
 #include "IRegularView.h"
+#include "IEditFrame.h"
 
 #include "GuiManager.h"
 #include "AboutWindowController.h"
 #include "MappingToolWindowController.h"
+#include "EditFrameController.h"
 
 #include "LevelManager.h"
 #include "EditablePagedLevel.h"
@@ -21,7 +23,7 @@
 MainWindowController::MainWindowController(IMainWindowPtr view):
 m_MainWindowView(view)
 {
-    m_View = static_cast<IRegularView*>(m_MainWindowView.get());
+    m_View = CAST_TO_REGULAR_VIEW(m_MainWindowView.get());
 
     AttachViewSlots();
 }
@@ -150,4 +152,20 @@ void MainWindowController::OnKeyboardEvent( irr::EKEY_CODE c, EButtonState s)
             //TODO
         }
     }
+}
+
+void MainWindowController::SetEditFrame( EditFrameControllerPtr frame)
+{
+    m_MainWindowView->SetEditFrame(frame->View());
+
+    m_EditFrameController = frame;
+    //subscribe on Edit signals
+    IEditFramePtr frameView = frame->GetFrameView();
+
+    frameView->AttachOn(IEditFrame::ES_ON_ADD_EMPTY_OBJECT, std::bind(&MainWindowController::OnAddNewEmptyObject, this));
+}
+
+void MainWindowController::OnAddNewEmptyObject()
+{
+
 }

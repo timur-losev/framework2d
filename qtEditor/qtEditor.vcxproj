@@ -97,15 +97,18 @@
     <ClCompile Include="Application.cpp">
       <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreprocessToFile>
     </ClCompile>
+    <ClCompile Include="EditFrameController.cpp" />
     <ClCompile Include="EdPrec.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EdPrec.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="GuiManager.cpp" />
     <ClCompile Include="Gui\AboutWindow.cpp" />
+    <ClCompile Include="Gui\EditFrame.cpp" />
     <ClCompile Include="Gui\MainWindow.cpp" />
     <ClCompile Include="Gui\MappingToolWindow.cpp" />
     <ClCompile Include="Gui\moc_AboutWindow.cpp" />
+    <ClCompile Include="Gui\moc_EditFrame.cpp" />
     <ClCompile Include="Gui\moc_MainWindow.cpp" />
     <ClCompile Include="Gui\moc_MappingToolWindow.cpp" />
     <ClCompile Include="Gui\moc_QIrrControl.cpp" />
@@ -135,16 +138,20 @@
     <ClInclude Include="..\Game\Src\StaticGameObject.h" />
     <ClInclude Include="..\Game\Src\ZwoptexParser.h" />
     <ClInclude Include="AboutWindowController.h" />
+    <ClInclude Include="EditFrameController.h" />
     <ClInclude Include="EdPrec.h" />
     <ClInclude Include="GuiManager.h" />
     <ClInclude Include="Gui\AboutWindow.h" />
+    <ClInclude Include="Gui\EditFrame.h" />
     <ClInclude Include="Gui\MainWindow.h" />
     <ClInclude Include="Gui\MappingToolWindow.h" />
     <ClInclude Include="Gui\QIrrControl.h" />
     <ClInclude Include="Gui\ui_AboutWindow.hpp" />
+    <ClInclude Include="Gui\ui_EditFrame.hpp" />
     <ClInclude Include="Gui\ui_MainWindow.hpp" />
     <ClInclude Include="Gui\ui_MappingToolWindow.hpp" />
     <ClInclude Include="IAboutWindow.h" />
+    <ClInclude Include="IEditFrame.h" />
     <ClInclude Include="IIrrControl.h" />
     <ClInclude Include="IMainWindow.h" />
     <ClInclude Include="IMappingToolWindow.h" />

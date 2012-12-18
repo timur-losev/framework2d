@@ -24,7 +24,7 @@ private:
 protected:
     core::rectf             m_Bound;
     core::position2df	    m_Pos;
-    u32                     m_Index;
+    u32                     m_PageIndex;
     core::position2df       m_Offset;
 
     GameObjectList_t        m_Layers[EPAGE_LAYER_MAX];
@@ -50,7 +50,7 @@ public:
     GameObjectPtr            GetGameObjectByHash(hash_t hash);
     GameObjectPtr            GetGameObjectByPoint(const core::position2df& p);
     bool_t                   AddGameObject(GameObjectPtr obj, const EPageLayer layer = EPAGE_LAYER_MIDDLE);
-    GameObjectPtr            AddGameObject(const std::string& name, GameObject::EType type, const EPageLayer layer = EPAGE_LAYER_MIDDLE);
+    GameObjectPtr            AddGameObject(const std::string& name, const EPageLayer layer = EPAGE_LAYER_MIDDLE);
     GameObjectListIter_t     RemoveGameObject(GameObjectPtr obj, const EPageLayer layer = EPAGE_LAYER_MIDDLE);
 
     const GameObjectList_t&  GetObjects(const EPageLayer layer = EPAGE_LAYER_MIDDLE) const;

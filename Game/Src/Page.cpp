@@ -10,7 +10,7 @@ core::position2df	PageInstance::MainLayerSpeed		= core::position2df(5.f, 5.f);
 float				PageInstance::ForegroundLayerSpeed = 7.f;
 
 PageInstance::PageInstance()
-    : m_Index(PE_UINT_MAX)
+    : m_PageIndex(PE_UINT_MAX)
     , m_DirtyPos(FALSE)
 {
 }
@@ -66,7 +66,7 @@ void PageInstance::Destroy()
 
 bool_t PageInstance::Init(size_t index)
 {
-    m_Index = index;
+    m_PageIndex = index;
     m_Pos.Y = 0;
     m_Pos.X = index * PageSize.Width;
     m_Bound = core::rectf(m_Pos, PageSize);
@@ -126,9 +126,10 @@ bool_t PageInstance::AddGameObject( GameObjectPtr obj, const EPageLayer layer )
 #ifdef DBGMODE
     GameObjectList_t &object_list = m_Layers[layer];
 
-    for(auto& thisobj : object_list)
+    for(auto & thisobj : object_list)
     {
-        if (obj->Hash() == thisobj->Hash() || obj->GetName() == thisobj->GetName())
+        if (obj->Hash() == thisobj->Hash() ||
+            obj->GetName() == thisobj->GetName())
         {
             APP_API_ASSERT("Game object already exists." && FALSE);
             LogMessage(LOG_ERR, "PageInstance::AddGameObject. Game object already exists. [" << obj->GetName() << "]");
@@ -142,19 +143,9 @@ bool_t PageInstance::AddGameObject( GameObjectPtr obj, const EPageLayer layer )
     return TRUE;
 }
 
-GameObjectPtr PageInstance::AddGameObject( const std::string& name, GameObject::EType type, const EPageLayer layer)
+GameObjectPtr PageInstance::AddGameObject( const std::string& name, const EPageLayer layer)
 {
-    GameObjectPtr gobj;
-
-    switch(type)
-    {
-    case GameObject::ET_NONE: gobj.reset(new GameObject());
-        break;
-    case GameObject::ET_STATIC: gobj.reset(new StaticGameObject());
-        break;
-    case GameObject::ET_ANIMATED: gobj.reset(new AnimatedGameObject());
-        break;
-    }
+    GameObjectPtr gobj(new GameObject());
 
     gobj->SetName(name);
     gobj->Hash(); //Calc hash here
@@ -220,7 +211,7 @@ void PageInstance::Serialize( DynamicMemoryStream& dms )
 
     for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
     {
-        dms.write(&m_Index);
+        dms.write(&m_PageIndex);
         ushort_t objCount = (ushort_t)m_Layers[(EPageLayer)i].size();
         dms.write(&objCount);
 
@@ -228,8 +219,8 @@ void PageInstance::Serialize( DynamicMemoryStream& dms )
 
         for(auto obji = objects_list.begin(), e = objects_list.end(); obji != e; ++obji)
         {
-            uchar_t type = (*obji)->Type();
-            dms.write(&type);
+            /*uchar_t type = (*obji)->Type();
+            dms.write(&type);*/
 
             (*obji)->Serialize(dms);
         }
@@ -238,50 +229,33 @@ void PageInstance::Serialize( DynamicMemoryStream& dms )
 
 size_t PageInstance::Deserialize( MemoryStream& ms )
 {
+    size_t count = 0;
     size_t layersCount = 0;
-    ms.read(&layersCount);
+
+    count = ms.read(&layersCount);
+
     if (EPAGE_LAYER_MAX != layersCount)
     {
         LogMessage(LOG_ERR, "PageInstance::Deserialize. Read file have incorrect version. Please check file format. Exist layers: " << EPAGE_LAYER_MAX << " read: " << layersCount);
         return 0;
     }
 
-    size_t count = 0;
     for (int layerIndx = 0; layerIndx < EPAGE_LAYER_MAX; ++layerIndx)
     {
-        count += ms.read(&m_Index);
+        count += ms.read(&m_PageIndex);
         ushort_t objCount = 0;
         count += ms.read(&objCount);
 
         for(ushort_t i = 0; i < objCount; ++i)
         {
-            GameObjectPtr obj = NULL;
-            uchar_t type = GameObject::ET_NONE;
-
-            count += ms.read(&type);
-
-            switch(type)
-            {
-            case GameObject::ET_STATIC:
-                obj.reset(new StaticGameObject());
-                break;
-
-            case GameObject::ET_ANIMATED:
-                //TODO
-                break;
-
-            default:
-                APP_API_ASSERT(FALSE && "Game object deserialization failed.");
-                return 0;
-                break;
-            }
+            GameObjectPtr obj(new GameObject());
 
             count += obj->Deserialize(ms);
 
             AddGameObject(obj);
         }
 
-        Init(m_Index);
+        Init(m_PageIndex);
     }
 
     return count;
@@ -294,7 +268,7 @@ const core::rectf& PageInstance::GetBound() const
 
 u32 PageInstance::GetIndex() const
 {
-    return m_Index;
+    return m_PageIndex;
 }
 
 const core::position2df& PageInstance::GetPosition() const

@@ -18,7 +18,6 @@ public:
 
     // overrides:
     virtual void Update(float dt, const RenderContext& context);
-    virtual GameObject::EType       Type() const { return ET_ANIMATED; }
     virtual void                    Serialize(DynamicMemoryStream& dms);
     virtual size_t                  Deserialize(MemoryStream& ms);
     virtual bool_t                  HitTest(const core::position2df& in) const;

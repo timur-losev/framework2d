@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1107</width>
+    <width>999</width>
     <height>913</height>
    </rect>
   </property>
@@ -27,21 +27,10 @@
        <widget class="QFrame" name="renderFrame">
         <property name="minimumSize">
          <size>
-          <width>1500</width>
+          <width>800</width>
           <height>600</height>
          </size>
         </property>
-        <property name="frameShape">
-         <enum>QFrame::Box</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-        <zorder>editFrame</zorder>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QFrame" name="editFrame">
         <property name="frameShape">
          <enum>QFrame::Box</enum>
         </property>
@@ -59,7 +48,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1107</width>
+     <width>999</width>
      <height>21</height>
     </rect>
    </property>

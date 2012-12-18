@@ -21,14 +21,6 @@ class GameObject : public Serializable, public std::enable_shared_from_this<Game
 #    endif
 {
 public:
-
-    enum EType
-    {
-        ET_NONE = 0,
-        ET_STATIC,
-        ET_ANIMATED
-    } ;
-
 private:
 protected:
     core::position2df       m_Shift;
@@ -72,8 +64,6 @@ public:
     virtual hash_t           Hash();
 
     virtual void             Update(float dt, const RenderContext& context);
-
-    virtual EType            Type() const;
 
     virtual void             Serialize(DynamicMemoryStream& dms);
     virtual size_t           Deserialize(MemoryStream& ms);

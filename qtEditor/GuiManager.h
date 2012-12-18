@@ -14,6 +14,7 @@
 SHARED_PTR_FORWARD(MainWindowController);
 SHARED_PTR_FORWARD(AboutWindowController);
 SHARED_PTR_FORWARD(MappingToolWindowController);
+SHARED_PTR_FORWARD(EditFrameController);
 
 class GuiManager : public Common::Singleton<GuiManager>
 {
@@ -22,6 +23,8 @@ private:
     AboutWindowControllerPtr            m_AboutWindow;
     MainWindowControllerPtr             m_MainWindow;
     MappingToolWindowControllerPtr      m_MappingToolWindow;
+    EditFrameControllerPtr              m_EditFrame;
+
     IRegularView*                       m_ForParentView;
     bool_t                              m_Modality;
 
@@ -38,6 +41,7 @@ public:
     MainWindowControllerPtr            CreateMainWindow();
     AboutWindowControllerPtr           CreateAboutWindow();
     MappingToolWindowControllerPtr     CreateMappingToolWindow();
+    EditFrameControllerPtr             CreateEditFrame();
 } ;
 
 #endif	/* GUIMANAGER_H */

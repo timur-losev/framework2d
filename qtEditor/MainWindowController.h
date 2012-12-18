@@ -14,17 +14,21 @@
 SHARED_PTR_FORWARD(IMainWindow);
 SHARED_PTR_FORWARD(LevelManager);
 SHARED_PTR_FORWARD(EditablePagedLevel);
+SHARED_PTR_FORWARD(EditFrameController);
 
 class MainWindowController : public IRegularController
 {
 private:
-    IMainWindowPtr      m_MainWindowView;
-    LevelManagerPtr     m_LevelManager;
-    EditablePagedLevelPtr  m_Level;
+    IMainWindowPtr          m_MainWindowView;
+    EditFrameControllerPtr  m_EditFrameController;
+    LevelManagerPtr         m_LevelManager;
+    EditablePagedLevelPtr   m_Level;
 public:
 
     MainWindowController(IMainWindowPtr view);
     ~MainWindowController();
+
+    void SetEditFrame(EditFrameControllerPtr);
 
 private:
     void AttachViewSlots();
@@ -42,6 +46,9 @@ private:
     void OnMouseWheel(int delta, int direction, int x, int y);
     void OnKeyboardEvent(irr::EKEY_CODE, EButtonState);
 
+
+    //Signals from EditFrame
+    void OnAddNewEmptyObject();
 } ;
 
 #endif	/* MAINWINDOWCONTROLLER_H */

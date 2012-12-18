@@ -25,6 +25,8 @@ public:
     };
 
     virtual IIrrControlPtr GetControl() = 0;
+
+    virtual void SetEditFrame(IRegularView& view) = 0;
 } ;
 
 #endif	/* IMAINWINDOW_H */

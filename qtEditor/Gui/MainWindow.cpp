@@ -1,13 +1,15 @@
 /*
- * File:   MainWindow.cpp
- * Author: void
- *
- * Created on September 22, 2012, 8:41 PM
- */
+* File:   MainWindow.cpp
+* Author: void
+*
+* Created on September 22, 2012, 8:41 PM
+*/
 
 #include "EdPrec.h"
 #include "MainWindow.h"
 #include "QIrrControl.h"
+#include "EditFrame.h"
+
 #include <QtGui/QPushButton>
 
 MainWindow::MainWindow()
@@ -59,14 +61,28 @@ void MainWindow::OnAtlasToolClicked()
 
 void MainWindow::resizeEvent(QResizeEvent *evt)
 {
-	if (m_IrrControl)
-	{
-		m_IrrControl->setGeometry(0, 0, widget.centralwidget->width(), widget.centralwidget->height());
-		m_IrrControl->Resize(core::dimension2du(widget.centralwidget->width(), widget.centralwidget->height()));
-	}
+    if (m_IrrControl)
+    {
+        m_IrrControl->setGeometry(0, 0, widget.centralwidget->width(), widget.centralwidget->height());
+        m_IrrControl->Resize(core::dimension2du(widget.centralwidget->width(), widget.centralwidget->height()));
+    }
 }
 
 IIrrControlPtr MainWindow::GetControl()
 {
     return m_IrrControl;
+}
+
+const char* MainWindow::DebugName() const
+{
+    return "MainWindow";
+}
+
+void MainWindow::SetEditFrame( IRegularView& view )
+{
+    m_EditFrame = static_cast<EditFrame*>(&view);
+
+    m_EditFrame->setParent(widget.centralwidget); //rebind the parent
+    m_EditFrame->setObjectName(QString::fromUtf8("EditFrame"));
+    widget.mainSizer->addWidget(m_EditFrame, 1, 0, 1, 1);
 }
