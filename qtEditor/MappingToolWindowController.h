@@ -38,6 +38,7 @@ private:
     void OnMouseUp(int x, int y, Qt::MouseButton button);
     void OnMouseWheel(int delta, int direction, int x, int y);
     void OnUpdateSpriteData(const SpriteInstance* sprite);
+	void OnSelectedFrameChanged(unsigned int index);
 } ;
 
 #endif	/* MAPPINGTOOLWINDOWCONTROLLER_H */

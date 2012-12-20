@@ -61,6 +61,7 @@ MappingToolWindow::MappingToolWindow(QWidget* parent) : QDialog(parent, Qt::Wind
     connect(actionOpenFile, SIGNAL(activated()), this, SLOT(OnOpenFileSelected()));
     connect(actionSaveFile, SIGNAL(activated()), this, SLOT(OnSaveFile()));
     connect(actionOpenTexture, SIGNAL(activated()), this, SLOT(OnOpenTextureSelected()));
+	connect(widget.mapTableView, SIGNAL(clicked(QModelIndex)), this, SLOT(OnFrameSelected(QModelIndex)));
 
 #ifdef USE_INVOKER
     QTimer* timer = new QTimer(this);
@@ -125,6 +126,13 @@ void MappingToolWindow::OnOpenTextureSelected()
 
     if (!arg.empty())
         CallBack(ES_ON_OPEN_IMAGE, arg);
+}
+
+void MappingToolWindow::OnFrameSelected(QModelIndex index)
+{
+	unsigned int i = index.row();
+
+	CallBack(ES_ON_CHANGE_SELECTED_FRAME, i);
 }
 
 IIrrControlPtr MappingToolWindow::GetControl()

@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MappingToolWindow.ui'
 **
-** Created: Sun 16. Dec 23:53:53 2012
-**      by: Qt User Interface Compiler version 4.8.3
+** Created: Thu 20. Dec 18:02:08 2012
+**      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -87,6 +87,7 @@ public:
 
         mapTableView = new QTableView(groupBox);
         mapTableView->setObjectName(QString::fromUtf8("mapTableView"));
+        mapTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
         mapTableView->horizontalHeader()->setDefaultSectionSize(50);
         mapTableView->horizontalHeader()->setMinimumSectionSize(23);
         mapTableView->verticalHeader()->setDefaultSectionSize(23);

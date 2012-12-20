@@ -26,6 +26,7 @@ m_MappingToolView(view)
     m_View->AttachOn<std::string>(IMappingToolWindow::ES_ON_OPEN_IMAGE, std::bind(&MappingToolWindowController::OnOpenTextureFile, this, std::placeholders::_1));
     m_View->AttachOn(IMappingToolWindow::EB_ON_SHOW, std::bind(&MappingToolWindowController::OnViewShowed, this));
 	m_View->AttachOn(IMappingToolWindow::EB_ON_CLOSE, std::bind(&MappingToolWindowController::OnViewClosed, this));
+	m_View->AttachOn<unsigned int>(IMappingToolWindow::ES_ON_CHANGE_SELECTED_FRAME, std::bind(&MappingToolWindowController::OnSelectedFrameChanged, this, std::placeholders::_1));
 
 }
 
@@ -149,4 +150,12 @@ void MappingToolWindowController::OnUpdateSpriteData(const SpriteInstance* sprit
     auto testuresList = sprite->GetTexturesList();
     auto framesList = sprite->GetFramesList();
 	m_MappingToolView->RefreshSpriteInfo(testuresList, framesList);
+}
+
+void MappingToolWindowController::OnSelectedFrameChanged(unsigned int index)
+{
+	if (m_Level)
+	{
+		m_Level->ChangeSelectedFrame(index);
+	}
 }

@@ -48,6 +48,7 @@ private Q_SLOTS:
     void OnOpenFileSelected();
     void OnSaveFile();
     void OnOpenTextureSelected();
+	void OnFrameSelected(QModelIndex index);
 
     void closeEvent (QCloseEvent * ev);
     void resizeEvent(QResizeEvent *evt);
