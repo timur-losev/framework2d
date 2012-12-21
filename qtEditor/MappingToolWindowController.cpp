@@ -185,9 +185,6 @@ void MappingToolWindowController::OnFrameDataChanged(unsigned int index, unsigne
 		bool result = false;
 		Common::Invoker::PerformCrossThreadCall(std::bind(&MappingToolLevel::ChangeFrameProperties, m_Level.get(), index, prop, value, std::ref(result)), m_Level.get(), TRUE);
 
-		if (!result)
-		{
-			// show cell error here
-		}
+		m_MappingToolView->SetFrameDataChangingError(!result);
 	}
 }

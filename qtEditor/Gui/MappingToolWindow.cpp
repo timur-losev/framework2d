@@ -235,3 +235,19 @@ void MappingToolWindow::RefreshSpriteInfo(SpriteTexturesListConstPtr textures, S
         widget.mapTableView->update();
     }
 }
+
+void MappingToolWindow::SetFrameDataChangingError(bool isSetError)
+{
+	QModelIndex index = widget.mapTableView->currentIndex();
+	QStandardItem* item = ((QStandardItemModel*)index.model())->item(index.row(), index.column());
+
+	if (isSetError)
+	{
+		item->setData(QBrush(Qt::red), Qt::BackgroundRole);
+		widget.mapTableView->selectionModel()->select(index, QItemSelectionModel::Deselect);
+	}
+	else
+	{
+		item->setData(QBrush(Qt::white), Qt::BackgroundRole);
+	}
+}
