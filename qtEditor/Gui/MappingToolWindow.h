@@ -11,6 +11,7 @@
 #    include "ui_MappingToolWindow.hpp"
 #    include "IMappingToolWindow.h"
 #    include <QtGui/QMenuBar>
+#	 include <QtGui/QStandardItem>
 
 SHARED_PTR_FORWARD(QIrrControl);
 
@@ -51,6 +52,7 @@ private Q_SLOTS:
 	void OnFrameSelected(QModelIndex index);
 	void OnShowAllChanged();
 	void OnTextureSelected(QModelIndex index);
+	void OnFrameDataChanged(QStandardItem* item);
 
     void closeEvent (QCloseEvent * ev);
     void resizeEvent(QResizeEvent *evt);

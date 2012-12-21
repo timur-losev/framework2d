@@ -29,6 +29,7 @@ m_MappingToolView(view)
 	m_View->AttachOn<unsigned int>(IMappingToolWindow::ES_ON_CHANGE_SELECTED_FRAME, std::bind(&MappingToolWindowController::OnSelectedFrameChanged, this, std::placeholders::_1));
 	m_View->AttachOn<bool>(IMappingToolWindow::ES_ON_SHOW_ALL_FRAMES, std::bind(&MappingToolWindowController::OnShowAllChanged, this, std::placeholders::_1));
 	m_View->AttachOn<unsigned int>(IMappingToolWindow::ES_ON_CHANGE_CURRENT_TEXTURE, std::bind(&MappingToolWindowController::OnCurrentTextureChanged, this, std::placeholders::_1));
+	m_View->AttachOn<unsigned int, unsigned int, const std::string>(IMappingToolWindow::ES_ON_FRAME_DATA_CHANGED, std::bind(&MappingToolWindowController::OnFrameDataChanged, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
 }
 
 MappingToolWindowController::~MappingToolWindowController()
@@ -174,5 +175,19 @@ void MappingToolWindowController::OnCurrentTextureChanged(unsigned int index)
 	if (m_Level)
 	{
 		m_Level->ChangeCurrentTexture(index);
+	}
+}
+
+void MappingToolWindowController::OnFrameDataChanged(unsigned int index, unsigned int prop, const std::string value)
+{
+	if (m_Level)
+	{
+		bool result = false;
+		Common::Invoker::PerformCrossThreadCall(std::bind(&MappingToolLevel::ChangeFrameProperties, m_Level.get(), index, prop, value, std::ref(result)), m_Level.get(), TRUE);
+
+		if (!result)
+		{
+			// show cell error here
+		}
 	}
 }

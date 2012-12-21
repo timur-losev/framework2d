@@ -402,3 +402,57 @@ const SpriteFramesListPtr& MapViewer::GetFramesList() const
 {
     return m_Frames;
 }
+
+bool MapViewer::ChangeFrameProperties(unsigned int index, unsigned int prop, const std::string& value)
+{
+	if (index > m_TotalFrames)
+	{
+		return false;
+	}
+
+	/* prop:
+		0 - Name
+		1 - left tex coord
+		2 - top tex coord 
+		3 - right tex coord 
+		4 - bottom tex coord 
+	*/
+
+	FrameDef& editedFrame = m_Frames->get(index);
+
+	if (0 == prop)	// name
+	{
+		// Checking if name already taken
+		for (size_t i = 0; i < m_TotalFrames; ++i)
+		{
+			const FrameDef& frame = m_Frames->get(i);
+			if (value == frame.name && i != index)
+			{
+				return false;
+			}
+		}
+
+		editedFrame.name = value;
+	}
+	else 
+	{
+		float fValue = atof(value.c_str());
+
+		// check validity
+		if ((0.f > fValue || 1.f < fValue) ||				// coord positions cannot be negative or greater than 1
+			(1 == prop && fValue > editedFrame.right) ||	// left > right?
+			(3 == prop && fValue < editedFrame.left) ||		// right < left?
+			(2 == prop && fValue > editedFrame.bottom) ||	// top > bottom?
+			(4 == prop && fValue < editedFrame.top))		// bottom < top?
+		{
+			return false;
+		}
+
+		editedFrame.left	= (1 == prop) ? fValue : editedFrame.left;
+		editedFrame.top		= (2 == prop) ? fValue : editedFrame.top;
+		editedFrame.right	= (3 == prop) ? fValue : editedFrame.right;
+		editedFrame.bottom	= (4 == prop) ? fValue : editedFrame.bottom;
+	}
+
+	return true;
+}

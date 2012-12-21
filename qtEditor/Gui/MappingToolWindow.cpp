@@ -10,7 +10,6 @@
 #include <QtGui/QFileDialog>
 
 #include "QIrrControl.h"
-#include <QtGui/QStandardItem>
 #include <QtGui/QStandardItemModel>
 #include <QtCore/QTimer>
 
@@ -151,6 +150,15 @@ void MappingToolWindow::OnTextureSelected(QModelIndex index)
 	CallBack(ES_ON_CHANGE_CURRENT_TEXTURE, i);
 }
 
+void MappingToolWindow::OnFrameDataChanged(QStandardItem* item)
+{
+	unsigned int col = item->index().column();
+	unsigned int row = item->index().row();
+	const std::string value = widget.mapTableView->model()->data(item->index()).toString().toUtf8().data();
+
+	CallBack(ES_ON_FRAME_DATA_CHANGED, row, col, value);
+}
+
 IIrrControlPtr MappingToolWindow::GetControl()
 {
     return m_IrrControl;
@@ -220,6 +228,8 @@ void MappingToolWindow::RefreshSpriteInfo(SpriteTexturesListConstPtr textures, S
 
             }
             widget.mapTableView->setModel(model);
+
+			connect(model, SIGNAL(itemChanged(QStandardItem*)), this, SLOT(OnFrameDataChanged(QStandardItem*)));
         }
         widget.texturesListWidget->update();
         widget.mapTableView->update();

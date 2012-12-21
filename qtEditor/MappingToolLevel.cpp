@@ -552,6 +552,16 @@ void MappingToolLevel::RemoveTexture(int index)
     }
 }
 
+void MappingToolLevel::ChangeFrameProperties(unsigned int index, unsigned int prop, const std::string& value, bool& validation)
+{
+	validation = false;
+
+	if (m_MapViewer)
+    {
+		validation = m_MapViewer->ChangeFrameProperties(index, prop, value);
+    }
+}
+
 const char* MappingToolLevel::DebugName() const
 {
     return "MappingToolLevel";

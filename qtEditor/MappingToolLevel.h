@@ -73,6 +73,7 @@ public:
     void                    ChangeCurrentTexture(int index);
     void                    RemoveFrame(int index);
     void                    RemoveTexture(int index);
+	void					ChangeFrameProperties(unsigned int index, unsigned int prop, const std::string& value, bool& validation);
 
     virtual const char*     DebugName() const ;/* = 0 */
 } ;

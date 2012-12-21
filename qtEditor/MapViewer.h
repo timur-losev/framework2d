@@ -62,6 +62,7 @@ public:
     void                    RemoveFrame(int index);
     void                    RemoveTexture(int index);
     void                    SetScaleByPoint(float scale, int x, int y);
+	bool					ChangeFrameProperties(unsigned int index, unsigned int prop, const std::string& value);
 } ;
 
 
