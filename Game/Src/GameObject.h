@@ -46,6 +46,8 @@ public:
 
     virtual ~GameObject();
 
+    void                     Init();
+
     const core::position2df& GetPosition() const;
     void                     SetPosition(const core::position2df& val);
     

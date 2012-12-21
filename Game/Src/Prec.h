@@ -102,8 +102,6 @@ class ILevel;
 class LevelManager;
 class EditablePagedLevel;
 class GameObject;
-class StaticGameObject;
-class AnimatedGameObject;
 
 using namespace irr;
 

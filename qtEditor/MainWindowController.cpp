@@ -159,13 +159,8 @@ void MainWindowController::SetEditFrame( EditFrameControllerPtr frame)
     m_MainWindowView->SetEditFrame(frame->View());
 
     m_EditFrameController = frame;
-    //subscribe on Edit signals
-    IEditFramePtr frameView = frame->GetFrameView();
 
-    frameView->AttachOn(IEditFrame::ES_ON_ADD_EMPTY_OBJECT, std::bind(&MainWindowController::OnAddNewEmptyObject, this));
-}
+    APP_API_ASSERT("The level instance must be exists already." && m_Level);
 
-void MainWindowController::OnAddNewEmptyObject()
-{
-
+    m_EditFrameController->SetCurrenLevel(m_Level);
 }

@@ -33,6 +33,11 @@ GameObject::~GameObject()
 
 }
 
+void GameObject::Init()
+{
+   // m_SpriteInstance->LoadTexture
+}
+
 hash_t GameObject::Hash()
 {
     if (m_Hash == 0)
@@ -69,10 +74,13 @@ void GameObject::Update( float dt, const RenderContext& context )
 #ifdef USE_INVOKER
     UpdateInvoker();
 #endif
+
+    m_SpriteInstance->Update(dt, context);
+
     std::for_each(m_Childs.begin(), m_Childs.end(), [&](GameObjectPtr obj)
-    {
-        obj->Update(dt, context);
-    }
+        {
+            obj->Update(dt, context);
+        }
     );
 }
 

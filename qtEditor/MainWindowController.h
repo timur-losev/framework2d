@@ -45,10 +45,6 @@ private:
     void OnMouseUp(int x, int y, Qt::MouseButton button);
     void OnMouseWheel(int delta, int direction, int x, int y);
     void OnKeyboardEvent(irr::EKEY_CODE, EButtonState);
-
-
-    //Signals from EditFrame
-    void OnAddNewEmptyObject();
 } ;
 
 #endif	/* MAINWINDOWCONTROLLER_H */

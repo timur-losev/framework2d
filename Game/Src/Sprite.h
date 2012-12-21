@@ -39,7 +39,7 @@ public:
     SpriteInstance(void);
     virtual ~SpriteInstance(void);
 
-    virtual void           Update(const RenderContext& context);
+    virtual void           Update(float dt, const RenderContext& context);
 
     void                   Load(const std::string& resName);
     bool_t                 LoadTexture(const std::string& resName, video::ITexture* out);

@@ -84,7 +84,7 @@ void SpriteInstance::Load(const std::string& resName)
     }
 }
 
-void SpriteInstance::Update( const RenderContext& context )
+void SpriteInstance::Update(float dt, const RenderContext& context )
 {
     m_Driver = context.Driver;
 

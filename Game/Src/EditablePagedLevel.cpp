@@ -502,4 +502,33 @@ void EditablePagedLevel::RestoreState()
     m_State = m_PreviousState;
     //ChangeCursorByState(m_State);
 }
+
+void EditablePagedLevel::AddEmptyObject(std::string* outName)
+{
+#ifdef USE_INVOKER
+    if (NeedInvoke())
+    {
+        BeginInvoke(std::bind(&EditablePagedLevel::AddEmptyObject, this, outName));
+    }
+    else
+#endif
+    {
+        PageInstance* page = GetEditablePage();
+        std::ostringstream ss;
+        int iter = 0;
+
+        do
+        {
+            ss.str("");
+            ss << "EmptyObject" << iter;
+            iter++;
+        }
+        while(page->GetGameObjectByName(ss.str()) != nullptr);
+
+        page->AddGameObject(ss.str());
+        if (outName)
+            *outName = ss.str();
+    }
+}
+
 #endif

@@ -4,8 +4,6 @@
 #    include "ILevel.h"
 #    include "GameObject.h"
 
-#    include <IGUIFont.h>
-
 enum LevelStates
 {
     LEVEL_STATE_IDLE = 0,
@@ -18,45 +16,47 @@ class EditablePagedLevel : public ILevel
 public:
     typedef core::array<PageInstance*>      PageList_t;
 
-    static float				DefaultBacklash;
-    static size_t				MaxPagesInView;
-    static float				StepValue;
+    static float                DefaultBacklash;
+    static size_t               MaxPagesInView;
+    static float                StepValue;
 private:
 
-    void						Rebuild(bool_t forward);
+    void                        Rebuild(bool_t forward);
 
 protected:
-    PageList_t					m_PageList;
-    PageList_t					m_PagesInView;
-    bool_t						m_Locked;
-    size_t						m_ActivePageIndx;
+    PageList_t                  m_PageList;
+    PageList_t                  m_PagesInView;
+    bool_t                      m_Locked;
+    size_t                      m_ActivePageIndx;
 public:
 
     EditablePagedLevel(const std::string& name);
     virtual ~EditablePagedLevel();
 
-    virtual void Update(float dt, const RenderContext& driver);
-    virtual bool_t				Create();
-    virtual void				Init();
-    virtual void				Destroy();
+    virtual void                Update(float dt, const RenderContext& driver);
+    virtual bool_t              Create();
+    virtual void                Init();
+    virtual void                Destroy();
 
-    void AddPage(PageInstance* page);
+    void                        AddPage(PageInstance* page);
 
-    void						Scroll(float deltaX, float deltaY);
+    void                        Scroll(float deltaX, float deltaY);
 
-    size_t GetPageIndexByPoint(const core::position2df& point);
-    PageInstance*						GetPageByIndex(size_t i);
+    size_t                      GetPageIndexByPoint(const core::position2df& point);
+    PageInstance*               GetPageByIndex(size_t i);
 
-    INL size_t					GetPagesCount() const
+    INL size_t                  GetPagesCount() const
     {
         return m_PageList.size();
     }
-    void SelectPageByPoint(const core::position2df& point);
+
+    void                        SelectPageByPoint(const core::position2df& point);
 
 
-    void						LockUnlock(bool_t lock);
-    virtual void				Serialize(DynamicMemoryStream& dms);
-    virtual size_t				Deserialize(MemoryStream& ms);
+    void                        LockUnlock(bool_t lock);
+
+    virtual void                Serialize(DynamicMemoryStream& dms);
+    virtual size_t              Deserialize(MemoryStream& ms);
 
 #    ifdef EDITOR
 public:
@@ -64,23 +64,24 @@ public:
 
     //OnGameObjectSelectedSignal	m_OnGameObjectSelectedSignal;
 
-    void						OnMouseDown(int btn, int x, int y);
-    void						OnMouseUp(int btn, int x, int y);
-    void						OnMouseMove(int x, int y);
-    void						OnKeyDown(irr::EKEY_CODE kc);
-    PageInstance*						GetEditablePage();
+    void                        OnMouseDown(int btn, int x, int y);
+    void                        OnMouseUp(int btn, int x, int y);
+    void                        OnMouseMove(int x, int y);
+    void                        OnKeyDown(irr::EKEY_CODE kc);
+    PageInstance*               GetEditablePage();
     //boost::signals::connection	AttachOnGameObjectSelectedSignal(const OnGameObjectSelectedSignal::slot_type& slot);
 
-    void						ChangeState(LevelStates state);
-    void						RestoreState();
+    void                        ChangeState(LevelStates state);
+    void                        RestoreState();
+    void                        AddEmptyObject(std::string* outName);
 private:
-    GameObjectPtr				m_SelectedObject;
+    GameObjectPtr               m_SelectedObject;
 
-    core::position2di			m_MouseEvtPos, m_MouseMovePos;
-    int							m_BtnId;
+    core::position2di           m_MouseEvtPos, m_MouseMovePos;
+    int                         m_BtnId;
 
-    LevelStates					m_State;
-    LevelStates					m_PreviousState;
+    LevelStates                 m_State;
+    LevelStates                 m_PreviousState;
 #    endif
 
 } ;
