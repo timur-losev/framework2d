@@ -40,6 +40,7 @@ private:
     void OnUpdateSpriteData(const SpriteInstance* sprite);
 	void OnSelectedFrameChanged(unsigned int index);
 	void OnShowAllChanged(bool isShow);
+	void OnCurrentTextureChanged(unsigned int index);
 } ;
 
 #endif	/* MAPPINGTOOLWINDOWCONTROLLER_H */

@@ -50,6 +50,7 @@ private Q_SLOTS:
     void OnOpenTextureSelected();
 	void OnFrameSelected(QModelIndex index);
 	void OnShowAllChanged();
+	void OnTextureSelected(QModelIndex index);
 
     void closeEvent (QCloseEvent * ev);
     void resizeEvent(QResizeEvent *evt);
