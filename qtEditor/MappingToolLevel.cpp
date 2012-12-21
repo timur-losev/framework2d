@@ -443,19 +443,19 @@ void MappingToolLevel::SetOperation(MapStates state)
     }
 }
 
-void MappingToolLevel::ShowHideAllSelections()
+void MappingToolLevel::ShowHideAllSelections(bool isShow)
 {
 #ifdef USE_INVOKER
     if (NeedInvoke())
     {
-        BeginInvoke(std::bind(&MappingToolLevel::ShowHideAllSelections, this));
+        BeginInvoke(std::bind(&MappingToolLevel::ShowHideAllSelections, this, isShow));
     }
     else
 #endif
     {
         if (m_MapViewer)
         {
-            m_MapViewer->ShowHideSelections();
+            m_MapViewer->ShowHideSelections(isShow);
         }
     }
 }
@@ -549,6 +549,16 @@ void MappingToolLevel::RemoveTexture(int index)
             m_MapViewer->RemoveTexture(index);
             m_MapViewer->Centering();
         }
+    }
+}
+
+void MappingToolLevel::ChangeFrameProperties(unsigned int index, unsigned int prop, const std::string& value, bool& validation)
+{
+	validation = false;
+
+	if (m_MapViewer)
+    {
+		validation = m_MapViewer->ChangeFrameProperties(index, prop, value);
     }
 }
 

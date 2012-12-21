@@ -50,7 +50,7 @@ public:
 
     int                     GetSelectedFrameIndex();
 
-    void                    ShowHideSelections();
+    void                    ShowHideSelections(bool isShow = false);
 
     bool_t                  IsShowAllSelection();
     void                    UpdateSelectedPosition(int dx, int dy);
@@ -62,6 +62,7 @@ public:
     void                    RemoveFrame(int index);
     void                    RemoveTexture(int index);
     void                    SetScaleByPoint(float scale, int x, int y);
+	bool					ChangeFrameProperties(unsigned int index, unsigned int prop, const std::string& value);
 } ;
 
 

@@ -5,9 +5,9 @@
 		<Texture>footman.png</Texture>
     </Textures>
     <Frames>
-        <Frame name="0" textureNumber="0" left="0.1" top="0.446" right="0.0811" bottom="0.068" offsetX="0" offsetY="0" originalWidth="0" originalHeight="0" animDuration="50" />
+        <Frame name="0" textureNumber="0" left="0.1" top="0.046" right="0.411" bottom="0.468" offsetX="0" offsetY="0" originalWidth="0" originalHeight="0" animDuration="50" />
         <Frame name="1" textureNumber="0" left="0.122" top="0.824" right="0.8108" bottom="0.865" offsetX="0" offsetY="0" originalWidth="0" originalHeight="0" animDuration="50" />
-        <Frame name="2" textureNumber="0" left="0.986" top="0.784" right="0.1892" bottom="0.689" offsetX="0" offsetY="0" originalWidth="0" originalHeight="0" animDuration="50" />
+        <Frame name="2" textureNumber="0" left="0.5" top="0.784" right="1.0" bottom="0.9" offsetX="0" offsetY="0" originalWidth="0" originalHeight="0" animDuration="50" />
         <Frame name="3" textureNumber="0" left="0.5" top="0.162" right="0.797" bottom="0.757" offsetX="0" offsetY="0" originalWidth="0" originalHeight="0" animDuration="50" />
         <Frame name="4" textureNumber="0" left="0.027" top="0.162" right="0.351" bottom="0.311" offsetX="0" offsetY="0" originalWidth="0" originalHeight="0" animDuration="50" />
     </Frames>
