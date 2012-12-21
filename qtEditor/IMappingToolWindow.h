@@ -39,6 +39,7 @@ public:
 
     virtual void RefreshSpriteInfo( SpriteTexturesListConstPtr textures, SpriteFramesListConstPtr frames) = 0;
 	virtual void SetFrameDataChangingError(bool isSetError = false) = 0;
+	virtual void SetCursor(int cursor) = 0;
 };
 
 #endif	/* IMAPPINGTOOLWINDOW_H */
