@@ -66,7 +66,7 @@ public:
 
     void                    SetMapViewerScale(float value, int x, int y);
     void                    SetOperation(MapStates operation);
-    void                    ShowHideAllSelections();
+    void                    ShowHideAllSelections(bool isShow);
     void                    ChangeCursorByState(MapStates state);
     void                    ChangeState(MapStates state);
     void                    RestoreState();

@@ -62,6 +62,7 @@ MappingToolWindow::MappingToolWindow(QWidget* parent) : QDialog(parent, Qt::Wind
     connect(actionSaveFile, SIGNAL(activated()), this, SLOT(OnSaveFile()));
     connect(actionOpenTexture, SIGNAL(activated()), this, SLOT(OnOpenTextureSelected()));
 	connect(widget.mapTableView, SIGNAL(clicked(QModelIndex)), this, SLOT(OnFrameSelected(QModelIndex)));
+	connect(widget.showAll, SIGNAL(clicked()), this, SLOT(OnShowAllChanged()));
 
 #ifdef USE_INVOKER
     QTimer* timer = new QTimer(this);
@@ -133,6 +134,13 @@ void MappingToolWindow::OnFrameSelected(QModelIndex index)
 	unsigned int i = index.row();
 
 	CallBack(ES_ON_CHANGE_SELECTED_FRAME, i);
+}
+
+void MappingToolWindow::OnShowAllChanged()
+{
+	bool isShow = widget.showAll->isChecked();
+
+	CallBack(ES_ON_SHOW_ALL_FRAMES, isShow);
 }
 
 IIrrControlPtr MappingToolWindow::GetControl()

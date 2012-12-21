@@ -39,6 +39,7 @@ private:
     void OnMouseWheel(int delta, int direction, int x, int y);
     void OnUpdateSpriteData(const SpriteInstance* sprite);
 	void OnSelectedFrameChanged(unsigned int index);
+	void OnShowAllChanged(bool isShow);
 } ;
 
 #endif	/* MAPPINGTOOLWINDOWCONTROLLER_H */

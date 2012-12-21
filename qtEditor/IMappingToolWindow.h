@@ -31,7 +31,8 @@ public:
         ES_ON_CHANGE_CURRENT_TEXTURE,
         ES_ON_REMOVE_FRAME,
         ES_ON_REMOVE_TEXTURE,
-        ES_ON_CHANGE_SELECTED_FRAME
+        ES_ON_CHANGE_SELECTED_FRAME,
+		ES_ON_SHOW_ALL_FRAMES,
     };
 
     virtual IIrrControlPtr GetControl() = 0;

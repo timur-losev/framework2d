@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MappingToolWindow.ui'
 **
-** Created: Thu 20. Dec 18:02:08 2012
+** Created: Fri 21. Dec 10:56:12 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -149,6 +149,7 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/16x16/show_all.png"), QSize(), QIcon::Normal, QIcon::Off);
         showAll->setIcon(icon);
+        showAll->setCheckable(true);
 
         mainSizer->addWidget(toolWidget, 2, 0, 1, 1);
 

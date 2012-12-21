@@ -185,6 +185,9 @@
          <iconset resource="../../Media/Icons/icons.qrc">
           <normaloff>:/16x16/show_all.png</normaloff>:/16x16/show_all.png</iconset>
         </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
        </widget>
       </widget>
      </item>

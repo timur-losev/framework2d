@@ -443,19 +443,19 @@ void MappingToolLevel::SetOperation(MapStates state)
     }
 }
 
-void MappingToolLevel::ShowHideAllSelections()
+void MappingToolLevel::ShowHideAllSelections(bool isShow)
 {
 #ifdef USE_INVOKER
     if (NeedInvoke())
     {
-        BeginInvoke(std::bind(&MappingToolLevel::ShowHideAllSelections, this));
+        BeginInvoke(std::bind(&MappingToolLevel::ShowHideAllSelections, this, isShow));
     }
     else
 #endif
     {
         if (m_MapViewer)
         {
-            m_MapViewer->ShowHideSelections();
+            m_MapViewer->ShowHideSelections(isShow);
         }
     }
 }

@@ -383,9 +383,9 @@ int MapViewer::GetSelectedFrameIndex()
     return m_SelectedFrame;
 }
 
-void MapViewer::ShowHideSelections()
+void MapViewer::ShowHideSelections(bool isShow)
 {
-    m_IsShowAllSelections = !m_IsShowAllSelections;
+    m_IsShowAllSelections = isShow;
 }
 
 bool_t MapViewer::IsShowAllSelection()
