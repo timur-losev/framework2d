@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<MappingEntry>
+    <Textures>
+        <Texture>transparent.png</Texture>
+    </Textures>
+    <Frames>        
+    </Frames>
+    <Animations>        
+    </Animations>
+</MappingEntry>

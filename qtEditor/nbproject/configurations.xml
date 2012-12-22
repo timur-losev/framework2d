@@ -47,10 +47,18 @@
       <logicalFolder name="f3" displayName="Controllers" projectFiles="true">
         <itemPath>AboutWindowController.cpp</itemPath>
         <itemPath>AboutWindowController.h</itemPath>
+        <itemPath>EditFrameController.cpp</itemPath>
+        <itemPath>EditFrameController.h</itemPath>
         <itemPath>MainWindowController.cpp</itemPath>
         <itemPath>MainWindowController.h</itemPath>
         <itemPath>MappingToolWindowController.cpp</itemPath>
         <itemPath>MappingToolWindowController.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f7" displayName="EditFrame" projectFiles="true">
+        <itemPath>Gui/EditFrame.cpp</itemPath>
+        <itemPath>Gui/EditFrame.h</itemPath>
+        <itemPath>Gui/EditFrame.ui</itemPath>
+        <itemPath>Gui/ui_EditFrame.hpp</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="MainWindow" projectFiles="true">
         <itemPath>Gui/MainWindow.cpp</itemPath>
@@ -66,6 +74,7 @@
       </logicalFolder>
       <logicalFolder name="f4" displayName="moc" projectFiles="true">
         <itemPath>Gui/moc_AboutWindow.cpp</itemPath>
+        <itemPath>Gui/moc_EditFrame.cpp</itemPath>
         <itemPath>Gui/moc_MainWindow.cpp</itemPath>
         <itemPath>Gui/moc_MappingToolWindow.cpp</itemPath>
         <itemPath>Gui/moc_QIrrControl.cpp</itemPath>
@@ -78,6 +87,7 @@
       </logicalFolder>
       <logicalFolder name="f1" displayName="Interfaces" projectFiles="true">
         <itemPath>IAboutWindow.h</itemPath>
+        <itemPath>IEditFrame.h</itemPath>
         <itemPath>IIrrControl.h</itemPath>
         <itemPath>IMainWindow.h</itemPath>
         <itemPath>IMappingToolWindow.h</itemPath>

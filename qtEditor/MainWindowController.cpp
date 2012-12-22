@@ -23,7 +23,7 @@
 MainWindowController::MainWindowController(IMainWindowPtr view):
 m_MainWindowView(view)
 {
-    m_View = CAST_TO_REGULAR_VIEW(m_MainWindowView.get());
+    CAST_TO_REGULAR_VIEW(m_MainWindowView.get());
 
     AttachViewSlots();
 }
@@ -136,7 +136,7 @@ void MainWindowController::OnMouseUp( int x, int y, Qt::MouseButton button )
 
 void MainWindowController::OnMouseWheel( int delta, int direction, int x, int y )
 {
-    
+
 }
 
 void MainWindowController::OnKeyboardEvent( irr::EKEY_CODE c, EButtonState s)

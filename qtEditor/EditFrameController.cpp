@@ -6,7 +6,7 @@
 EditFrameController::EditFrameController( IEditFramePtr view ):
     m_EditFrameView(view)
 {
-    m_View = CAST_TO_REGULAR_VIEW(m_EditFrameView.get());
+    CAST_TO_REGULAR_VIEW(m_EditFrameView.get());
 
     AttachViewSlots();
 }
