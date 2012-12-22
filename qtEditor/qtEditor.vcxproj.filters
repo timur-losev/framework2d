@@ -280,5 +280,8 @@
     <None Include="Gui\MappingToolWindow.ui">
       <Filter>Gui\MappingToolWindow</Filter>
     </None>
+    <None Include="Gui\EditFrame.ui">
+      <Filter>Gui\EditFrame</Filter>
+    </None>
   </ItemGroup>
 </Project>

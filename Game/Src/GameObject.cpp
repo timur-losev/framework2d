@@ -22,8 +22,7 @@ GameObject::GameObject( const core::position2df& pos, const core::vector2df& sca
 GameObject::GameObject( const GameObject& oth )
     :
     m_Name(oth.m_Name),
-    m_Hash(oth.m_Hash),
-    m_Offset(oth.m_Offset)
+    m_Hash(oth.m_Hash)
 {
 
 }
@@ -35,7 +34,7 @@ GameObject::~GameObject()
 
 void GameObject::Init()
 {
-   // m_SpriteInstance->LoadTexture
+    Hash(); //Calc hash here
 }
 
 hash_t GameObject::Hash()
@@ -82,6 +81,11 @@ void GameObject::Update( float dt, const RenderContext& context )
             obj->Update(dt, context);
         }
     );
+
+    if (m_SpriteInstance->IsEmpty())
+    {
+        m_SpriteInstance->Load(EMPTY_STUB);
+    }
 }
 
 void GameObject::Serialize( DynamicMemoryStream& dms )
@@ -101,14 +105,14 @@ size_t GameObject::Deserialize( MemoryStream& ms )
     return read;
 }
 
-const core::position2df& GameObject::GetPosition() const
+const core::position2df& GameObject::GetPosition(EPosRelation r) const
 {
-    return m_SpriteInstance->GetPosition();
+    return m_SpriteInstance->GetPosition(r);
 }
 
-void GameObject::SetPosition( const core::position2df& val )
+void GameObject::SetPosition( const core::position2df& val, EPosRelation r)
 {
-    m_SpriteInstance->SetPosition(val);
+    m_SpriteInstance->SetPosition(val, r);
 }
 
 const std::string& GameObject::GetName()
@@ -141,19 +145,9 @@ void GameObject::SetRotation( float val )
     m_SpriteInstance->SetRotation(val);
 }
 
-const core::position2df& GameObject::GetOffset()
-{
-    return m_Offset;
-}
-
-void GameObject::SetOffset( const core::position2df& val )
-{
-    m_Offset = val;
-}
-
 bool_t GameObject::HitTest( const core::position2df& in ) const
 {
-    const core::position2df& thispos = GetPosition();
+    const core::position2df& thispos = GetPosition(ABSOLUTE_POS);
     if (in.X < thispos.X || in.Y < thispos.Y)
         return FALSE;
 

@@ -68,6 +68,12 @@ enum EButtonState
     EBS_KEY_PRESSED
 };
 
+enum EPosRelation
+{
+    ABSOLUTE_POS,
+    RELATIVE_POS
+};
+
 class IMainWindow;
 struct IRegularView;
 

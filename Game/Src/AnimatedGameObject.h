@@ -11,16 +11,16 @@ class AnimatedGameObject: public GameObject
 {
 private:
 protected:
-    SpriteInstance*                        m_Sprite;
+    //SpriteInstance*                        m_Sprite;
 public:
-    AnimatedGameObject();
-    virtual ~AnimatedGameObject();
+    //AnimatedGameObject();
+    //virtual ~AnimatedGameObject();
 
-    // overrides:
-    virtual void Update(float dt, const RenderContext& context);
-    virtual void                    Serialize(DynamicMemoryStream& dms);
-    virtual size_t                  Deserialize(MemoryStream& ms);
-    virtual bool_t                  HitTest(const core::position2df& in) const;
+    //// overrides:
+    //virtual void Update(float dt, const RenderContext& context);
+    //virtual void                    Serialize(DynamicMemoryStream& dms);
+    //virtual size_t                  Deserialize(MemoryStream& ms);
+    //virtual bool_t                  HitTest(const core::position2df& in) const;
 };
 
 #endif // AnimatedGameObject_h__

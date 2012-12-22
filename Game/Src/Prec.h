@@ -105,8 +105,9 @@ class GameObject;
 
 using namespace irr;
 
-#define MEDIA_FOLDER std::string("Media")
-#define MEDIA_PATH std::string(MEDIA_FOLDER + "/")
+const std::string MEDIA_FOLDER  = std::string("Media");
+const std::string MEDIA_PATH  = std::string(MEDIA_FOLDER + "/");
+const std::string EMPTY_STUB  = std::string(MEDIA_PATH + "empty.mpf");
 
 #define ARRAY_COUNT(__arr) sizeof(__arr) / sizeof(__arr[0])
 

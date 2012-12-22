@@ -7,7 +7,7 @@ EditFrame::EditFrame(QWidget* parent): QFrame(parent)
 
     m_MenuBar = new QMenuBar(this);
     m_MenuBar->setObjectName(QString::fromUtf8("MenuBar"));
-    m_MenuBar->setGeometry(3, 3, 300, 23);
+    m_MenuBar->setGeometry(0, 0, 300, 20);
     m_AddNewMenu = new QMenu(m_MenuBar);
     m_AddNewMenu->setObjectName(QString::fromUtf8("FileMenu"));
 

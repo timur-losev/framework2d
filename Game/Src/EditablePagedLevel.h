@@ -45,15 +45,9 @@ public:
     size_t                      GetPageIndexByPoint(const core::position2df& point);
     PageInstance*               GetPageByIndex(size_t i);
 
-    INL size_t                  GetPagesCount() const
-    {
-        return m_PageList.size();
-    }
+    size_t                      GetPagesCount() const;
 
     void                        SelectPageByPoint(const core::position2df& point);
-
-
-    void                        LockUnlock(bool_t lock);
 
     virtual void                Serialize(DynamicMemoryStream& dms);
     virtual size_t              Deserialize(MemoryStream& ms);

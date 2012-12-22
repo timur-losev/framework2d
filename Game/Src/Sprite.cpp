@@ -108,7 +108,7 @@ void SpriteInstance::Update(float dt, const RenderContext& context )
         core::rectf frameRect;
         u32 animDuration  = 0;
         u32 textureNumber = 0;
-        core::position2df position   = m_Position;
+        core::position2df position   = /*m_Position*/m_AbsolutePosition;
         core::dimension2du atlasSize = m_Atlases->get(textureNumber).texture()->getSize();
 
         if (m_FramesCount > 0 && m_CurrentFrame < m_FramesCount)
@@ -164,6 +164,7 @@ void SpriteInstance::Draw2DImage(DriverPtr driver,
 
     // Find the positions of corners
     core::vector2df rect[4];
+
     rect[0] =  core::vector2df(position.X, position.Y);
     rect[1] =  core::vector2df(position.X + sourceRect.getWidth() * scale.X, position.Y);
     rect[2] =  core::vector2df(position.X, position.Y + sourceRect.getHeight() * scale.Y);
@@ -292,13 +293,19 @@ u32 SpriteInstance::GetTotalFrames() const
     return m_TotalFrames;
 }
 
-void SpriteInstance::SetPosition( const core::position2df& position )
+void SpriteInstance::SetPosition( const core::position2df& position,EPosRelation rel)
 {
-    m_Position = position;
+    if (rel == ABSOLUTE_POS)
+        m_AbsolutePosition = position;
+    else if (rel == RELATIVE_POS)
+        m_Position = position;
 }
 
-const core::position2df& SpriteInstance::GetPosition() const
+const core::position2df& SpriteInstance::GetPosition(EPosRelation rel) const
 {
+    if (rel == ABSOLUTE_POS)
+        return m_AbsolutePosition;
+
     return m_Position;
 }
 
@@ -359,13 +366,28 @@ SpriteFramesListConstPtr SpriteInstance::GetFramesList() const
 
 bool_t SpriteInstance::HitTest( const core::position2df& in ) const
 {
-    for(size_t i = 0; i < m_FramesCount; ++i)
+    if (m_FramesCount > 0)
     {
-        const FrameDef& frame = m_Frames->get(i);
+        for(size_t i = 0; i < m_FramesCount; ++i)
+        {
+            const FrameDef& frame = m_Frames->get(i);
 
-        if (frame.originalWidth >= in.X && frame.originalHeight >= in.Y)
+            if (frame.originalWidth >= in.X && frame.originalHeight >= in.Y)
+                return TRUE;
+        }
+    }
+    else if (m_Atlases->size() > 0)
+    {
+        core::dimension2du atlasSize = m_Atlases->get(0).texture()->getSize();
+
+        if (atlasSize.Width + m_AbsolutePosition.X >= in.X && atlasSize.Height + m_AbsolutePosition.Y >= in.Y)
             return TRUE;
     }
 
     return FALSE;
+}
+
+bool_t SpriteInstance::IsEmpty() const
+{
+    return m_Atlases->empty();
 }

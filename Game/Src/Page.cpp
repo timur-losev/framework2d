@@ -26,25 +26,26 @@ void PageInstance::Update( float dt, const RenderContext& context )
     UpdateInvoker();
 #endif
 
+    if (m_DirtyPos)
+    {
+        m_Pos += m_Offset;
+        m_DirtyPos = FALSE;
+        m_Offset = core::position2df(0, 0);
+    }
+
     for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
     {
         GameObjectList_t& objects_list = m_Layers[(EPageLayer)i];
 
         for(auto& obj : objects_list)
         {
-            if (m_DirtyPos)
+            //if (m_DirtyPos)
             {
-                obj->SetOffset(obj->GetOffset() + m_Offset);
+                //obj->SetOffset(obj->GetOffset() + m_Offset);
+                obj->SetPosition(obj->GetPosition(RELATIVE_POS) + m_Pos, ABSOLUTE_POS);
             }
             obj->Update(dt, context);
         }
-    }
-
-    if (m_DirtyPos)
-    {
-        m_Pos += m_Offset;
-        m_DirtyPos = FALSE;
-        m_Offset = core::position2df(0, 0);
     }
 }
 
@@ -148,7 +149,7 @@ GameObjectPtr PageInstance::AddGameObject( const std::string& name, const EPageL
     GameObjectPtr gobj(new GameObject());
 
     gobj->SetName(name);
-    gobj->Hash(); //Calc hash here
+    gobj->Init();
 
     if (AddGameObject(gobj, layer) == FALSE)
     {

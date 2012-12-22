@@ -18,6 +18,7 @@ protected:
 
     // Properties
     core::position2df       m_Position;
+    core::position2df       m_AbsolutePosition;
     core::vector2df         m_Scale;
     core::position2df       m_RotationPoint;
     f32                     m_Rotation;
@@ -30,12 +31,13 @@ protected:
 
     DriverPtr               m_Driver;
 
-    static void             Draw2DImage (DriverPtr driver,
+    void                    Draw2DImage (DriverPtr driver,
                                          video::ITexture* texture,
                                          const core::rectf& sourceRect, const core::position2df& position,
                                          const core::position2df& rotationPoint, f32 rotation, const core::vector2df& scale,
                                          bool useAlphaChannel, const video::SColor& color);
 public:
+
     SpriteInstance(void);
     virtual ~SpriteInstance(void);
 
@@ -60,8 +62,8 @@ public:
     u32                    GetTotalFrames() const;
     // Properties
 
-    void                   SetPosition(const core::position2df& position);
-    const core::position2df& GetPosition() const;
+    void                   SetPosition(const core::position2df& position, EPosRelation r = RELATIVE_POS);
+    const core::position2df& GetPosition(EPosRelation r = RELATIVE_POS) const;
 
     void                   SetScale(const core::vector2df& scale);
     const core::vector2df& GetScale() const;
@@ -75,7 +77,11 @@ public:
     void                   SetVisible(bool_t isVisible);
     bool_t                 GetVisible() const;
 
+    void                   SetOffset(const core::position2df& off);
+    const core::position2df& GetOffset() const;
+
     bool_t                 IsAnimated() const;
+    bool_t                 IsEmpty() const;
 
     SpriteTexturesListConstPtr GetTexturesList() const;
     SpriteFramesListConstPtr GetFramesList() const;

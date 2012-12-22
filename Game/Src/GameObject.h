@@ -27,8 +27,6 @@ protected:
     std::string             m_Name;
     hash_t                  m_Hash;
 
-    core::position2df       m_Offset;
-
     hash_t                  CalcHash();
 
     GameObjectList_t        m_Childs;
@@ -48,8 +46,8 @@ public:
 
     void                     Init();
 
-    const core::position2df& GetPosition() const;
-    void                     SetPosition(const core::position2df& val);
+    const core::position2df& GetPosition(EPosRelation r = RELATIVE_POS) const;
+    void                     SetPosition(const core::position2df& val, EPosRelation r = RELATIVE_POS);
     
     const std::string&       GetName();
     void                     SetName(const std::string& val);
@@ -59,9 +57,6 @@ public:
     
     float                    GetRotation();
     void                     SetRotation(float val);
-    
-    const core::position2df& GetOffset();
-    void                     SetOffset(const core::position2df& val);
 
     virtual hash_t           Hash();
 

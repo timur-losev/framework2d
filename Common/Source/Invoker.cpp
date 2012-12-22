@@ -4,8 +4,6 @@
 
 namespace Common {
 
-//#ifdef ENABLE_BOOST
-
 static std::condition_variable CondVar;
 
 Invoker::Invoker() : m_Created(FALSE)
@@ -100,7 +98,5 @@ void Invoker::PerformCrossThreadCall( InvokeFunction_t f, Invoker* invobj, bool_
         CondVar.wait(lock);
     }
 }
-
-//#endif //ENABLE_BOOST
 
 } //Common
