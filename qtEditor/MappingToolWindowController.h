@@ -42,6 +42,7 @@ private:
 	void OnShowAllChanged(bool isShow);
 	void OnCurrentTextureChanged(unsigned int index);
 	void OnFrameDataChanged(unsigned int index, unsigned int prop, const std::string value);
+	void OnChangeCursorStyle(int cursor);
 } ;
 
 #endif	/* MAPPINGTOOLWINDOWCONTROLLER_H */

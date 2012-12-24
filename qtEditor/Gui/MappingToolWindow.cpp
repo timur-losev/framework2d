@@ -235,3 +235,60 @@ void MappingToolWindow::RefreshSpriteInfo(SpriteTexturesListConstPtr textures, S
         widget.mapTableView->update();
     }
 }
+
+void MappingToolWindow::SetFrameDataChangingError(bool isSetError)
+{
+#ifdef USE_INVOKER
+    if (NeedInvoke())
+    {
+		BeginInvoke(std::bind(&MappingToolWindow::SetFrameDataChangingError, this, isSetError));
+    }
+    else
+#endif
+    {
+		QModelIndex index = widget.mapTableView->currentIndex();
+		QStandardItem* item = ((QStandardItemModel*)index.model())->item(index.row(), index.column());
+
+		if (isSetError)
+		{
+			item->setData(QBrush(Qt::red), Qt::BackgroundRole);
+			widget.mapTableView->selectionModel()->select(index, QItemSelectionModel::Deselect);
+		}
+		else
+		{
+			item->setData(QBrush(Qt::white), Qt::BackgroundRole);
+		}
+	}
+}
+
+void MappingToolWindow::SetCursor(int cursor)
+{
+#ifdef USE_INVOKER
+    if (NeedInvoke())
+    {
+		BeginInvoke(std::bind(&MappingToolWindow::SetCursor, this, cursor));
+    }
+    else
+#endif
+    {
+		Qt::CursorShape cursorStyle = Qt::ArrowCursor;
+		switch (cursor)
+		{
+		case 0:
+		case 1:
+			cursorStyle = Qt::ArrowCursor;
+			break;
+		case 2:
+			cursorStyle = Qt::SizeAllCursor;
+			break;
+		case 3:
+			cursorStyle = Qt::OpenHandCursor;
+			break;
+		default:
+			return;
+			break;
+		}
+
+		widget.renderFrame->setCursor(cursorStyle);
+	}
+}

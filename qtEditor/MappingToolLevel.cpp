@@ -226,6 +226,7 @@ void MappingToolLevel::OnMouseMove(int x, int y)
             if (EMB_LEFT == m_BtnId)
             {
                 m_MapViewer->UpdateSelectedPosition(deltaX, deltaY);
+				m_MapViewer->UpdateSelectedSize(deltaX, deltaY);
             }
         }
         else if (MAP_STATE_RESIZE_FRAME == m_State)
@@ -235,17 +236,15 @@ void MappingToolLevel::OnMouseMove(int x, int y)
                 if (MapViewer::TOP_LEFT_CORNER == m_ResizeCorner)
                 {
                     m_MapViewer->UpdateSelectedPosition(deltaX, deltaY);
-                    m_MapViewer->UpdateSelectedSize(-deltaX, -deltaY);
                 }
                 else if (MapViewer::TOP_CENTER_CORNER == m_ResizeCorner)
                 {
                     m_MapViewer->UpdateSelectedPosition(0, deltaY);
-                    m_MapViewer->UpdateSelectedSize(0, -deltaY);
                 }
                 else if (MapViewer::TOP_RIGHT_CORNER == m_ResizeCorner)
                 {
                     m_MapViewer->UpdateSelectedPosition(0, deltaY);
-                    m_MapViewer->UpdateSelectedSize(deltaX, -deltaY);
+                    m_MapViewer->UpdateSelectedSize(deltaX, 0);
                 }
                 else if (MapViewer::RIGHT_CENTER_CORNER == m_ResizeCorner)
                 {
@@ -262,12 +261,11 @@ void MappingToolLevel::OnMouseMove(int x, int y)
                 else if (MapViewer::BOTTOM_LEFT_CORNER == m_ResizeCorner)
                 {
                     m_MapViewer->UpdateSelectedPosition(deltaX, 0);
-                    m_MapViewer->UpdateSelectedSize(-deltaX, deltaY);
+                    m_MapViewer->UpdateSelectedSize(0, deltaY);
                 }
                 else if (MapViewer::LEFT_CENTER_CORNER == m_ResizeCorner)
                 {
                     m_MapViewer->UpdateSelectedPosition(deltaX, 0);
-                    m_MapViewer->UpdateSelectedSize(-deltaX, 0);
                 }
             }
         }

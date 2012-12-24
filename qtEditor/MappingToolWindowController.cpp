@@ -83,8 +83,8 @@ void MappingToolWindowController::OnViewShowed()
 	control->AttachOnMouseReleaseEventSignal(boost::bind(&MappingToolWindowController::OnMouseUp, this, _1, _2, _3));
 	control->AttachOnMouseWheelEventSignal(boost::bind(&MappingToolWindowController::OnMouseWheel, this, _1, _2, _3, _4));
 
-	m_Level->AttachOn<const SpriteInstance*>(MappingToolLevel::ES_ON_SPRITE_DATA_UPDATED_SIGNAL,
-            std::bind(&MappingToolWindowController::OnUpdateSpriteData, this, std::placeholders::_1));
+	m_Level->AttachOn<const SpriteInstance*>(MappingToolLevel::ES_ON_SPRITE_DATA_UPDATED_SIGNAL, std::bind(&MappingToolWindowController::OnUpdateSpriteData, this, std::placeholders::_1));
+	m_Level->AttachOn<int>(MappingToolLevel::ES_ON_CHANGE_CURSOR_SIGNAL, std::bind(&MappingToolWindowController::OnChangeCursorStyle, this, std::placeholders::_1));
 }
 
 void MappingToolWindowController::OnMouseMove(int x, int y, Qt::MouseButton button)
@@ -185,9 +185,11 @@ void MappingToolWindowController::OnFrameDataChanged(unsigned int index, unsigne
 		bool result = false;
 		Common::Invoker::PerformCrossThreadCall(std::bind(&MappingToolLevel::ChangeFrameProperties, m_Level.get(), index, prop, value, std::ref(result)), m_Level.get(), TRUE);
 
-		if (!result)
-		{
-			// show cell error here
-		}
+		m_MappingToolView->SetFrameDataChangingError(!result);
 	}
+}
+
+void MappingToolWindowController::OnChangeCursorStyle(int cursor)
+{
+	m_MappingToolView->SetCursor(cursor);
 }

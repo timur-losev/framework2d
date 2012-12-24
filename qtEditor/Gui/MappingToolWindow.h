@@ -44,6 +44,8 @@ public:
     virtual IIrrControlPtr GetControl();
 
     virtual void RefreshSpriteInfo(SpriteTexturesListConstPtr textures, SpriteFramesListConstPtr frames);
+	virtual void SetFrameDataChangingError(bool isSetError = false);
+	virtual void SetCursor(int cursor);
 
 private Q_SLOTS:
     void OnOpenFileSelected();

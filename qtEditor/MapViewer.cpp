@@ -92,7 +92,7 @@ void MapViewer::Update( const RenderContext& context )
         // Draw anchors, not optimized
         for (int i = TOP_LEFT_CORNER; i < NONE_INTERSECT; ++i)
         {
-            m_Driver->draw2DRectangle(video::SColor(200, 0, 0, 0), GetSelectedFrameAnchorRect((IntersectSelection) i));
+            m_Driver->draw2DRectangle(video::SColor(200, 0, 255, 0), GetSelectedFrameAnchorRect( (IntersectSelection)i ));
         }
     }
 }
@@ -280,10 +280,16 @@ void MapViewer::UpdateSelectedPosition(int dx, int dy)
 {
     if (m_SelectedFrame >= 0 && m_SelectedFrame < (int) m_TotalFrames && m_TotalTextures)
     {
+		FrameDef& frame = m_Frames->get(m_SelectedFrame);
         const core::dimension2du& atlasSize = m_Atlases->get(m_CurrentTexture).texture()->getSize();
 
-        m_Frames->get(m_SelectedFrame).left += dx / (m_Scale.X * atlasSize.Width);
-        m_Frames->get(m_SelectedFrame).top += dy / (m_Scale.Y * atlasSize.Height);
+        frame.left += dx / (m_Scale.X * atlasSize.Width);
+        frame.top += dy / (m_Scale.Y * atlasSize.Height);
+		// restrictions
+		if (frame.left > frame.right) frame.left = frame.right;
+		if (frame.top > frame.bottom) frame.top = frame.bottom;
+		if (frame.left < 0.f) frame.left = 0.f;
+		if (frame.top < 0.f) frame.top = 0.f;
     }
 }
 
@@ -296,11 +302,11 @@ void MapViewer::UpdateSelectedSize(int dw, int dh)
 
         frame.right += (float) (dw / (m_Scale.X * atlasSize.Width));
         frame.bottom += (float) (dh / (m_Scale.Y * atlasSize.Height));
-
-        if (frame.right < frame.left)
-            frame.right = frame.left;
-        if (frame.bottom < frame.top)
-            frame.bottom = frame.top;
+		// restrictions
+        if (frame.right < frame.left) frame.right = frame.left;
+        if (frame.bottom < frame.top) frame.bottom = frame.top;
+		if (frame.right > 1.f) frame.right = 1.f;
+		if (frame.bottom > 1.f) frame.bottom = 1.f;
     }
 }
 
