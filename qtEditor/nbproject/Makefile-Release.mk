@@ -49,9 +49,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/2033245622/ILevel.o \
 	${OBJECTDIR}/_ext/1676536254/tinyxmlerror.o \
 	${OBJECTDIR}/_ext/1676536254/tinyxmlparser.o \
+	${OBJECTDIR}/_ext/2033245622/ZwoptexParser.o \
 	${OBJECTDIR}/Gui/moc_MappingToolWindow.o \
 	${OBJECTDIR}/IrrWorker.o \
-	${OBJECTDIR}/_ext/2033245622/ZwoptexParser.o \
 	${OBJECTDIR}/_ext/1676536254/tinyxml.o \
 	${OBJECTDIR}/EdPrec.o \
 	${OBJECTDIR}/Gui/MainWindow.o \
@@ -59,7 +59,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/MapViewer.o \
 	${OBJECTDIR}/_ext/2033245622/Sprite.o \
 	${OBJECTDIR}/_ext/2033245622/MappingFile.o \
+	${OBJECTDIR}/Gui/EditFrame.o \
 	${OBJECTDIR}/SigSlot2Test.o \
+	${OBJECTDIR}/EditFrameController.o \
 	${OBJECTDIR}/Gui/moc_MainWindow.o \
 	${OBJECTDIR}/_ext/2033245622/Page.o \
 	${OBJECTDIR}/Gui/QIrrControl.o \
@@ -68,7 +70,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/2033245622/LevelManager.o \
 	${OBJECTDIR}/MainWindowController.o \
 	${OBJECTDIR}/_ext/2033245622/AnimatedGameObject.o \
-	${OBJECTDIR}/Gui/moc_AboutWindow.o
+	${OBJECTDIR}/Gui/moc_AboutWindow.o \
+	${OBJECTDIR}/Gui/moc_EditFrame.o
 
 
 # C Compiler Flags
@@ -165,6 +168,11 @@ ${OBJECTDIR}/_ext/1676536254/tinyxmlparser.o: ../lib/tinyxml/tinyxmlparser.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/1676536254/tinyxmlparser.o ../lib/tinyxml/tinyxmlparser.cpp
 
+${OBJECTDIR}/_ext/2033245622/ZwoptexParser.o: ../Game/Src/ZwoptexParser.cpp 
+	${MKDIR} -p ${OBJECTDIR}/_ext/2033245622
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2033245622/ZwoptexParser.o ../Game/Src/ZwoptexParser.cpp
+
 ${OBJECTDIR}/Gui/moc_MappingToolWindow.o: Gui/moc_MappingToolWindow.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Gui
 	${RM} $@.d
@@ -174,11 +182,6 @@ ${OBJECTDIR}/IrrWorker.o: IrrWorker.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/IrrWorker.o IrrWorker.cpp
-
-${OBJECTDIR}/_ext/2033245622/ZwoptexParser.o: ../Game/Src/ZwoptexParser.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/2033245622
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2033245622/ZwoptexParser.o ../Game/Src/ZwoptexParser.cpp
 
 ${OBJECTDIR}/_ext/1676536254/tinyxml.o: ../lib/tinyxml/tinyxml.cpp 
 	${MKDIR} -p ${OBJECTDIR}/_ext/1676536254
@@ -215,10 +218,20 @@ ${OBJECTDIR}/_ext/2033245622/MappingFile.o: ../Game/Src/MappingFile.cpp
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/_ext/2033245622/MappingFile.o ../Game/Src/MappingFile.cpp
 
+${OBJECTDIR}/Gui/EditFrame.o: Gui/EditFrame.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Gui
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Gui/EditFrame.o Gui/EditFrame.cpp
+
 ${OBJECTDIR}/SigSlot2Test.o: SigSlot2Test.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/SigSlot2Test.o SigSlot2Test.cpp
+
+${OBJECTDIR}/EditFrameController.o: EditFrameController.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/EditFrameController.o EditFrameController.cpp
 
 ${OBJECTDIR}/Gui/moc_MainWindow.o: Gui/moc_MainWindow.cpp 
 	${MKDIR} -p ${OBJECTDIR}/Gui
@@ -264,6 +277,11 @@ ${OBJECTDIR}/Gui/moc_AboutWindow.o: Gui/moc_AboutWindow.cpp
 	${MKDIR} -p ${OBJECTDIR}/Gui
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Gui/moc_AboutWindow.o Gui/moc_AboutWindow.cpp
+
+${OBJECTDIR}/Gui/moc_EditFrame.o: Gui/moc_EditFrame.cpp 
+	${MKDIR} -p ${OBJECTDIR}/Gui
+	${RM} $@.d
+	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Gui/moc_EditFrame.o Gui/moc_EditFrame.cpp
 
 # Subprojects
 .build-subprojects:
