@@ -10,8 +10,7 @@ class EditFrame: public QFrame, public IEditFrame
     Q_OBJECT
 private:
     Ui::EditFrame   widget;
-    QMenuBar*       m_MenuBar;
-    QMenu*          m_AddNewMenu;
+    QMenu*          m_AddNew_Menu;
 protected:
 public:
 
