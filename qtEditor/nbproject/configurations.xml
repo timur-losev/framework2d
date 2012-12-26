@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="84">
+<configurationDescriptor version="88">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="f1" displayName="Game" projectFiles="true">
       <logicalFolder name="f1" displayName="Level" projectFiles="true">
@@ -101,8 +101,6 @@
         <itemPath>MappingToolLevel.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f4" displayName="Tests" projectFiles="true">
-        <itemPath>SigSlot2Test.cpp</itemPath>
-        <itemPath>SigSlot2Test.h</itemPath>
       </logicalFolder>
       <itemPath>Application.cpp</itemPath>
       <itemPath>EdPrec.cpp</itemPath>
@@ -183,12 +181,170 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="../Game/Src/AnimatedGameObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/AnimatedGameObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/AssetsManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/AssetsManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/EditablePagedLevel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/EditablePagedLevel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/GameObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/GameObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/ILevel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/ILevel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/LevelFile.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/LevelFile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/LevelManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/LevelManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/MappingFile.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/MappingFile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/Page.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/Page.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/Prec.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/Sprite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/Sprite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/SpriteDefs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/StaticGameObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/StaticGameObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/ZwoptexParser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/ZwoptexParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/tinyxml/tinystr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/tinyxml/tinystr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/tinyxml/tinyxml.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/tinyxml/tinyxml.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/tinyxml/tinyxmlerror.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/tinyxml/tinyxmlparser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AboutWindowController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AboutWindowController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Application.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EdPrec.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="EdPrec.h" ex="false" tool="1" flavor2="0">
         <ccTool>
           <stripSymbols>false</stripSymbols>
         </ccTool>
       </item>
-      <item path="SigSlot2Test.cpp" ex="true" tool="1" flavor2="0">
+      <item path="EditFrameController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EditFrameController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/AboutWindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/AboutWindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/AboutWindow.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/EditFrame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/EditFrame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/EditFrame.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/MainWindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/MainWindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/MainWindow.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/MappingToolWindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/MappingToolWindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/MappingToolWindow.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/QIrrControl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/QIrrControl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/moc_AboutWindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/moc_EditFrame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/moc_MainWindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/moc_MappingToolWindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/moc_QIrrControl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/ui_AboutWindow.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/ui_EditFrame.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/ui_MainWindow.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/ui_MappingToolWindow.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GuiManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GuiManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IAboutWindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IEditFrame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IIrrControl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IMainWindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IMappingToolWindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IRegularController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IRegularView.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IrrWorker.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="IrrWorker.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MainWindowController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MainWindowController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MapViewer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MapViewer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MappingToolLevel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MappingToolLevel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MappingToolWindowController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MappingToolWindowController.h" ex="false" tool="3" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -210,6 +366,168 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="../Game/Src/AnimatedGameObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/AnimatedGameObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/AssetsManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/AssetsManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/EditablePagedLevel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/EditablePagedLevel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/GameObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/GameObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/ILevel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/ILevel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/LevelFile.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/LevelFile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/LevelManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/LevelManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/MappingFile.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/MappingFile.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/Page.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/Page.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/Prec.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/Sprite.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/Sprite.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/SpriteDefs.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/StaticGameObject.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/StaticGameObject.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../Game/Src/ZwoptexParser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../Game/Src/ZwoptexParser.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/tinyxml/tinystr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/tinyxml/tinystr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/tinyxml/tinyxml.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/tinyxml/tinyxml.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../lib/tinyxml/tinyxmlerror.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="../lib/tinyxml/tinyxmlparser.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AboutWindowController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="AboutWindowController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Application.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EdPrec.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EdPrec.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="EditFrameController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="EditFrameController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/AboutWindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/AboutWindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/AboutWindow.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/EditFrame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/EditFrame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/EditFrame.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/MainWindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/MainWindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/MainWindow.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/MappingToolWindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/MappingToolWindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/MappingToolWindow.ui" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/QIrrControl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/QIrrControl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/moc_AboutWindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/moc_EditFrame.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/moc_MainWindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/moc_MappingToolWindow.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/moc_QIrrControl.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Gui/ui_AboutWindow.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/ui_EditFrame.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/ui_MainWindow.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Gui/ui_MappingToolWindow.hpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="GuiManager.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="GuiManager.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IAboutWindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IEditFrame.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IIrrControl.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IMainWindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IMappingToolWindow.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IRegularController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IRegularView.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="IrrWorker.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="IrrWorker.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MainWindowController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MainWindowController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MapViewer.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MapViewer.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MappingToolLevel.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MappingToolLevel.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="MappingToolWindowController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="MappingToolWindowController.h" ex="false" tool="3" flavor2="0">
+      </item>
     </conf>
   </confs>
 </configurationDescriptor>

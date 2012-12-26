@@ -1,5 +1,6 @@
 #include "EdPrec.h"
 #include "EditFrame.h"
+#include "QtGui/qstandarditemmodel.h"
 
 EditFrame::EditFrame(QWidget* parent): QFrame(parent)
 {
@@ -14,6 +15,14 @@ EditFrame::EditFrame(QWidget* parent): QFrame(parent)
     actionAddEmptyObject->setText(QApplication::translate("EditFrame", "Add empty object", 0, QApplication::UnicodeUTF8));
     connect(actionAddEmptyObject, SIGNAL(activated()), this, SLOT(OnAddEmptyObject()));
     //setStyleSheet("* { background-color:rgb(125,100,50);color:rgb(200,150,100); padding: 7px}}");
+    
+    QStandardItemModel *model = new QStandardItemModel(14, 2, this);
+    model->setHorizontalHeaderItem(0, new QStandardItem("Item"));
+    model->setHorizontalHeaderItem(2, new QStandardItem("Value"));
+    widget.tableView->setModel(model);
+    
+    QStandardItem* firstRow = new QStandardItem("Value");
+    model->setItem(0, 0, firstRow);
 }
 
 void EditFrame::ShowView()

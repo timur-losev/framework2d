@@ -60,7 +60,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/_ext/2033245622/Sprite.o \
 	${OBJECTDIR}/_ext/2033245622/MappingFile.o \
 	${OBJECTDIR}/Gui/EditFrame.o \
-	${OBJECTDIR}/SigSlot2Test.o \
 	${OBJECTDIR}/EditFrameController.o \
 	${OBJECTDIR}/Gui/moc_MainWindow.o \
 	${OBJECTDIR}/_ext/2033245622/Page.o \
@@ -96,7 +95,7 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/qteditor: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/qteditor ${OBJECTFILES} ${LDLIBSOPTIONS} 
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/qteditor ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/Application.o: Application.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -222,11 +221,6 @@ ${OBJECTDIR}/Gui/EditFrame.o: Gui/EditFrame.cpp
 	${MKDIR} -p ${OBJECTDIR}/Gui
 	${RM} $@.d
 	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/Gui/EditFrame.o Gui/EditFrame.cpp
-
-${OBJECTDIR}/SigSlot2Test.o: SigSlot2Test.cpp 
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} $@.d
-	$(COMPILE.cc) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/SigSlot2Test.o SigSlot2Test.cpp
 
 ${OBJECTDIR}/EditFrameController.o: EditFrameController.cpp 
 	${MKDIR} -p ${OBJECTDIR}
