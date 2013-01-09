@@ -56,6 +56,7 @@ public:
     void                    UpdateSelectedPosition(int dx, int dy);
     void                    UpdateSelectedSize(int dw, int dh);
     void                    SetCurrentTexture(int index);
+	inline int				GetCurrentTexture() { return m_CurrentTexture; }
     void                    Centering();
 
     int                     GetCurrentTexture();

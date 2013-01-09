@@ -184,6 +184,9 @@ bool MapViewer::AddFrame(const core::recti& frameRect, FrameDef& out)
     out.bottom = (frameRect.LowerRightCorner.Y - m_Position.Y) / (atlasSize.Height * m_Scale.Y);
     out.textureNum = m_CurrentTexture;
 
+	m_Frames->push_back(out);
+	m_TotalFrames = m_Frames->size();
+
     return true;
 }
 

@@ -176,7 +176,8 @@ void MappingToolLevel::OnMouseUp( int btn, int x, int y)
 				if (m_MapViewer->AddFrame(selection, frame))
 				{
 					m_MapViewer->SelectFrame(m_MapViewer->GetTotalFrames() - 1);
-					CallBack(ES_ON_SELECTION_ADDED_SIGNAL, std::ref(frame));
+					//CallBack(ES_ON_SELECTION_ADDED_SIGNAL, std::ref(frame));
+					CallBack<const SpriteInstance*>(ES_ON_SPRITE_DATA_UPDATED_SIGNAL, m_MapViewer);
 				}
                 return;
             }

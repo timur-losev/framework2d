@@ -149,9 +149,10 @@ void MappingToolWindowController::OnMouseWheel(int delta, int direction, int x, 
 
 void MappingToolWindowController::OnUpdateSpriteData(const SpriteInstance* sprite)
 {
-    auto testuresList = sprite->GetTexturesList();
+    auto texturesList = sprite->GetTexturesList();
     auto framesList = sprite->GetFramesList();
-	m_MappingToolView->RefreshSpriteInfo(testuresList, framesList);
+	//int currentTexture = 
+	m_MappingToolView->RefreshSpriteInfo(texturesList, framesList);
 }
 
 void MappingToolWindowController::OnSelectedFrameChanged(unsigned int index)
