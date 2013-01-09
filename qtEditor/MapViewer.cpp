@@ -151,7 +151,8 @@ int MapViewer::IntersectWithShowedFrame(int x, int y)
                 (int) (m_Position.X + frame.right  * atlasSize.Width  * m_Scale.X),
                 (int) (m_Position.Y + frame.bottom * atlasSize.Width  * m_Scale.X));
 
-            if (frameRect.isPointInside(core::vector2d<s32 > (x, y)))
+			if (frame.textureNum == m_CurrentTexture &&
+				frameRect.isPointInside(core::vector2d<s32 > (x, y)))
             {
                 return i;
             }
