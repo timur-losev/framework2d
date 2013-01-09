@@ -59,7 +59,6 @@ public:
 	inline int				GetCurrentTexture() { return m_CurrentTexture; }
     void                    Centering();
 
-    int                     GetCurrentTexture();
     void                    RemoveFrame(int index);
     void                    RemoveTexture(int index);
     void                    SetScaleByPoint(float scale, int x, int y);

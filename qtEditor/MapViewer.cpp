@@ -402,11 +402,6 @@ bool_t MapViewer::IsShowAllSelection()
     return m_IsShowAllSelections;
 }
 
-int MapViewer::GetCurrentTexture()
-{
-    return m_CurrentTexture;
-}
-
 const SpriteFramesListPtr& MapViewer::GetFramesList() const
 {
     return m_Frames;
