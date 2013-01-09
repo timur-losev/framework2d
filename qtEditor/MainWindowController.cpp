@@ -9,10 +9,12 @@
 
 #include "IMainWindow.h"
 #include "IRegularView.h"
+#include "IEditFrame.h"
 
 #include "GuiManager.h"
 #include "AboutWindowController.h"
 #include "MappingToolWindowController.h"
+#include "EditFrameController.h"
 
 #include "LevelManager.h"
 #include "EditablePagedLevel.h"
@@ -21,7 +23,7 @@
 MainWindowController::MainWindowController(IMainWindowPtr view):
 m_MainWindowView(view)
 {
-    m_View = static_cast<IRegularView*>(m_MainWindowView.get());
+    CAST_TO_REGULAR_VIEW(m_MainWindowView.get());
 
     AttachViewSlots();
 }
@@ -134,7 +136,7 @@ void MainWindowController::OnMouseUp( int x, int y, Qt::MouseButton button )
 
 void MainWindowController::OnMouseWheel( int delta, int direction, int x, int y )
 {
-    
+
 }
 
 void MainWindowController::OnKeyboardEvent( irr::EKEY_CODE c, EButtonState s)
@@ -150,4 +152,15 @@ void MainWindowController::OnKeyboardEvent( irr::EKEY_CODE c, EButtonState s)
             //TODO
         }
     }
+}
+
+void MainWindowController::SetEditFrame( EditFrameControllerPtr frame)
+{
+    m_MainWindowView->SetEditFrame(frame->View());
+
+    m_EditFrameController = frame;
+
+    APP_API_ASSERT("The level instance must be exists already." && m_Level);
+
+    m_EditFrameController->SetCurrenLevel(m_Level);
 }

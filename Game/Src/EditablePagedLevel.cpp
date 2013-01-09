@@ -14,7 +14,7 @@ EditablePagedLevel::EditablePagedLevel(const std::string& name)
     , m_Locked(FALSE)
     , m_ActivePageIndx(0)
 #ifdef EDITOR
-    , m_SelectedObject(NULL)
+    , m_SelectedObject(nullptr)
     , m_State(LEVEL_STATE_IDLE)
     , m_PreviousState(LEVEL_STATE_IDLE)
 #endif
@@ -33,8 +33,6 @@ void EditablePagedLevel::Update( float dt, const RenderContext& context )
 #endif
 
     DriverPtr driver = context.Driver;
-
-    if (m_Locked) return;
 
     for (size_t i = 0; i < MaxPagesInView; ++i)
     {
@@ -97,7 +95,7 @@ void EditablePagedLevel::Init()
     {
         m_PageList.clear();
         m_PagesInView.clear();
-        m_SelectedObject = NULL;
+        m_SelectedObject.reset();
 
         for (size_t i = 0; i < MaxPagesInView; ++i)
         {
@@ -123,7 +121,7 @@ void EditablePagedLevel::Destroy()
 #endif
     {
         m_PagesInView.clear();
-        m_SelectedObject = NULL;
+        m_SelectedObject.reset();
 
         for (size_t i = 0; i < m_PageList.size(); ++i)
         {
@@ -273,7 +271,7 @@ void EditablePagedLevel::OnMouseDown( int btn, int x, int y )
     {
         m_MouseEvtPos.X = x;
         m_MouseEvtPos.Y = y;
-        m_BtnId			= btn;
+        m_BtnId         = btn;
 
         if (EMB_LEFT == btn)
         {
@@ -306,7 +304,7 @@ void EditablePagedLevel::OnMouseUp( int btn, int x, int y )
     if (EMB_LEFT == btn && LEVEL_STATE_MOVE_OBJECT == m_State)
     {
         RestoreState();
-        m_SelectedObject = NULL;
+        m_SelectedObject.reset();
     }
     else if (EMB_RIGHT == btn)
     {
@@ -342,7 +340,7 @@ void EditablePagedLevel::OnMouseMove( int x, int y )
             else
             {
                 RestoreState();
-                m_SelectedObject = NULL;
+                m_SelectedObject.reset();
             }
         }
         else if (LEVEL_STATE_MOVE_LEVEL == m_State)
@@ -481,11 +479,6 @@ size_t EditablePagedLevel::Deserialize( MemoryStream& ms )
     return count;
 }
 
-void EditablePagedLevel::LockUnlock( bool_t lock )
-{
-    m_Locked = lock;
-}
-
 #ifdef EDITOR
 void EditablePagedLevel::ChangeState(LevelStates state)
 {
@@ -502,4 +495,39 @@ void EditablePagedLevel::RestoreState()
     m_State = m_PreviousState;
     //ChangeCursorByState(m_State);
 }
+
+void EditablePagedLevel::AddEmptyObject(std::string* outName)
+{
+#ifdef USE_INVOKER
+    if (NeedInvoke())
+    {
+        BeginInvoke(std::bind(&EditablePagedLevel::AddEmptyObject, this, outName));
+    }
+    else
+#endif
+    {
+        PageInstance* page = GetEditablePage();
+        std::ostringstream ss;
+        int iter = 0;
+
+        do
+        {
+            ss.str("");
+            ss << "EmptyObject" << iter;
+            iter++;
+        }
+        while(page->GetGameObjectByName(ss.str()) != nullptr);
+
+        page->AddGameObject(ss.str());
+        if (outName)
+            *outName = ss.str();
+    }
+}
+
+size_t EditablePagedLevel::GetPagesCount() const
+{
+    return m_PageList.size();
+}
+
+
 #endif

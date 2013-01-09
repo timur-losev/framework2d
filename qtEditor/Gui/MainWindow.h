@@ -9,12 +9,12 @@
 #    define	_MAINWINDOW_H
 
 #    include "IMainWindow.h"
-
 #    include "ui_MainWindow.hpp"
 
 #    include "SharedPointer.h"
 
 SHARED_PTR_FORWARD(QIrrControl);
+class EditFrame;
 
 class MainWindow : public QMainWindow, public IMainWindow
 {
@@ -22,7 +22,7 @@ class MainWindow : public QMainWindow, public IMainWindow
 private:
     Ui::MainWindow    widget;
     QIrrControlPtr    m_IrrControl;
-
+    EditFrame*        m_EditFrame; //naked ptr is safe here
 public:
     MainWindow();
     ~MainWindow();
@@ -30,12 +30,11 @@ public:
     virtual void ShowView();
     virtual void HideView();
 
-    virtual const char* DebugName() const
-    {
-        return "MainWindow";
-    }
+    virtual const char* DebugName() const;
 
     void resizeEvent( QResizeEvent* evt);
+
+    virtual void SetEditFrame(IRegularView& view);
 
 private:
     virtual IIrrControlPtr GetControl();

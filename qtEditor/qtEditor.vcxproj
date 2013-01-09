@@ -66,22 +66,29 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;DEBUG;EDITOR;QT_NO_KEYWORDS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.;..\Game\Src;..\lib\irres\include;$(QTSDK)\Desktop\Qt\4.8.1\msvc2010\include;..\Common\Include;..\lib\tinyxml;..\lib\boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeaderFile>EdPrec.h</PrecompiledHeaderFile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(QTSDK)\Desktop\Qt\4.8.1\msvc2010\lib;..\lib\boost\stage\lib\msvc_11_x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>QtCore4.lib;QtGui4.lib;..\lib\irres\lib\Win32-visualstudio\Irrlicht.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Game\Src\AnimatedGameObject.cpp" />
+    <ClCompile Include="..\Game\Src\AnimatedGameObject.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\Game\Src\AssetsManager.cpp" />
     <ClCompile Include="..\Game\Src\EditablePagedLevel.cpp" />
     <ClCompile Include="..\Game\Src\GameObject.cpp" />
@@ -97,15 +104,19 @@
     <ClCompile Include="Application.cpp">
       <PreprocessToFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</PreprocessToFile>
     </ClCompile>
+    <ClCompile Include="EditFrameController.cpp" />
     <ClCompile Include="EdPrec.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">EdPrec.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="GuiManager.cpp" />
     <ClCompile Include="Gui\AboutWindow.cpp" />
+    <ClCompile Include="Gui\EditFrame.cpp" />
     <ClCompile Include="Gui\MainWindow.cpp" />
     <ClCompile Include="Gui\MappingToolWindow.cpp" />
     <ClCompile Include="Gui\moc_AboutWindow.cpp" />
+    <ClCompile Include="Gui\moc_EditFrame.cpp" />
     <ClCompile Include="Gui\moc_MainWindow.cpp" />
     <ClCompile Include="Gui\moc_MappingToolWindow.cpp" />
     <ClCompile Include="Gui\moc_QIrrControl.cpp" />
@@ -117,6 +128,7 @@
     <ClCompile Include="MapViewer.cpp" />
     <ClCompile Include="SigSlot2Test.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -135,16 +147,20 @@
     <ClInclude Include="..\Game\Src\StaticGameObject.h" />
     <ClInclude Include="..\Game\Src\ZwoptexParser.h" />
     <ClInclude Include="AboutWindowController.h" />
+    <ClInclude Include="EditFrameController.h" />
     <ClInclude Include="EdPrec.h" />
     <ClInclude Include="GuiManager.h" />
     <ClInclude Include="Gui\AboutWindow.h" />
+    <ClInclude Include="Gui\EditFrame.h" />
     <ClInclude Include="Gui\MainWindow.h" />
     <ClInclude Include="Gui\MappingToolWindow.h" />
     <ClInclude Include="Gui\QIrrControl.h" />
     <ClInclude Include="Gui\ui_AboutWindow.hpp" />
+    <ClInclude Include="Gui\ui_EditFrame.hpp" />
     <ClInclude Include="Gui\ui_MainWindow.hpp" />
     <ClInclude Include="Gui\ui_MappingToolWindow.hpp" />
     <ClInclude Include="IAboutWindow.h" />
+    <ClInclude Include="IEditFrame.h" />
     <ClInclude Include="IIrrControl.h" />
     <ClInclude Include="IMainWindow.h" />
     <ClInclude Include="IMappingToolWindow.h" />
@@ -159,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Gui\AboutWindow.ui" />
+    <None Include="Gui\EditFrame.ui" />
     <None Include="Gui\MainWindow.ui" />
     <None Include="Gui\MappingToolWindow.ui" />
   </ItemGroup>

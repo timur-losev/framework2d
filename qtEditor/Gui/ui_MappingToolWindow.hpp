@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MappingToolWindow.ui'
 **
-** Created: Fri 21. Dec 10:56:12 2012
+** Created: Wed Dec 26 01:07:40 2012
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

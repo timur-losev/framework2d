@@ -12,6 +12,7 @@
 SHARED_PTR_FORWARD(MainWindow);
 SHARED_PTR_FORWARD(AboutWindow);
 SHARED_PTR_FORWARD(MappingToolWindow);
+SHARED_PTR_FORWARD(EditFrame);
 
 #include "MainWindowController.h"
 #include "IMainWindow.h"
@@ -24,6 +25,10 @@ SHARED_PTR_FORWARD(MappingToolWindow);
 #include "MappingToolWindowController.h"
 #include "IMappingToolWindow.h"
 #include "Gui/MappingToolWindow.h"
+
+#include "EditFrameController.h"
+#include "IEditFrame.h"
+#include "Gui/EditFrame.h"
 
 #include <QtCore/qnamespace.h>
 #include <QtGui/QWidget>
@@ -96,6 +101,18 @@ MappingToolWindowControllerPtr GuiManager::CreateMappingToolWindow()
     APPLY_MODALITY_FOR(view);
 
     return m_MappingToolWindow;
+}
+
+EditFrameControllerPtr GuiManager::CreateEditFrame()
+{
+    LOOK_UP_PARENT
+
+    EditFramePtr view(new EditFrame(parent));
+    m_EditFrame.reset(new EditFrameController(view));
+
+    APPLY_MODALITY_FOR(view);
+
+    return m_EditFrame;
 }
 
 GuiManager& GuiManager::ForParent(IRegularView* parent)

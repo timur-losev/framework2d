@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MainWindow.ui'
 **
-** Created: Sun 16. Dec 23:53:53 2012
-**      by: Qt User Interface Compiler version 4.8.3
+** Created: Wed Dec 26 01:07:40 2012
+**      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -37,7 +37,6 @@ public:
     QGridLayout *gridLayout;
     QGridLayout *mainSizer;
     QFrame *renderFrame;
-    QFrame *editFrame;
     QMenuBar *menubar;
     QMenu *menuFile;
     QMenu *menuTools;
@@ -49,7 +48,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1107, 913);
+        MainWindow->resize(999, 913);
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
         actionAtlas = new QAction(MainWindow);
@@ -70,18 +69,11 @@ public:
         mainSizer->setContentsMargins(0, -1, -1, -1);
         renderFrame = new QFrame(centralwidget);
         renderFrame->setObjectName(QString::fromUtf8("renderFrame"));
-        renderFrame->setMinimumSize(QSize(1500, 600));
+        renderFrame->setMinimumSize(QSize(800, 600));
         renderFrame->setFrameShape(QFrame::Box);
         renderFrame->setFrameShadow(QFrame::Raised);
 
         mainSizer->addWidget(renderFrame, 0, 0, 1, 1);
-
-        editFrame = new QFrame(centralwidget);
-        editFrame->setObjectName(QString::fromUtf8("editFrame"));
-        editFrame->setFrameShape(QFrame::Box);
-        editFrame->setFrameShadow(QFrame::Raised);
-
-        mainSizer->addWidget(editFrame, 1, 0, 1, 1);
 
 
         gridLayout->addLayout(mainSizer, 0, 0, 1, 1);
@@ -89,7 +81,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1107, 21));
+        menubar->setGeometry(QRect(0, 0, 999, 21));
         menuFile = new QMenu(menubar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuTools = new QMenu(menubar);

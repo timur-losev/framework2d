@@ -21,21 +21,11 @@ class GameObject : public Serializable, public std::enable_shared_from_this<Game
 #    endif
 {
 public:
-
-    enum EType
-    {
-        ET_NONE = 0,
-        ET_STATIC,
-        ET_ANIMATED
-    } ;
-
 private:
 protected:
     core::position2df       m_Shift;
     std::string             m_Name;
     hash_t                  m_Hash;
-
-    core::position2df       m_Offset;
 
     hash_t                  CalcHash();
 
@@ -54,8 +44,10 @@ public:
 
     virtual ~GameObject();
 
-    const core::position2df& GetPosition() const;
-    void                     SetPosition(const core::position2df& val);
+    void                     Init();
+
+    const core::position2df& GetPosition(EPosRelation r = RELATIVE_POS) const;
+    void                     SetPosition(const core::position2df& val, EPosRelation r = RELATIVE_POS);
     
     const std::string&       GetName();
     void                     SetName(const std::string& val);
@@ -65,15 +57,10 @@ public:
     
     float                    GetRotation();
     void                     SetRotation(float val);
-    
-    const core::position2df& GetOffset();
-    void                     SetOffset(const core::position2df& val);
 
     virtual hash_t           Hash();
 
     virtual void             Update(float dt, const RenderContext& context);
-
-    virtual EType            Type() const;
 
     virtual void             Serialize(DynamicMemoryStream& dms);
     virtual size_t           Deserialize(MemoryStream& ms);

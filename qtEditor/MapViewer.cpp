@@ -445,7 +445,7 @@ bool MapViewer::ChangeFrameProperties(unsigned int index, unsigned int prop, con
 	}
 	else 
 	{
-		float fValue = atof(value.c_str());
+		float fValue = (float)atof(value.c_str());
 
 		// check validity
 		if ((0.f > fValue || 1.f < fValue) ||				// coord positions cannot be negative or greater than 1

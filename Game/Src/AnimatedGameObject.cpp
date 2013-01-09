@@ -3,34 +3,25 @@
 #include "AnimatedGameObject.h"
 #include "Sprite.h"
 
-AnimatedGameObject::AnimatedGameObject()
-{
-    m_Sprite = APP_API_NEW SpriteInstance();
-}
 
-AnimatedGameObject::~AnimatedGameObject()
-{
-    APP_API_DEL(m_Sprite);
-}
-
-void AnimatedGameObject::Update( float dt, const RenderContext& context )
-{
-
-}
-
-void AnimatedGameObject::Serialize( DynamicMemoryStream& dms )
-{
-
-}
-
-size_t AnimatedGameObject::Deserialize( MemoryStream& ms )
-{
-    return 0;
-}
-
-bool_t AnimatedGameObject::HitTest( const core::position2df& in ) const
-{
-    return 0;
-}
+//void AnimatedGameObject::Update( float dt, const RenderContext& context )
+//{
+//
+//}
+//
+//void AnimatedGameObject::Serialize( DynamicMemoryStream& dms )
+//{
+//
+//}
+//
+//size_t AnimatedGameObject::Deserialize( MemoryStream& ms )
+//{
+//    return 0;
+//}
+//
+//bool_t AnimatedGameObject::HitTest( const core::position2df& in ) const
+//{
+//    return 0;
+//}
 
 
