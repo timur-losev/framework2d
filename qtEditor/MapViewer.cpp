@@ -191,12 +191,20 @@ bool MapViewer::AddFrame(const core::recti& frameRect, FrameDef& out)
     return true;
 }
 
-void MapViewer::SelectFrame(u32 index)
+void MapViewer::SelectFrame(u32 index, bool isNeedSwitchTexture)
 {
     m_SelectedFrame = -1;
     if (index >= 0 && index < m_Frames->size())
     {
         m_SelectedFrame = index;
+
+		u32 textureIndx = m_Frames->get(index).textureNum;
+
+		if (isNeedSwitchTexture && m_CurrentTexture != textureIndx)
+		{
+			SetCurrentTexture(textureIndx);
+			Centering();
+		}
     }
 }
 

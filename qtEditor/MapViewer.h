@@ -46,7 +46,7 @@ public:
 
     void                    AddFrame(const FrameDef& frame);
     bool                    AddFrame(const core::recti& frameRect, FrameDef& out);
-    void                    SelectFrame(u32 index);
+    void                    SelectFrame(u32 index, bool isNeedSwitchTexture = false);
 
     int                     GetSelectedFrameIndex();
 

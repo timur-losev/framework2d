@@ -406,7 +406,7 @@ void MappingToolLevel::ChangeSelectedFrame(int index)
     {
         if (m_MapViewer)
         {
-            m_MapViewer->SelectFrame(index);
+            m_MapViewer->SelectFrame(index, true);
         }
     }
 }
