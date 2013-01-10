@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MappingToolWindow.ui'
 **
-** Created: Wed Dec 26 01:07:40 2012
+** Created: Thu 10. Jan 19:09:24 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -18,11 +18,11 @@
 #include <QtGui/QFrame>
 #include <QtGui/QGridLayout>
 #include <QtGui/QGroupBox>
-#include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QListView>
 #include <QtGui/QPushButton>
+#include <QtGui/QSplitter>
 #include <QtGui/QTableView>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
@@ -32,58 +32,95 @@ QT_BEGIN_NAMESPACE
 class Ui_MappingToolWindow
 {
 public:
-    QHBoxLayout *horizontalLayout;
-    QGridLayout *mainSizer;
+    QWidget *verticalLayoutWidget;
+    QVBoxLayout *mainSizer;
+    QWidget *menusWidget;
+    QSplitter *splitter;
     QFrame *renderFrame;
     QGroupBox *groupBox;
-    QGridLayout *gridLayout_3;
-    QVBoxLayout *verticalLayout;
-    QLabel *label;
+    QGridLayout *gridLayout_9;
+    QVBoxLayout *verticalLayout_1;
+    QLabel *label_11;
     QTableView *mapTableView;
-    QPushButton *addFramesButton;
-    QPushButton *removeFrameButton;
-    QLabel *label_2;
+    QLabel *label_12;
     QListView *texturesListWidget;
     QPushButton *addTextureButton;
     QPushButton *removeTextureButton;
     QWidget *toolWidget;
     QPushButton *showAll;
-    QWidget *menusWidget;
 
     void setupUi(QDialog *MappingToolWindow)
     {
         if (MappingToolWindow->objectName().isEmpty())
             MappingToolWindow->setObjectName(QString::fromUtf8("MappingToolWindow"));
-        MappingToolWindow->resize(1021, 857);
-        horizontalLayout = new QHBoxLayout(MappingToolWindow);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        mainSizer = new QGridLayout();
+        MappingToolWindow->resize(1024, 768);
+        verticalLayoutWidget = new QWidget(MappingToolWindow);
+        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
+        verticalLayoutWidget->setGeometry(QRect(10, 10, 1001, 751));
+        mainSizer = new QVBoxLayout(verticalLayoutWidget);
         mainSizer->setObjectName(QString::fromUtf8("mainSizer"));
-        mainSizer->setVerticalSpacing(4);
-        renderFrame = new QFrame(MappingToolWindow);
+        mainSizer->setSizeConstraint(QLayout::SetDefaultConstraint);
+        mainSizer->setContentsMargins(0, 0, 0, 0);
+        menusWidget = new QWidget(verticalLayoutWidget);
+        menusWidget->setObjectName(QString::fromUtf8("menusWidget"));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(menusWidget->sizePolicy().hasHeightForWidth());
+        menusWidget->setSizePolicy(sizePolicy);
+        menusWidget->setMinimumSize(QSize(0, 25));
+
+        mainSizer->addWidget(menusWidget);
+
+        splitter = new QSplitter(verticalLayoutWidget);
+        splitter->setObjectName(QString::fromUtf8("splitter"));
+        splitter->setEnabled(true);
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(splitter->sizePolicy().hasHeightForWidth());
+        splitter->setSizePolicy(sizePolicy1);
+        splitter->setFrameShape(QFrame::NoFrame);
+        splitter->setFrameShadow(QFrame::Plain);
+        splitter->setLineWidth(1);
+        splitter->setMidLineWidth(0);
+        splitter->setOrientation(Qt::Horizontal);
+        splitter->setOpaqueResize(false);
+        splitter->setHandleWidth(4);
+        splitter->setChildrenCollapsible(false);
+        renderFrame = new QFrame(splitter);
         renderFrame->setObjectName(QString::fromUtf8("renderFrame"));
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(3);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(renderFrame->sizePolicy().hasHeightForWidth());
+        renderFrame->setSizePolicy(sizePolicy2);
+        renderFrame->setMinimumSize(QSize(200, 200));
         renderFrame->setFrameShape(QFrame::StyledPanel);
         renderFrame->setFrameShadow(QFrame::Raised);
-
-        mainSizer->addWidget(renderFrame, 1, 0, 1, 1);
-
-        groupBox = new QGroupBox(MappingToolWindow);
+        splitter->addWidget(renderFrame);
+        groupBox = new QGroupBox(splitter);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
+        QSizePolicy sizePolicy3(QSizePolicy::Fixed, QSizePolicy::Expanding);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
+        groupBox->setSizePolicy(sizePolicy3);
         groupBox->setMinimumSize(QSize(200, 0));
-        groupBox->setMaximumSize(QSize(120, 16777215));
-        gridLayout_3 = new QGridLayout(groupBox);
-        gridLayout_3->setSpacing(0);
-        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
-        gridLayout_3->setContentsMargins(5, 0, 5, 5);
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setSpacing(0);
-        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        verticalLayout->setContentsMargins(0, -1, -1, -1);
-        label = new QLabel(groupBox);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setIndent(7);
+        groupBox->setMaximumSize(QSize(16777215, 16777215));
+        gridLayout_9 = new QGridLayout(groupBox);
+        gridLayout_9->setSpacing(0);
+        gridLayout_9->setObjectName(QString::fromUtf8("gridLayout_9"));
+        gridLayout_9->setContentsMargins(5, 0, 5, 5);
+        verticalLayout_1 = new QVBoxLayout();
+        verticalLayout_1->setSpacing(0);
+        verticalLayout_1->setObjectName(QString::fromUtf8("verticalLayout_1"));
+        verticalLayout_1->setContentsMargins(0, -1, -1, -1);
+        label_11 = new QLabel(groupBox);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        label_11->setIndent(7);
 
-        verticalLayout->addWidget(label);
+        verticalLayout_1->addWidget(label_11);
 
         mapTableView = new QTableView(groupBox);
         mapTableView->setObjectName(QString::fromUtf8("mapTableView"));
@@ -93,52 +130,40 @@ public:
         mapTableView->verticalHeader()->setDefaultSectionSize(23);
         mapTableView->verticalHeader()->setMinimumSectionSize(15);
 
-        verticalLayout->addWidget(mapTableView);
+        verticalLayout_1->addWidget(mapTableView);
 
-        addFramesButton = new QPushButton(groupBox);
-        addFramesButton->setObjectName(QString::fromUtf8("addFramesButton"));
+        label_12 = new QLabel(groupBox);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+        label_12->setMargin(0);
+        label_12->setIndent(7);
 
-        verticalLayout->addWidget(addFramesButton);
-
-        removeFrameButton = new QPushButton(groupBox);
-        removeFrameButton->setObjectName(QString::fromUtf8("removeFrameButton"));
-
-        verticalLayout->addWidget(removeFrameButton);
-
-        label_2 = new QLabel(groupBox);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setMargin(0);
-        label_2->setIndent(7);
-
-        verticalLayout->addWidget(label_2);
+        verticalLayout_1->addWidget(label_12);
 
         texturesListWidget = new QListView(groupBox);
         texturesListWidget->setObjectName(QString::fromUtf8("texturesListWidget"));
         texturesListWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-        verticalLayout->addWidget(texturesListWidget);
+        verticalLayout_1->addWidget(texturesListWidget);
 
         addTextureButton = new QPushButton(groupBox);
         addTextureButton->setObjectName(QString::fromUtf8("addTextureButton"));
 
-        verticalLayout->addWidget(addTextureButton);
+        verticalLayout_1->addWidget(addTextureButton);
 
         removeTextureButton = new QPushButton(groupBox);
         removeTextureButton->setObjectName(QString::fromUtf8("removeTextureButton"));
 
-        verticalLayout->addWidget(removeTextureButton);
+        verticalLayout_1->addWidget(removeTextureButton);
 
 
-        gridLayout_3->addLayout(verticalLayout, 0, 0, 1, 1);
+        gridLayout_9->addLayout(verticalLayout_1, 0, 0, 1, 1);
 
+        splitter->addWidget(groupBox);
 
-        mainSizer->addWidget(groupBox, 1, 1, 1, 1);
+        mainSizer->addWidget(splitter);
 
-        toolWidget = new QWidget(MappingToolWindow);
+        toolWidget = new QWidget(verticalLayoutWidget);
         toolWidget->setObjectName(QString::fromUtf8("toolWidget"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(toolWidget->sizePolicy().hasHeightForWidth());
         toolWidget->setSizePolicy(sizePolicy);
         toolWidget->setMinimumSize(QSize(0, 25));
@@ -151,16 +176,7 @@ public:
         showAll->setIcon(icon);
         showAll->setCheckable(true);
 
-        mainSizer->addWidget(toolWidget, 2, 0, 1, 1);
-
-        menusWidget = new QWidget(MappingToolWindow);
-        menusWidget->setObjectName(QString::fromUtf8("menusWidget"));
-        menusWidget->setMinimumSize(QSize(0, 25));
-
-        mainSizer->addWidget(menusWidget, 0, 0, 1, 1);
-
-
-        horizontalLayout->addLayout(mainSizer);
+        mainSizer->addWidget(toolWidget);
 
 
         retranslateUi(MappingToolWindow);
@@ -172,10 +188,8 @@ public:
     {
         MappingToolWindow->setWindowTitle(QApplication::translate("MappingToolWindow", "MappingToolWindow", 0, QApplication::UnicodeUTF8));
         groupBox->setTitle(QApplication::translate("MappingToolWindow", "Map box", 0, QApplication::UnicodeUTF8));
-        label->setText(QApplication::translate("MappingToolWindow", "Map list", 0, QApplication::UnicodeUTF8));
-        addFramesButton->setText(QApplication::translate("MappingToolWindow", "Add frames", 0, QApplication::UnicodeUTF8));
-        removeFrameButton->setText(QApplication::translate("MappingToolWindow", "Remove Frame", 0, QApplication::UnicodeUTF8));
-        label_2->setText(QApplication::translate("MappingToolWindow", "Textures list", 0, QApplication::UnicodeUTF8));
+        label_11->setText(QApplication::translate("MappingToolWindow", "Map list", 0, QApplication::UnicodeUTF8));
+        label_12->setText(QApplication::translate("MappingToolWindow", "Textures list", 0, QApplication::UnicodeUTF8));
         addTextureButton->setText(QApplication::translate("MappingToolWindow", "Add Texture", 0, QApplication::UnicodeUTF8));
         removeTextureButton->setText(QApplication::translate("MappingToolWindow", "Remove Texture", 0, QApplication::UnicodeUTF8));
         showAll->setText(QString());

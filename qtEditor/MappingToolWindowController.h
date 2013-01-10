@@ -43,6 +43,7 @@ private:
 	void OnCurrentTextureChanged(unsigned int index);
 	void OnFrameDataChanged(unsigned int index, unsigned int prop, const std::string value);
 	void OnChangeCursorStyle(int cursor);
+	void OnResizeRenderPanel(unsigned int width, unsigned int height);
 } ;
 
 #endif	/* MAPPINGTOOLWINDOWCONTROLLER_H */

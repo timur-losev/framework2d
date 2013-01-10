@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'MappingToolWindow.h'
 **
-** Created: Wed Dec 26 01:07:40 2012
+** Created: Thu 10. Jan 19:09:24 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -24,7 +24,7 @@ static const uint qt_meta_data_MappingToolWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -39,9 +39,10 @@ static const uint qt_meta_data_MappingToolWindow[] = {
      112,   18,   18,   18, 0x08,
      131,   77,   18,   18, 0x08,
      167,  162,   18,   18, 0x08,
-     205,  202,   18,   18, 0x08,
-     234,  230,   18,   18, 0x08,
-     261,   18,   18,   18, 0x08,
+     204,  202,   18,   18, 0x08,
+     232,  229,   18,   18, 0x08,
+     261,  257,   18,   18, 0x08,
+     288,   18,   18,   18, 0x08,
 
        0        // eod
 };
@@ -52,7 +53,8 @@ static const char qt_meta_stringdata_MappingToolWindow[] = {
     "index\0OnFrameSelected(QModelIndex)\0"
     "OnShowAllChanged()\0OnTextureSelected(QModelIndex)\0"
     "item\0OnFrameDataChanged(QStandardItem*)\0"
-    "ev\0closeEvent(QCloseEvent*)\0evt\0"
+    ",\0OnSplitterMoved(int,int)\0ev\0"
+    "closeEvent(QCloseEvent*)\0evt\0"
     "resizeEvent(QResizeEvent*)\0DelayedUpdate()\0"
 };
 
@@ -69,9 +71,10 @@ void MappingToolWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 4: _t->OnShowAllChanged(); break;
         case 5: _t->OnTextureSelected((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
         case 6: _t->OnFrameDataChanged((*reinterpret_cast< QStandardItem*(*)>(_a[1]))); break;
-        case 7: _t->closeEvent((*reinterpret_cast< QCloseEvent*(*)>(_a[1]))); break;
-        case 8: _t->resizeEvent((*reinterpret_cast< QResizeEvent*(*)>(_a[1]))); break;
-        case 9: _t->DelayedUpdate(); break;
+        case 7: _t->OnSplitterMoved((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 8: _t->closeEvent((*reinterpret_cast< QCloseEvent*(*)>(_a[1]))); break;
+        case 9: _t->resizeEvent((*reinterpret_cast< QResizeEvent*(*)>(_a[1]))); break;
+        case 10: _t->DelayedUpdate(); break;
         default: ;
         }
     }
@@ -111,9 +114,9 @@ int MappingToolWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 11;
     }
     return _id;
 }

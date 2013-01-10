@@ -55,6 +55,7 @@ private Q_SLOTS:
 	void OnShowAllChanged();
 	void OnTextureSelected(QModelIndex index);
 	void OnFrameDataChanged(QStandardItem* item);
+	void OnSplitterMoved(int, int);
 
     void closeEvent (QCloseEvent * ev);
     void resizeEvent(QResizeEvent *evt);

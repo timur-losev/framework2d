@@ -56,13 +56,14 @@ public:
     void                    UpdateSelectedPosition(int dx, int dy);
     void                    UpdateSelectedSize(int dw, int dh);
     void                    SetCurrentTexture(int index);
-	inline int				GetCurrentTexture() { return m_CurrentTexture; }
+	INL int					GetCurrentTexture() { return m_CurrentTexture; }
     void                    Centering();
 
     void                    RemoveFrame(int index);
     void                    RemoveTexture(int index);
     void                    SetScaleByPoint(float scale, int x, int y);
 	bool					ChangeFrameProperties(unsigned int index, unsigned int prop, const std::string& value);
+	INL void				SetPreviewDimension( const core::vector2df& position, const core::vector2di& size ) { m_PreviewPos = position; m_PreviewSize = size; }
 } ;
 
 

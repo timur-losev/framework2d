@@ -30,6 +30,7 @@ m_MappingToolView(view)
 	m_View->AttachOn<bool>(IMappingToolWindow::ES_ON_SHOW_ALL_FRAMES, std::bind(&MappingToolWindowController::OnShowAllChanged, this, std::placeholders::_1));
 	m_View->AttachOn<unsigned int>(IMappingToolWindow::ES_ON_CHANGE_CURRENT_TEXTURE, std::bind(&MappingToolWindowController::OnCurrentTextureChanged, this, std::placeholders::_1));
 	m_View->AttachOn<unsigned int, unsigned int, const std::string>(IMappingToolWindow::ES_ON_FRAME_DATA_CHANGED, std::bind(&MappingToolWindowController::OnFrameDataChanged, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
+	m_View->AttachOn<unsigned int, unsigned int>(IMappingToolWindow::ES_ON_RESIZE, std::bind(&MappingToolWindowController::OnResizeRenderPanel, this, std::placeholders::_1, std::placeholders::_2));
 }
 
 MappingToolWindowController::~MappingToolWindowController()
@@ -193,4 +194,12 @@ void MappingToolWindowController::OnFrameDataChanged(unsigned int index, unsigne
 void MappingToolWindowController::OnChangeCursorStyle(int cursor)
 {
 	m_MappingToolView->SetCursor(cursor);
+}
+
+void MappingToolWindowController::OnResizeRenderPanel(unsigned int width, unsigned int height)
+{
+	if (m_Level)
+	{
+		m_Level->SetPreviewDimesion(core::position2df(0.f, 0.f), core::position2di(width, height));
+	}
 }

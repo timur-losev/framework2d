@@ -329,7 +329,8 @@ void MappingToolLevel::SetPreviewDimesion( const core::position2df previewPos, c
     else
 #endif
     {
-        m_MapViewer->Init(previewPos, previewSize);
+		m_MapViewer->SetPreviewDimension(previewPos, previewSize);
+		m_MapViewer->Centering();
     }
 }
 

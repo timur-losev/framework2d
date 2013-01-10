@@ -63,6 +63,7 @@ MappingToolWindow::MappingToolWindow(QWidget* parent) : QDialog(parent, Qt::Wind
 	connect(widget.mapTableView, SIGNAL(clicked(QModelIndex)), this, SLOT(OnFrameSelected(QModelIndex)));
 	connect(widget.showAll, SIGNAL(clicked()), this, SLOT(OnShowAllChanged()));
 	connect(widget.texturesListWidget, SIGNAL(clicked(QModelIndex)), this, SLOT(OnTextureSelected(QModelIndex)));
+	connect(widget.splitter, SIGNAL(splitterMoved(int, int)), this, SLOT(OnSplitterMoved(int, int)));
 
 #ifdef USE_INVOKER
     QTimer* timer = new QTimer(this);
@@ -159,6 +160,20 @@ void MappingToolWindow::OnFrameDataChanged(QStandardItem* item)
 	CallBack(ES_ON_FRAME_DATA_CHANGED, row, col, value);
 }
 
+void MappingToolWindow::OnSplitterMoved(int x, int y)
+{
+	if (m_IrrControl)
+	{
+		unsigned int width = widget.renderFrame->width();
+		unsigned int height = widget.renderFrame->height();
+
+		m_IrrControl->setGeometry(0, 0, width, height);
+		m_IrrControl->Resize(core::dimension2du(width, height));
+
+		CallBack(ES_ON_RESIZE, width, height);
+	}
+}
+
 IIrrControlPtr MappingToolWindow::GetControl()
 {
     return m_IrrControl;
@@ -173,8 +188,13 @@ void MappingToolWindow::resizeEvent(QResizeEvent *evt)
 {
 	if (m_IrrControl)
 	{
-		m_IrrControl->setGeometry(0, 0, widget.renderFrame->width(), widget.renderFrame->height());
-		m_IrrControl->Resize(core::dimension2du(widget.renderFrame->width(), widget.renderFrame->height()));
+		int width = widget.renderFrame->width();
+		int height = widget.renderFrame->height();
+
+		m_IrrControl->setGeometry(0, 0, width, height);
+		m_IrrControl->Resize(core::dimension2du(width, height));
+
+		CallBack(ES_ON_RESIZE, width, height);
 	}
 }
 
