@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MappingToolWindow.ui'
 **
-** Created: Thu 10. Jan 19:09:24 2013
+** Created: Thu 10. Jan 19:54:48 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -20,6 +20,7 @@
 #include <QtGui/QGroupBox>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
+#include <QtGui/QLineEdit>
 #include <QtGui/QListView>
 #include <QtGui/QPushButton>
 #include <QtGui/QSplitter>
@@ -42,6 +43,7 @@ public:
     QVBoxLayout *verticalLayout_1;
     QLabel *label_11;
     QTableView *mapTableView;
+    QLineEdit *fastEdit;
     QLabel *label_12;
     QListView *texturesListWidget;
     QPushButton *addTextureButton;
@@ -132,6 +134,11 @@ public:
 
         verticalLayout_1->addWidget(mapTableView);
 
+        fastEdit = new QLineEdit(groupBox);
+        fastEdit->setObjectName(QString::fromUtf8("fastEdit"));
+
+        verticalLayout_1->addWidget(fastEdit);
+
         label_12 = new QLabel(groupBox);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setMargin(0);
@@ -172,7 +179,7 @@ public:
         showAll->setObjectName(QString::fromUtf8("showAll"));
         showAll->setGeometry(QRect(0, 0, 23, 23));
         QIcon icon;
-        icon.addFile(QString::fromUtf8(":/16x16/show_all.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8("../../Media/Icons/16x16/show_all.png"), QSize(), QIcon::Normal, QIcon::Off);
         showAll->setIcon(icon);
         showAll->setCheckable(true);
 
@@ -189,6 +196,7 @@ public:
         MappingToolWindow->setWindowTitle(QApplication::translate("MappingToolWindow", "MappingToolWindow", 0, QApplication::UnicodeUTF8));
         groupBox->setTitle(QApplication::translate("MappingToolWindow", "Map box", 0, QApplication::UnicodeUTF8));
         label_11->setText(QApplication::translate("MappingToolWindow", "Map list", 0, QApplication::UnicodeUTF8));
+        fastEdit->setPlaceholderText(QApplication::translate("MappingToolWindow", "Fast properties editor", 0, QApplication::UnicodeUTF8));
         label_12->setText(QApplication::translate("MappingToolWindow", "Textures list", 0, QApplication::UnicodeUTF8));
         addTextureButton->setText(QApplication::translate("MappingToolWindow", "Add Texture", 0, QApplication::UnicodeUTF8));
         removeTextureButton->setText(QApplication::translate("MappingToolWindow", "Remove Texture", 0, QApplication::UnicodeUTF8));

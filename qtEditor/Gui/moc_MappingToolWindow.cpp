@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'MappingToolWindow.h'
 **
-** Created: Thu 10. Jan 19:09:24 2013
+** Created: Thu 10. Jan 19:54:47 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -24,7 +24,7 @@ static const uint qt_meta_data_MappingToolWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      11,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -43,6 +43,7 @@ static const uint qt_meta_data_MappingToolWindow[] = {
      232,  229,   18,   18, 0x08,
      261,  257,   18,   18, 0x08,
      288,   18,   18,   18, 0x08,
+     304,   77,   18,   18, 0x08,
 
        0        // eod
 };
@@ -56,6 +57,7 @@ static const char qt_meta_stringdata_MappingToolWindow[] = {
     ",\0OnSplitterMoved(int,int)\0ev\0"
     "closeEvent(QCloseEvent*)\0evt\0"
     "resizeEvent(QResizeEvent*)\0DelayedUpdate()\0"
+    "MakeFastEditString(QModelIndex)\0"
 };
 
 void MappingToolWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -75,6 +77,7 @@ void MappingToolWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 8: _t->closeEvent((*reinterpret_cast< QCloseEvent*(*)>(_a[1]))); break;
         case 9: _t->resizeEvent((*reinterpret_cast< QResizeEvent*(*)>(_a[1]))); break;
         case 10: _t->DelayedUpdate(); break;
+        case 11: _t->MakeFastEditString((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -114,9 +117,9 @@ int MappingToolWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 11)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 11;
+        _id -= 12;
     }
     return _id;
 }

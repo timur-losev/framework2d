@@ -60,6 +60,8 @@ private Q_SLOTS:
     void closeEvent (QCloseEvent * ev);
     void resizeEvent(QResizeEvent *evt);
     void DelayedUpdate();
+
+	void MakeFastEditString(QModelIndex index);
 } ;
 
 #endif	/* _MAPPINGTOOLWINDOW_H */

@@ -173,6 +173,13 @@
            </widget>
           </item>
           <item>
+           <widget class="QLineEdit" name="fastEdit">
+            <property name="placeholderText">
+             <string>Fast properties editor</string>
+            </property>
+           </widget>
+          </item>
+          <item>
            <widget class="QLabel" name="label_12">
             <property name="text">
              <string>Textures list</string>
@@ -242,8 +249,8 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../Media/Icons/icons.qrc">
-         <normaloff>:/16x16/show_all.png</normaloff>:/16x16/show_all.png</iconset>
+        <iconset>
+         <normaloff>../../Media/Icons/16x16/show_all.png</normaloff>../../Media/Icons/16x16/show_all.png</iconset>
        </property>
        <property name="checkable">
         <bool>true</bool>

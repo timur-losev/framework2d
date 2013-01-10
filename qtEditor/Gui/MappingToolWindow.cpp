@@ -134,6 +134,8 @@ void MappingToolWindow::OnFrameSelected(QModelIndex index)
 {
 	unsigned int i = index.row();
 
+	MakeFastEditString(index);
+
 	CallBack(ES_ON_CHANGE_SELECTED_FRAME, i);
 }
 
@@ -311,4 +313,24 @@ void MappingToolWindow::SetCursor(int cursor)
 
 		widget.renderFrame->setCursor(cursorStyle);
 	}
+}
+
+void MappingToolWindow::MakeFastEditString(QModelIndex index)
+{
+	std::string strResult;
+
+	const int propsNum = 5;
+	std::string strDelimeter = " ";
+	std::string strProps[propsNum] = {"name=", "x=", "y=", "w=", "h="};
+
+	for (int i = 0; i < propsNum; ++i)
+	{
+		const std::string value = widget.mapTableView->model()->data(widget.mapTableView->model()->index(index.row(), i)).toString().toUtf8().data();
+
+		strResult += (0 == i) ? "" : strDelimeter;
+		strResult += strProps[i];
+		strResult += value;
+	}
+
+	widget.fastEdit->setText(strResult.c_str());
 }
