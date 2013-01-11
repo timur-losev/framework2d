@@ -64,6 +64,7 @@ MappingToolWindow::MappingToolWindow(QWidget* parent) : QDialog(parent, Qt::Wind
 	connect(widget.showAll, SIGNAL(clicked()), this, SLOT(OnShowAllChanged()));
 	connect(widget.texturesListWidget, SIGNAL(clicked(QModelIndex)), this, SLOT(OnTextureSelected(QModelIndex)));
 	connect(widget.splitter, SIGNAL(splitterMoved(int, int)), this, SLOT(OnSplitterMoved(int, int)));
+	connect(widget.fastEdit, SIGNAL(textEdited(QString)), this, SLOT(OnFastEditorChanged(QString)));
 
 #ifdef USE_INVOKER
     QTimer* timer = new QTimer(this);
@@ -317,7 +318,8 @@ void MappingToolWindow::SetCursor(int cursor)
 
 void MappingToolWindow::MakeFastEditString(QModelIndex index)
 {
-	std::string strResult;
+	m_FastEditorStr = "";
+	m_FastEditorRowIndex = index.row();
 
 	const int propsNum = 5;
 	std::string strDelimeter = " ";
@@ -327,10 +329,55 @@ void MappingToolWindow::MakeFastEditString(QModelIndex index)
 	{
 		const std::string value = widget.mapTableView->model()->data(widget.mapTableView->model()->index(index.row(), i)).toString().toUtf8().data();
 
-		strResult += (0 == i) ? "" : strDelimeter;
-		strResult += strProps[i];
-		strResult += value;
+		m_FastEditorStr += (0 == i) ? "" : strDelimeter;
+		m_FastEditorStr += strProps[i];
+		m_FastEditorStr += value;
 	}
 
-	widget.fastEdit->setText(strResult.c_str());
+	widget.fastEdit->setText(m_FastEditorStr.c_str());
+}
+
+void MappingToolWindow::OnFastEditorChanged(QString text)
+{
+	int corruptedIndx = -1;
+	std::string currentString = text.toUtf8().data();
+	const int propsNum = 5;
+	std::string strDelimeter = " ";
+	std::string strProps[propsNum] = {"name=", "x=", "y=", "w=", "h="};
+	std::vector<std::string> values;
+
+	// check corruption
+	for (int i = 0; i < propsNum; ++i)
+	{
+		std::string prop = (0 == i) ? "" : strDelimeter;
+		prop += strProps[i];
+
+		// getting changed value
+		size_t beg = currentString.find(prop);
+		size_t end = (i < propsNum - 1) ? currentString.find(strDelimeter + strProps[i+1]) : currentString.length();
+		if (beg == std::string::npos || end == std::string::npos || end < beg)
+		{
+			corruptedIndx = i;
+			break;
+		}
+		// skip properties key
+		beg += prop.length();
+
+		// Update edited cell value
+		std::string oldValue = widget.mapTableView->model()->data(widget.mapTableView->model()->index(m_FastEditorRowIndex, i)).toString().toUtf8().data();
+		std::string newValue = currentString.substr(beg, end - beg).c_str();
+		if (newValue != oldValue)
+		{
+			widget.mapTableView->model()->setData(widget.mapTableView->model()->index(m_FastEditorRowIndex, i), newValue.c_str());
+		}
+	}
+
+	if (-1 != corruptedIndx)
+	{
+		widget.fastEdit->setText(m_FastEditorStr.c_str());
+	}
+	else
+	{
+		m_FastEditorStr = currentString;
+	}
 }

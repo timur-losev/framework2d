@@ -30,6 +30,9 @@ private:
     QMenu*      m_FileMenu, *m_ToolsMenu;
 
     QIrrControlPtr    m_IrrControl;
+
+	std::string m_FastEditorStr;
+	int			m_FastEditorRowIndex;
 protected:
     //void resizeEvent(QResizeEvent *);
 public:
@@ -56,12 +59,12 @@ private Q_SLOTS:
 	void OnTextureSelected(QModelIndex index);
 	void OnFrameDataChanged(QStandardItem* item);
 	void OnSplitterMoved(int, int);
-
     void closeEvent (QCloseEvent * ev);
     void resizeEvent(QResizeEvent *evt);
     void DelayedUpdate();
 
 	void MakeFastEditString(QModelIndex index);
+	void OnFastEditorChanged(QString text);
 } ;
 
 #endif	/* _MAPPINGTOOLWINDOW_H */
