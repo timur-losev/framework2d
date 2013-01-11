@@ -340,11 +340,10 @@ void MappingToolWindow::MakeFastEditString(QModelIndex index)
 void MappingToolWindow::OnFastEditorChanged(QString text)
 {
 	int corruptedIndx = -1;
-	std::string currentString = text.toUtf8().data();
 	const int propsNum = 5;
+	std::string currentString = text.toUtf8().data();
 	std::string strDelimeter = " ";
 	std::string strProps[propsNum] = {"name=", "x=", "y=", "w=", "h="};
-	std::vector<std::string> values;
 
 	// check corruption
 	for (int i = 0; i < propsNum; ++i)
@@ -374,7 +373,9 @@ void MappingToolWindow::OnFastEditorChanged(QString text)
 
 	if (-1 != corruptedIndx)
 	{
+		int cursorPosition = widget.fastEdit->cursorPosition();
 		widget.fastEdit->setText(m_FastEditorStr.c_str());
+		widget.fastEdit->setCursorPosition(cursorPosition + 1);
 	}
 	else
 	{
