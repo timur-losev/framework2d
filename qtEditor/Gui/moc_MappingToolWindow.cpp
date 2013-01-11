@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'MappingToolWindow.h'
 **
-** Created: Fri 11. Jan 11:59:54 2013
+** Created: Fri 11. Jan 16:36:18 2013
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -24,7 +24,7 @@ static const uint qt_meta_data_MappingToolWindow[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -45,6 +45,7 @@ static const uint qt_meta_data_MappingToolWindow[] = {
      288,   18,   18,   18, 0x08,
      304,   77,   18,   18, 0x08,
      341,  336,   18,   18, 0x08,
+     374,  370,   18,   18, 0x08,
 
        0        // eod
 };
@@ -59,7 +60,8 @@ static const char qt_meta_stringdata_MappingToolWindow[] = {
     "closeEvent(QCloseEvent*)\0evt\0"
     "resizeEvent(QResizeEvent*)\0DelayedUpdate()\0"
     "MakeFastEditString(QModelIndex)\0text\0"
-    "OnFastEditorChanged(QString)\0"
+    "OnFastEditorChanged(QString)\0x,y\0"
+    "OnFastEditorCursorPositionChanged(int,int)\0"
 };
 
 void MappingToolWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -81,6 +83,7 @@ void MappingToolWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 10: _t->DelayedUpdate(); break;
         case 11: _t->MakeFastEditString((*reinterpret_cast< QModelIndex(*)>(_a[1]))); break;
         case 12: _t->OnFastEditorChanged((*reinterpret_cast< QString(*)>(_a[1]))); break;
+        case 13: _t->OnFastEditorCursorPositionChanged((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
         }
     }
@@ -120,9 +123,9 @@ int MappingToolWindow::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 14;
     }
     return _id;
 }

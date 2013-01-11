@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MappingToolWindow.ui'
 **
-** Created: Fri 11. Jan 11:59:55 2013
+** Created: Fri 11. Jan 16:36:18 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -136,6 +136,7 @@ public:
 
         fastEdit = new QLineEdit(groupBox);
         fastEdit->setObjectName(QString::fromUtf8("fastEdit"));
+        fastEdit->setMaxLength(1024);
 
         verticalLayout_1->addWidget(fastEdit);
 

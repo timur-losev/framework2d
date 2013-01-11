@@ -65,6 +65,7 @@ MappingToolWindow::MappingToolWindow(QWidget* parent) : QDialog(parent, Qt::Wind
 	connect(widget.texturesListWidget, SIGNAL(clicked(QModelIndex)), this, SLOT(OnTextureSelected(QModelIndex)));
 	connect(widget.splitter, SIGNAL(splitterMoved(int, int)), this, SLOT(OnSplitterMoved(int, int)));
 	connect(widget.fastEdit, SIGNAL(textEdited(QString)), this, SLOT(OnFastEditorChanged(QString)));
+	connect(widget.fastEdit, SIGNAL(cursorPositionChanged(int, int)), this, SLOT(OnFastEditorCursorPositionChanged(int, int)));
 
 #ifdef USE_INVOKER
     QTimer* timer = new QTimer(this);
@@ -380,5 +381,38 @@ void MappingToolWindow::OnFastEditorChanged(QString text)
 	else
 	{
 		m_FastEditorStr = currentString;
+	}
+}
+
+void MappingToolWindow::OnFastEditorCursorPositionChanged(int y, int x)
+{
+	static bool isWasHighlighted = false;
+	if (widget.fastEdit->selectedText().length() > 0 || isWasHighlighted)
+	{
+		isWasHighlighted = false;
+		return;
+	}
+
+	const int propsNum = 5;
+	std::string strDelimeter = " ";
+	std::string strProps[propsNum] = {"name=", "x=", "y=", "w=", "h="};
+
+	for (int i = 0; i < propsNum; ++i)
+	{
+		std::string prop = strProps[i];
+
+		size_t beg = m_FastEditorStr.find(prop);
+		if (beg != std::string::npos)
+		{
+			size_t end = (i < propsNum - 1) ? m_FastEditorStr.find(strDelimeter + strProps[i+1]) : m_FastEditorStr.length();
+			if (beg <= (size_t)x && (size_t)x < beg + prop.length())
+			{
+				beg += prop.length();
+
+				widget.fastEdit->setSelection(beg, end - beg);
+				isWasHighlighted = true;
+				break;
+			}
+		}
 	}
 }

@@ -65,6 +65,7 @@ private Q_SLOTS:
 
 	void MakeFastEditString(QModelIndex index);
 	void OnFastEditorChanged(QString text);
+	void OnFastEditorCursorPositionChanged(int x, int y);
 } ;
 
 #endif	/* _MAPPINGTOOLWINDOW_H */
