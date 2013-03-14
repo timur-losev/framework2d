@@ -529,6 +529,8 @@ void MappingToolLevel::RemoveFrame(int index)
         if (m_MapViewer)
         {
             m_MapViewer->RemoveFrame(index);
+
+			CallBack<const SpriteInstance*>(ES_ON_SPRITE_DATA_UPDATED_SIGNAL, m_MapViewer);
         }
     }
 }

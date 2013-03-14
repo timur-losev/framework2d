@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MappingToolWindow.ui'
 **
-** Created: Fri 11. Jan 16:36:18 2013
+** Created: Wed 13. Mar 18:06:34 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -24,6 +24,7 @@
 #include <QtGui/QListView>
 #include <QtGui/QPushButton>
 #include <QtGui/QSplitter>
+#include <QtGui/QTabWidget>
 #include <QtGui/QTableView>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
@@ -33,9 +34,10 @@ QT_BEGIN_NAMESPACE
 class Ui_MappingToolWindow
 {
 public:
+    QTabWidget *tabWidget;
+    QWidget *mapping;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *mainSizer;
-    QWidget *menusWidget;
     QSplitter *splitter;
     QFrame *renderFrame;
     QGroupBox *groupBox;
@@ -50,38 +52,34 @@ public:
     QPushButton *removeTextureButton;
     QWidget *toolWidget;
     QPushButton *showAll;
+    QWidget *animation;
+    QWidget *menusWidget;
 
     void setupUi(QDialog *MappingToolWindow)
     {
         if (MappingToolWindow->objectName().isEmpty())
             MappingToolWindow->setObjectName(QString::fromUtf8("MappingToolWindow"));
-        MappingToolWindow->resize(1024, 768);
-        verticalLayoutWidget = new QWidget(MappingToolWindow);
+        MappingToolWindow->resize(1024, 792);
+        tabWidget = new QTabWidget(MappingToolWindow);
+        tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
+        tabWidget->setGeometry(QRect(10, 40, 1001, 741));
+        mapping = new QWidget();
+        mapping->setObjectName(QString::fromUtf8("mapping"));
+        verticalLayoutWidget = new QWidget(mapping);
         verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(10, 10, 1001, 751));
+        verticalLayoutWidget->setGeometry(QRect(0, 0, 1001, 751));
         mainSizer = new QVBoxLayout(verticalLayoutWidget);
         mainSizer->setObjectName(QString::fromUtf8("mainSizer"));
         mainSizer->setSizeConstraint(QLayout::SetDefaultConstraint);
         mainSizer->setContentsMargins(0, 0, 0, 0);
-        menusWidget = new QWidget(verticalLayoutWidget);
-        menusWidget->setObjectName(QString::fromUtf8("menusWidget"));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(menusWidget->sizePolicy().hasHeightForWidth());
-        menusWidget->setSizePolicy(sizePolicy);
-        menusWidget->setMinimumSize(QSize(0, 25));
-
-        mainSizer->addWidget(menusWidget);
-
         splitter = new QSplitter(verticalLayoutWidget);
         splitter->setObjectName(QString::fromUtf8("splitter"));
         splitter->setEnabled(true);
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(splitter->sizePolicy().hasHeightForWidth());
-        splitter->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(splitter->sizePolicy().hasHeightForWidth());
+        splitter->setSizePolicy(sizePolicy);
         splitter->setFrameShape(QFrame::NoFrame);
         splitter->setFrameShadow(QFrame::Plain);
         splitter->setLineWidth(1);
@@ -92,22 +90,22 @@ public:
         splitter->setChildrenCollapsible(false);
         renderFrame = new QFrame(splitter);
         renderFrame->setObjectName(QString::fromUtf8("renderFrame"));
-        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy2.setHorizontalStretch(3);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(renderFrame->sizePolicy().hasHeightForWidth());
-        renderFrame->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy1.setHorizontalStretch(3);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(renderFrame->sizePolicy().hasHeightForWidth());
+        renderFrame->setSizePolicy(sizePolicy1);
         renderFrame->setMinimumSize(QSize(200, 200));
         renderFrame->setFrameShape(QFrame::StyledPanel);
         renderFrame->setFrameShadow(QFrame::Raised);
         splitter->addWidget(renderFrame);
         groupBox = new QGroupBox(splitter);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        QSizePolicy sizePolicy3(QSizePolicy::Fixed, QSizePolicy::Expanding);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
-        groupBox->setSizePolicy(sizePolicy3);
+        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
+        groupBox->setSizePolicy(sizePolicy2);
         groupBox->setMinimumSize(QSize(200, 0));
         groupBox->setMaximumSize(QSize(16777215, 16777215));
         gridLayout_9 = new QGridLayout(groupBox);
@@ -126,6 +124,7 @@ public:
 
         mapTableView = new QTableView(groupBox);
         mapTableView->setObjectName(QString::fromUtf8("mapTableView"));
+        mapTableView->setContextMenuPolicy(Qt::CustomContextMenu);
         mapTableView->setSelectionBehavior(QAbstractItemView::SelectRows);
         mapTableView->horizontalHeader()->setDefaultSectionSize(50);
         mapTableView->horizontalHeader()->setMinimumSectionSize(23);
@@ -172,22 +171,35 @@ public:
 
         toolWidget = new QWidget(verticalLayoutWidget);
         toolWidget->setObjectName(QString::fromUtf8("toolWidget"));
-        sizePolicy.setHeightForWidth(toolWidget->sizePolicy().hasHeightForWidth());
-        toolWidget->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy3.setHorizontalStretch(0);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(toolWidget->sizePolicy().hasHeightForWidth());
+        toolWidget->setSizePolicy(sizePolicy3);
         toolWidget->setMinimumSize(QSize(0, 25));
         toolWidget->setContextMenuPolicy(Qt::DefaultContextMenu);
         showAll = new QPushButton(toolWidget);
         showAll->setObjectName(QString::fromUtf8("showAll"));
         showAll->setGeometry(QRect(0, 0, 23, 23));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8("../../Media/Icons/16x16/show_all.png"), QSize(), QIcon::Normal, QIcon::Off);
-        showAll->setIcon(icon);
         showAll->setCheckable(true);
 
         mainSizer->addWidget(toolWidget);
 
+        tabWidget->addTab(mapping, QString());
+        animation = new QWidget();
+        animation->setObjectName(QString::fromUtf8("animation"));
+        tabWidget->addTab(animation, QString());
+        menusWidget = new QWidget(MappingToolWindow);
+        menusWidget->setObjectName(QString::fromUtf8("menusWidget"));
+        menusWidget->setGeometry(QRect(10, 10, 999, 25));
+        sizePolicy3.setHeightForWidth(menusWidget->sizePolicy().hasHeightForWidth());
+        menusWidget->setSizePolicy(sizePolicy3);
+        menusWidget->setMinimumSize(QSize(0, 25));
 
         retranslateUi(MappingToolWindow);
+
+        tabWidget->setCurrentIndex(0);
+
 
         QMetaObject::connectSlotsByName(MappingToolWindow);
     } // setupUi
@@ -202,6 +214,8 @@ public:
         addTextureButton->setText(QApplication::translate("MappingToolWindow", "Add Texture", 0, QApplication::UnicodeUTF8));
         removeTextureButton->setText(QApplication::translate("MappingToolWindow", "Remove Texture", 0, QApplication::UnicodeUTF8));
         showAll->setText(QString());
+        tabWidget->setTabText(tabWidget->indexOf(mapping), QApplication::translate("MappingToolWindow", "Mapping Tool", 0, QApplication::UnicodeUTF8));
+        tabWidget->setTabText(tabWidget->indexOf(animation), QApplication::translate("MappingToolWindow", "Animation Tool", 0, QApplication::UnicodeUTF8));
     } // retranslateUi
 
 };

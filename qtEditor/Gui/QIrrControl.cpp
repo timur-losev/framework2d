@@ -37,7 +37,7 @@ bool_t QIrrControl::Init()
 
 void QIrrControl::Start()
 {
-
+	
 }
 
 void QIrrControl::Stop()
@@ -56,7 +56,11 @@ bool QIrrControl::event(QEvent* event)
 {
     if (event->type() == QEvent::Hide)
     {
-        Stop();
+        Pause();
+    }
+	else if (event->type() == QEvent::Show)
+    {
+		Resume();
     }
 
     return QWidget::event(event);
@@ -64,11 +68,17 @@ bool QIrrControl::event(QEvent* event)
 
 void QIrrControl::Pause()
 {
+	if (m_Worker.IsWorking())
+        return;
+
     Common::Invoker::PerformCrossThreadCall(std::bind(&IrrWorker::Pause, &m_Worker), &m_Worker, TRUE);
 }
 
 void QIrrControl::Resume()
 {
+	if (m_Worker.IsWorking())
+        return;
+
     Common::Invoker::PerformCrossThreadCall(std::bind(&IrrWorker::Unpause, &m_Worker), &m_Worker, TRUE);
 }
 

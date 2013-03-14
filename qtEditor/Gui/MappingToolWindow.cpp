@@ -56,6 +56,11 @@ MappingToolWindow::MappingToolWindow(QWidget* parent) : QDialog(parent, Qt::Wind
     actionSaveFile->setText(QApplication::translate("MappingToolWindow", "Save", 0, QApplication::UnicodeUTF8));
     actionOpenTexture->setText(QApplication::translate("MappingToolWindow", "Open Texture", 0, QApplication::UnicodeUTF8));
 
+	QIcon icon;
+	std::string iconPath = std::string(MEDIA_PATH) + "Icons/16x16/show_all.png";
+	icon.addFile(iconPath.c_str(), QSize(), QIcon::Normal, QIcon::Off);
+    widget.showAll->setIcon(icon);
+
     connect(actionClose, SIGNAL(activated()), this, SLOT(close()));
     connect(actionOpenFile, SIGNAL(activated()), this, SLOT(OnOpenFileSelected()));
     connect(actionSaveFile, SIGNAL(activated()), this, SLOT(OnSaveFile()));
@@ -66,6 +71,8 @@ MappingToolWindow::MappingToolWindow(QWidget* parent) : QDialog(parent, Qt::Wind
 	connect(widget.splitter, SIGNAL(splitterMoved(int, int)), this, SLOT(OnSplitterMoved(int, int)));
 	connect(widget.fastEdit, SIGNAL(textEdited(QString)), this, SLOT(OnFastEditorChanged(QString)));
 	connect(widget.fastEdit, SIGNAL(cursorPositionChanged(int, int)), this, SLOT(OnFastEditorCursorPositionChanged(int, int)));
+	connect(widget.mapTableView, SIGNAL(customContextMenuRequested(const QPoint&)), this, SLOT(OnShowMapContextMenu(const QPoint&)));
+	connect(widget.tabWidget, SIGNAL(currentChanged(int)), this, SLOT(OnCurrentViewChanged(int)));
 
 #ifdef USE_INVOKER
     QTimer* timer = new QTimer(this);
@@ -86,8 +93,8 @@ void MappingToolWindow::ShowView()
     m_IrrControl.reset(new QIrrControl(widget.renderFrame));
     m_IrrControl->setGeometry(0, 0, widget.renderFrame->width(), widget.renderFrame->height());
     m_IrrControl->setObjectName(QString::fromUtf8("IrrControlOnMapping"));
-    m_IrrControl->show();
     m_IrrControl->Init();
+	m_IrrControl->show();
 
     CallBack(EB_ON_SHOW);
 }
@@ -202,6 +209,12 @@ void MappingToolWindow::resizeEvent(QResizeEvent *evt)
 	}
 }
 
+void MappingToolWindow::keyPressEvent(QKeyEvent *event)
+{
+	QModelIndex index = widget.mapTableView->currentIndex();
+	OnFrameSelected(index);
+}
+
 void MappingToolWindow::DelayedUpdate()
 {
 #ifdef USE_INVOKER
@@ -225,7 +238,10 @@ void MappingToolWindow::RefreshSpriteInfo(SpriteTexturesListConstPtr textures, S
             QStandardItemModel *model = new QStandardItemModel();
             for (size_t i = 0; i < textures->size(); ++i)
             {
-                model->appendRow( new QStandardItem(QIcon("Media/Icons/16x16/puzzle.png"), QString(textures->get(i).name.c_str()) ));
+				QIcon icon;
+				std::string iconPath = std::string(MEDIA_PATH) + "Icons/16x16/puzzle.png";
+				icon.addFile(iconPath.c_str(), QSize(), QIcon::Normal, QIcon::Off);
+                model->appendRow( new QStandardItem(icon, QString(textures->get(i).name.c_str()) ));
             }
             widget.texturesListWidget->setModel(model);
         }
@@ -402,17 +418,44 @@ void MappingToolWindow::OnFastEditorCursorPositionChanged(int y, int x)
 		std::string prop = strProps[i];
 
 		size_t beg = m_FastEditorStr.find(prop);
-		if (beg != std::string::npos)
+		size_t end = (i < propsNum - 1) ? m_FastEditorStr.find(strDelimeter + strProps[i+1]) : m_FastEditorStr.length();
+		if (beg != std::string::npos && end != std::string::npos)
 		{
-			size_t end = (i < propsNum - 1) ? m_FastEditorStr.find(strDelimeter + strProps[i+1]) : m_FastEditorStr.length();
-			if (beg <= (size_t)x && (size_t)x < beg + prop.length())
+			if (beg <= (size_t)x && (size_t)x < beg + prop.length())	// if cursor is on properties key name then properties value should be highlighted
 			{
-				beg += prop.length();
+				beg += prop.length();	// shift to starting value position
 
 				widget.fastEdit->setSelection(beg, end - beg);
-				isWasHighlighted = true;
+				isWasHighlighted = true;	// Mark that next changing value just removes highlighting
 				break;
 			}
 		}
+	}
+}
+
+void MappingToolWindow::OnShowMapContextMenu(const QPoint& pos) // this is a slot
+{
+	QPoint globalPos = widget.mapTableView->mapToGlobal(pos);
+
+    QMenu contextMenu;
+    contextMenu.addAction("Delete selected frame");
+
+    QAction* selectedItem = contextMenu.exec(globalPos);
+    if (selectedItem)
+    {
+		if (selectedItem->text() == "Delete selected frame")
+		{
+			QModelIndex index = widget.mapTableView->currentIndex();
+			unsigned int frameIndx = (unsigned int)index.row();
+			CallBack(ES_ON_REMOVE_FRAME, frameIndx);
+		}
+    }
+}
+
+void MappingToolWindow::OnCurrentViewChanged(int tabIndex)
+{
+	if (m_IrrControl)
+	{
+		//m_IrrControl->Init();
 	}
 }

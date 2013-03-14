@@ -44,6 +44,7 @@ private:
 	void OnFrameDataChanged(unsigned int index, unsigned int prop, const std::string value);
 	void OnChangeCursorStyle(int cursor);
 	void OnResizeRenderPanel(unsigned int width, unsigned int height);
+	void OnRemoveFrame(unsigned int index);
 } ;
 
 #endif	/* MAPPINGTOOLWINDOWCONTROLLER_H */

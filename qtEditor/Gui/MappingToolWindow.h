@@ -61,11 +61,15 @@ private Q_SLOTS:
 	void OnSplitterMoved(int, int);
     void closeEvent (QCloseEvent * ev);
     void resizeEvent(QResizeEvent *evt);
+	void keyPressEvent(QKeyEvent *event);
     void DelayedUpdate();
 
 	void MakeFastEditString(QModelIndex index);
 	void OnFastEditorChanged(QString text);
 	void OnFastEditorCursorPositionChanged(int x, int y);
+
+	void OnShowMapContextMenu(const QPoint& pos);
+	void OnCurrentViewChanged(int tabIndex);
 } ;
 
 #endif	/* _MAPPINGTOOLWINDOW_H */
