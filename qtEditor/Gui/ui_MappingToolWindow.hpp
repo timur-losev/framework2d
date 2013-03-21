@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'MappingToolWindow.ui'
 **
-** Created: Wed 13. Mar 18:06:34 2013
+** Created: Thu 21. Mar 11:54:25 2013
 **      by: Qt User Interface Compiler version 4.8.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -34,9 +34,12 @@ QT_BEGIN_NAMESPACE
 class Ui_MappingToolWindow
 {
 public:
+    QGridLayout *gridLayout;
+    QWidget *menusWidget;
+    QVBoxLayout *verticalLayout;
     QTabWidget *tabWidget;
     QWidget *mapping;
-    QWidget *verticalLayoutWidget;
+    QVBoxLayout *verticalLayout_3;
     QVBoxLayout *mainSizer;
     QSplitter *splitter;
     QFrame *renderFrame;
@@ -53,33 +56,55 @@ public:
     QWidget *toolWidget;
     QPushButton *showAll;
     QWidget *animation;
-    QWidget *menusWidget;
 
     void setupUi(QDialog *MappingToolWindow)
     {
         if (MappingToolWindow->objectName().isEmpty())
             MappingToolWindow->setObjectName(QString::fromUtf8("MappingToolWindow"));
-        MappingToolWindow->resize(1024, 792);
+        MappingToolWindow->resize(1087, 866);
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy.setHorizontalStretch(1);
+        sizePolicy.setVerticalStretch(1);
+        sizePolicy.setHeightForWidth(MappingToolWindow->sizePolicy().hasHeightForWidth());
+        MappingToolWindow->setSizePolicy(sizePolicy);
+        gridLayout = new QGridLayout(MappingToolWindow);
+        gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
+        menusWidget = new QWidget(MappingToolWindow);
+        menusWidget->setObjectName(QString::fromUtf8("menusWidget"));
+        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(menusWidget->sizePolicy().hasHeightForWidth());
+        menusWidget->setSizePolicy(sizePolicy1);
+        menusWidget->setMinimumSize(QSize(0, 25));
+
+        gridLayout->addWidget(menusWidget, 0, 0, 1, 1);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
+        verticalLayout->setSizeConstraint(QLayout::SetMaximumSize);
         tabWidget = new QTabWidget(MappingToolWindow);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
-        tabWidget->setGeometry(QRect(10, 40, 1001, 741));
+        tabWidget->setEnabled(true);
+        sizePolicy.setHeightForWidth(tabWidget->sizePolicy().hasHeightForWidth());
+        tabWidget->setSizePolicy(sizePolicy);
         mapping = new QWidget();
         mapping->setObjectName(QString::fromUtf8("mapping"));
-        verticalLayoutWidget = new QWidget(mapping);
-        verticalLayoutWidget->setObjectName(QString::fromUtf8("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(0, 0, 1001, 751));
-        mainSizer = new QVBoxLayout(verticalLayoutWidget);
+        sizePolicy.setHeightForWidth(mapping->sizePolicy().hasHeightForWidth());
+        mapping->setSizePolicy(sizePolicy);
+        verticalLayout_3 = new QVBoxLayout(mapping);
+        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
+        mainSizer = new QVBoxLayout();
         mainSizer->setObjectName(QString::fromUtf8("mainSizer"));
-        mainSizer->setSizeConstraint(QLayout::SetDefaultConstraint);
-        mainSizer->setContentsMargins(0, 0, 0, 0);
-        splitter = new QSplitter(verticalLayoutWidget);
+        mainSizer->setSizeConstraint(QLayout::SetMaximumSize);
+        splitter = new QSplitter(mapping);
         splitter->setObjectName(QString::fromUtf8("splitter"));
         splitter->setEnabled(true);
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(splitter->sizePolicy().hasHeightForWidth());
-        splitter->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(splitter->sizePolicy().hasHeightForWidth());
+        splitter->setSizePolicy(sizePolicy2);
         splitter->setFrameShape(QFrame::NoFrame);
         splitter->setFrameShadow(QFrame::Plain);
         splitter->setLineWidth(1);
@@ -90,22 +115,22 @@ public:
         splitter->setChildrenCollapsible(false);
         renderFrame = new QFrame(splitter);
         renderFrame->setObjectName(QString::fromUtf8("renderFrame"));
-        QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy1.setHorizontalStretch(3);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(renderFrame->sizePolicy().hasHeightForWidth());
-        renderFrame->setSizePolicy(sizePolicy1);
+        QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy3.setHorizontalStretch(3);
+        sizePolicy3.setVerticalStretch(0);
+        sizePolicy3.setHeightForWidth(renderFrame->sizePolicy().hasHeightForWidth());
+        renderFrame->setSizePolicy(sizePolicy3);
         renderFrame->setMinimumSize(QSize(200, 200));
         renderFrame->setFrameShape(QFrame::StyledPanel);
         renderFrame->setFrameShadow(QFrame::Raised);
         splitter->addWidget(renderFrame);
         groupBox = new QGroupBox(splitter);
         groupBox->setObjectName(QString::fromUtf8("groupBox"));
-        QSizePolicy sizePolicy2(QSizePolicy::Fixed, QSizePolicy::Expanding);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
-        groupBox->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy4(QSizePolicy::Fixed, QSizePolicy::Expanding);
+        sizePolicy4.setHorizontalStretch(0);
+        sizePolicy4.setVerticalStretch(0);
+        sizePolicy4.setHeightForWidth(groupBox->sizePolicy().hasHeightForWidth());
+        groupBox->setSizePolicy(sizePolicy4);
         groupBox->setMinimumSize(QSize(200, 0));
         groupBox->setMaximumSize(QSize(16777215, 16777215));
         gridLayout_9 = new QGridLayout(groupBox);
@@ -169,13 +194,10 @@ public:
 
         mainSizer->addWidget(splitter);
 
-        toolWidget = new QWidget(verticalLayoutWidget);
+        toolWidget = new QWidget(mapping);
         toolWidget->setObjectName(QString::fromUtf8("toolWidget"));
-        QSizePolicy sizePolicy3(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy3.setHorizontalStretch(0);
-        sizePolicy3.setVerticalStretch(0);
-        sizePolicy3.setHeightForWidth(toolWidget->sizePolicy().hasHeightForWidth());
-        toolWidget->setSizePolicy(sizePolicy3);
+        sizePolicy1.setHeightForWidth(toolWidget->sizePolicy().hasHeightForWidth());
+        toolWidget->setSizePolicy(sizePolicy1);
         toolWidget->setMinimumSize(QSize(0, 25));
         toolWidget->setContextMenuPolicy(Qt::DefaultContextMenu);
         showAll = new QPushButton(toolWidget);
@@ -185,16 +207,24 @@ public:
 
         mainSizer->addWidget(toolWidget);
 
+
+        verticalLayout_3->addLayout(mainSizer);
+
         tabWidget->addTab(mapping, QString());
         animation = new QWidget();
         animation->setObjectName(QString::fromUtf8("animation"));
+        QSizePolicy sizePolicy5(QSizePolicy::Maximum, QSizePolicy::Maximum);
+        sizePolicy5.setHorizontalStretch(1);
+        sizePolicy5.setVerticalStretch(1);
+        sizePolicy5.setHeightForWidth(animation->sizePolicy().hasHeightForWidth());
+        animation->setSizePolicy(sizePolicy5);
         tabWidget->addTab(animation, QString());
-        menusWidget = new QWidget(MappingToolWindow);
-        menusWidget->setObjectName(QString::fromUtf8("menusWidget"));
-        menusWidget->setGeometry(QRect(10, 10, 999, 25));
-        sizePolicy3.setHeightForWidth(menusWidget->sizePolicy().hasHeightForWidth());
-        menusWidget->setSizePolicy(sizePolicy3);
-        menusWidget->setMinimumSize(QSize(0, 25));
+
+        verticalLayout->addWidget(tabWidget);
+
+
+        gridLayout->addLayout(verticalLayout, 1, 0, 1, 1);
+
 
         retranslateUi(MappingToolWindow);
 
