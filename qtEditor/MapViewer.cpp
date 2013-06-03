@@ -174,7 +174,7 @@ bool MapViewer::AddFrame(const core::recti& frameRect, FrameDef& out)
         return false;
     }
 
-    std::string name = std::to_string(m_Frames->size());
+    std::string name = std::to_string((long long)m_Frames->size());
     out = FrameDef(name, (float)frameRect.UpperLeftCorner.X, (float)frameRect.UpperLeftCorner.Y);
     const core::dimension2du& atlasSize = m_Atlases->get(m_CurrentTexture).texture()->getSize();
 

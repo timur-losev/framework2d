@@ -12,7 +12,7 @@
 
 SHARED_PTR_FORWARD(LevelManager);
 
-typedef std::lock_guard<std::mutex> lock_guard_t;
+typedef boost::lock_guard<boost::mutex> lock_guard_t;
 typedef std::weak_ptr<LevelManager> LevelManagerWeakPtr;
 
 namespace irr

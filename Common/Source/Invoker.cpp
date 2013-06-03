@@ -1,10 +1,11 @@
 //#include "pch.h"
 #include "Invoker.h"
-#include <condition_variable>
+//#include <condition_variable>
+#include <boost/thread/condition_variable.hpp>
 
 namespace Common {
 
-static std::condition_variable CondVar;
+static boost::condition_variable CondVar;
 
 Invoker::Invoker() : m_Created(FALSE)
 {
@@ -21,9 +22,9 @@ bool_t Invoker::NeedInvoke() const
     APP_API_ASSERT(m_Created);
 
     if (m_Thread)
-        return std::this_thread::get_id() != m_Thread->get_id();
+        return boost::this_thread::get_id() != m_Thread->get_id();
     else if (m_ThreadId)
-        return *m_ThreadId != std::this_thread::get_id();
+        return *m_ThreadId != boost::this_thread::get_id();
 
     APP_API_ASSERT("There are no acceptable comparator for thread id" && FALSE);
 
@@ -33,7 +34,7 @@ bool_t Invoker::NeedInvoke() const
 void Invoker::BeginInvoke( InvokeFunction_t f )
 {
     APP_API_ASSERT(m_Created);
-    std::lock_guard<std::mutex> lock(*m_Mutex);
+    boost::lock_guard<boost::mutex> lock(*m_Mutex);
 
     m_Funcs.push(f);
 }
@@ -45,7 +46,7 @@ void Invoker::UpdateInvoker()
 
     if (m_Created)
     {
-        std::lock_guard<std::mutex> lock(*m_Mutex);
+        boost::lock_guard<boost::mutex> lock(*m_Mutex);
 
         while(!m_Funcs.empty())
         {
@@ -79,7 +80,7 @@ void Invoker::CreateInvoker()
 {
     m_Thread.reset();
     m_Mutex.reset(new Mutex_t());
-    m_ThreadId.reset(new ThreadId_t(std::this_thread::get_id()));
+    m_ThreadId.reset(new ThreadId_t(boost::this_thread::get_id()));
     m_Created = TRUE;
 }
 
@@ -93,7 +94,7 @@ void Invoker::PerformCrossThreadCall( InvokeFunction_t f, Invoker* invobj, bool_
     }
     else
     {
-        std::unique_lock<std::mutex> lock(*invobj->m_Mutex);
+        boost::unique_lock<boost::mutex> lock(*invobj->m_Mutex);
         invobj->m_Funcs.push(f);
         CondVar.wait(lock);
     }

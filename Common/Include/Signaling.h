@@ -13,7 +13,7 @@
 #include "Logger.h" //Warning: Logger must be created!
 #include <functional>
 
-#include "Sigslot2.h"
+//#include "Sigslot2.h"
 
 namespace Common {
 

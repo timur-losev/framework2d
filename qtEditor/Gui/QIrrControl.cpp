@@ -26,7 +26,7 @@ bool_t QIrrControl::Init()
 {
     m_Worker.SetSurface(winId());
 
-    m_WorkerThread.reset(new std::thread(std::ref(m_Worker)));
+    m_WorkerThread.reset(new boost::thread(boost::ref(m_Worker)));
 
     m_Worker.YourThread(m_WorkerThread);
 
@@ -47,7 +47,7 @@ void QIrrControl::Stop()
 
     m_Worker.Stop();
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(300));
+    boost::this_thread::sleep_for(boost::chrono::milliseconds(300));
 
     m_WorkerThread->detach();
 }

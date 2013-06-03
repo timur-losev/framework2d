@@ -154,9 +154,9 @@ bool_t GameObject::HitTest( const core::position2df& in ) const
     if (m_SpriteInstance->HitTest(in))
         return TRUE;
 
-    for(auto & obj: m_Childs)
+    for(GameObjectList_t::const_iterator i = m_Childs.begin(), e = m_Childs.end(); i != e; ++i)
     {
-        if (obj->HitTest(in))
+        if ((*i)->HitTest(in))
             return TRUE;
     }
 
@@ -216,11 +216,11 @@ void GameObject::RemoveChild( GameObjectPtr o)
 
 GameObjectPtr GameObject::GetChild( const std::string& name )
 {
-    //TODO: hashify names if performance stack at this
-    for(auto & obj: m_Childs)
+    //TODO: hashify names if performance stuck at this
+    for(GameObjectList_t::const_iterator i = m_Childs.begin(), e = m_Childs.end(); i != e; ++i)
     {
-        if (obj->GetName() == name)
-            return obj;
+        if ((*i)->GetName() == name)
+            return *i;
     }
 
     return nullptr;

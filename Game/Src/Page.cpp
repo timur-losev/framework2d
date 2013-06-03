@@ -37,8 +37,10 @@ void PageInstance::Update( float dt, const RenderContext& context )
     {
         GameObjectList_t& objects_list = m_Layers[(EPageLayer)i];
 
-        for(auto& obj : objects_list)
+        for(GameObjectList_t::iterator i = objects_list.begin(), e = objects_list.end(); i != e; ++i)
         {
+            auto obj = *i;
+
             //if (m_DirtyPos)
             {
                 //obj->SetOffset(obj->GetOffset() + m_Offset);
@@ -94,12 +96,12 @@ GameObjectPtr PageInstance::GetGameObjectByName( const std::string& name )
 {
     for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
     {
-        GameObjectList_t &object_list = m_Layers[(EPageLayer)i];
+        GameObjectList_t &objects_list = m_Layers[(EPageLayer)i];
 
-        for(auto& obj: object_list)
+        for(GameObjectList_t::iterator i = objects_list.begin(), e = objects_list.end(); i != e; ++i)
         {
-            if (obj->GetName() == name)
-                return obj;
+            if ((*i)->GetName() == name)
+                return *i;
         };
     }
 
@@ -110,25 +112,27 @@ GameObjectPtr PageInstance::GetGameObjectByHash( hash_t hash )
 {
     for (int i = 0; i < EPAGE_LAYER_MAX; ++i)
     {
-        GameObjectList_t &object_list = m_Layers[(EPageLayer)i];
+        GameObjectList_t &objects_list = m_Layers[(EPageLayer)i];
 
-        for(auto& obj : object_list)
+        for(GameObjectList_t::iterator i = objects_list.begin(), e = objects_list.end(); i != e; ++i)
         {
-            if (obj->Hash() == hash)
-                return obj;
-        }
+            if ((*i)->Hash() == hash)
+                return *i;
+        };
     }
 
-    return NULL;
+    return nullptr;
 }
 
 bool_t PageInstance::AddGameObject( GameObjectPtr obj, const EPageLayer layer )
 {
 #ifdef DBGMODE
-    GameObjectList_t &object_list = m_Layers[layer];
+    GameObjectList_t &objects_list = m_Layers[layer];
 
-    for(auto & thisobj : object_list)
+    for(GameObjectList_t::iterator i = objects_list.begin(), e = objects_list.end(); i != e; ++i)
     {
+        auto thisobj = *i;
+
         if (obj->Hash() == thisobj->Hash() ||
             obj->GetName() == thisobj->GetName())
         {
@@ -188,10 +192,10 @@ GameObjectPtr PageInstance::GetGameObjectByPoint( const core::position2df& p )
     {
         GameObjectList_t& objects_list = m_Layers[i];
 
-        for(auto& obj : objects_list)
+        for(auto i = objects_list.begin(), e = objects_list.end(); i != e; ++i)
         {
-            if (obj->HitTest(p) != FALSE)
-                return obj;
+            if ((*i)->HitTest(p) != FALSE)
+                return *i;
         }
     }
 

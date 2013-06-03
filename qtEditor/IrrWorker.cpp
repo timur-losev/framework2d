@@ -25,14 +25,14 @@ bool_t IrrWorker::Init()
 {
     lock_guard_t lock(*m_MutexPtr);
 
-    using namespace std::chrono;
+    using namespace boost::chrono;
 
     //wait for window open
     //TODO: Make true wait
     auto end = high_resolution_clock::now() + milliseconds(300);
     do
     {
-        std::this_thread::yield();
+        boost::this_thread::yield();
         UpdateInvoker();
     }
     while(high_resolution_clock::now() < end);
@@ -99,7 +99,7 @@ void IrrWorker::Start()
 
         if (timeTaken < msfor30frames)
         {
-            std::this_thread::sleep_for(std::chrono::milliseconds(msfor30frames - timeTaken));
+            boost::this_thread::sleep_for(boost::chrono::milliseconds(msfor30frames - timeTaken));
         }
     }
 }
